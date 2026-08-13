@@ -23,6 +23,26 @@
     z-index: 6;
     pointer-events: none;
   }
+  #corner-drop {
+    position: fixed;
+    top: 40px;
+    right: 48px;
+    z-index: 4;
+    width: 32vmin;
+    height: 32vmin;
+    min-width: 180px;
+    min-height: 180px;
+    max-width: 320px;
+    max-height: 320px;
+    border-radius: 50%;
+    pointer-events: none;
+    -webkit-mask-image: radial-gradient(circle closest-side, black 40%, transparent 95%);
+    mask-image: radial-gradient(circle closest-side, black 40%, transparent 95%);
+    background: radial-gradient(circle, rgba(188,228,230,0.4), rgba(188,228,230,0.06) 70%);
+  }
+  @media (max-width: 640px) {
+    #corner-drop { width: 30vmin; height: 30vmin; top: 76px; right: 20px; }
+  }
   .sidebar {
     position: fixed;
     top: 0; left: 0;
@@ -147,6 +167,8 @@
     <feGaussianBlur in="SourceGraphic" stdDeviation="14" result="soft" />
   </filter>
 </svg>
+
+<div id="corner-drop"></div>
 
 <div class="sidebar">
   <div>
