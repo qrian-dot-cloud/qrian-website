@@ -95,6 +95,7 @@
     border-top: 1px solid rgba(188, 228, 230, 0.15);
     font-family: 'Space Mono', monospace;
     font-size: 13px;
+    color: #A9B4B8;
   }
   .cv-contact a {
     color: #BCE4E6;
@@ -103,55 +104,6 @@
   }
   .cv-contact a:hover {
     border-bottom-color: rgba(188, 228, 230, 0.8);
-  }
-
-  .contact-form {
-    margin-top: 40px;
-    max-width: 480px;
-  }
-  .contact-form label {
-    display: block;
-    font-family: 'Space Mono', monospace;
-    font-size: 12px;
-    color: #7A9EA8;
-    margin-bottom: 6px;
-    letter-spacing: 0.03em;
-  }
-  .contact-form input,
-  .contact-form textarea {
-    width: 100%;
-    box-sizing: border-box;
-    background: rgba(188, 228, 230, 0.04);
-    border: 1px solid rgba(188, 228, 230, 0.2);
-    border-radius: 4px;
-    padding: 10px 12px;
-    margin-bottom: 20px;
-    color: #E8ECEF;
-    font-family: 'Inter', sans-serif;
-    font-size: 14px;
-  }
-  .contact-form input:focus,
-  .contact-form textarea:focus {
-    outline: none;
-    border-color: rgba(188, 228, 230, 0.6);
-  }
-  .contact-form textarea {
-    min-height: 100px;
-    resize: vertical;
-  }
-  .contact-form button {
-    font-family: 'Space Mono', monospace;
-    font-size: 13px;
-    background: transparent;
-    color: #BCE4E6;
-    border: 1px solid rgba(188, 228, 230, 0.5);
-    border-radius: 4px;
-    padding: 10px 24px;
-    cursor: pointer;
-    transition: background 0.2s ease;
-  }
-  .contact-form button:hover {
-    background: rgba(188, 228, 230, 0.1);
   }
 </style>
 </head>
@@ -172,7 +124,7 @@
 </div>
 
 <main>
-  <h1 style="font-size: 22px; letter-spacing: 0.02em;">Emotion through<br>Interface,<br>Memory through<br>Resonance</h1>
+  <h1 style="font-size: 22px; letter-spacing: 0.02em;">EMOTION THROUGH<br>INTERFACE,<br>MEMORY THROUGH<br>RESONANCE.</h1>
 
   <!-- TODO: 아래는 초안이에요. 확정되면 이 텍스트 그대로 교체하시면 돼요 -->
   <p>Kyuri Kim, born in Seoul, South Korea, is an electronic musician and interdisciplinary artist known as QRIAN. She is currently completing her MA in Computational Arts at Goldsmiths, University of London, extending her long-standing sound practice into computational, mixed reality, and data-driven forms of art-making.</p>
@@ -186,22 +138,8 @@
   <p>Across sound, sculpture, mixed reality, and machine learning, QRIAN's practice asks how resonance between human and machine might reshape what counts as authentic, valuable, or real — leaving audiences with vivid, present-tense encounters between body, data, and machine.</p>
 
   <div class="cv-contact">
-    <a href="mailto:qqqrian@gmail.com?subject=CV%20Request">Request CV</a> &nbsp;·&nbsp; <a href="mailto:qqqrian@gmail.com">qqqrian@gmail.com</a>
+    Request CV (PDF) to <a href="mailto:qqqrian@gmail.com?subject=CV%20Request">qqqrian@gmail.com</a>
   </div>
-
-  <form class="contact-form" name="contact" method="POST" data-netlify="true">
-    <input type="hidden" name="form-name" value="contact" />
-    <label for="name">Name</label>
-    <input type="text" id="name" name="name">
-
-    <label for="email">Email</label>
-    <input type="email" id="email" name="email" required>
-
-    <label for="message">Message</label>
-    <textarea id="message" name="message" required></textarea>
-
-    <button type="submit">Send</button>
-  </form>
 </main>
 
 </body>
