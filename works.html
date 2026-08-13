@@ -117,7 +117,7 @@
     color: #E8ECEF;
   }
 
-  /* 태그 라벨 (지금은 프로토타입이라 위치 확인용으로 보여줌) */
+  /* tag label */
   .tag-label {
     position: fixed;
     z-index: 5;
@@ -129,7 +129,7 @@
     pointer-events: none;
   }
 
-  /* 호버 시 선명하게 뜨는 사진 — goo 블러 필터가 안 걸린 별도 레이어 */
+  /* more vivid pics when hovered — the separate layer without goo blur filter */
   #hover-photo {
     position: fixed;
     top: 40px;
@@ -315,7 +315,7 @@ function teardropPath(cx, cy, r) {
   let top = cy - h / 2;
   let bottom = cy + h / 2;
   drawingContext.beginPath();
-  drawingContext.moveTo(cx, top); // 맨 위 뾰족한 점
+  drawingContext.moveTo(cx, top); // poky spot on the top
   drawingContext.bezierCurveTo(cx + w / 2, cy - h * 0.08, cx + w / 2, cy + h * 0.32, cx, bottom);
   drawingContext.bezierCurveTo(cx - w / 2, cy + h * 0.32, cx - w / 2, cy - h * 0.08, cx, top);
   drawingContext.closePath();
