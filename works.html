@@ -210,10 +210,6 @@
   </div>
 </div>
 
-<div class="page-title">
-  <p>Hover a droplet to see the piece · click to open</p>
-</div>
-
 <div id="tooltip"></div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.min.js"></script>
@@ -224,29 +220,29 @@
 
 // --- 가상의 작업 데이터 (나중에 실제 프로젝트로 교체) ---
 const WORKS = [
-  { title: "Proof of Tears",          tags: ["MR", "sound", "resonance", "capital", "biometric-trace"], img: "https://picsum.photos/seed/prooftears/300/300" },
-  { title: "Mindful Resonance",       tags: ["MR", "sound", "resonance", "ritual"], img: "https://picsum.photos/seed/mindfulres/300/300" },
-  { title: "The Chimes — Spring v01", tags: ["sound", "gesture", "synthesis", "nature"], img: "https://picsum.photos/seed/chimes/300/300" },
-  { title: "Are We Feeling The Same?",tags: ["sound", "voice", "cross-cultural", "machine-learning"], img: "https://picsum.photos/seed/feelingsame/300/300" },
-  { title: "Between Clap and Slap",   tags: ["sound", "gesture", "machine-learning", "perception"], img: "https://picsum.photos/seed/clapslap/300/300" },
-  { title: "Liminal Rock",            tags: ["MR", "narrative", "emotion"], img: "https://picsum.photos/seed/liminalrock/300/300" },
-  { title: "Meme Machine",            tags: ["machine-learning", "culture", "bias", "classification"], img: "https://picsum.photos/seed/mememachine/300/300" },
-  { title: "Read My Face Out Loud",   tags: ["sound", "biometric-trace", "gesture"], img: "https://picsum.photos/seed/readmyface/300/300" },
-  { title: "Gaslighting",             tags: ["culture", "bias", "identity"], series: "Neither 0 Nor 1", img: "https://picsum.photos/seed/gaslighting/300/300" },
-  { title: "Asian Women vs Women in Asia", tags: ["culture", "identity"], series: "Neither 0 Nor 1", img: "https://picsum.photos/seed/asianwomen/300/300" },
-  { title: "The Freelancer, Never Feeling Free", tags: ["culture", "identity", "capital"], series: "Neither 0 Nor 1", img: "https://picsum.photos/seed/freelancer/300/300" },
-  { title: "AI: An Imposter or Improver?", tags: ["machine-learning", "bias", "identity"], series: "Neither 0 Nor 1", img: "https://picsum.photos/seed/aiimposter/300/300" },
+  { title: "Proof of Tears",          tags: ["MR", "sound", "resonance", "capital", "biometric-trace"], zone: "interactive", img: "https://picsum.photos/seed/prooftears/300/300" },
+  { title: "Mindful Resonance",       tags: ["MR", "sound", "resonance", "ritual"], zone: "interactive", img: "https://picsum.photos/seed/mindfulres/300/300" },
+  { title: "The Chimes — Spring v01", tags: ["sound", "gesture", "synthesis", "nature"], zone: "interactive", img: "https://picsum.photos/seed/chimes/300/300" },
+  { title: "Are We Feeling The Same?",tags: ["sound", "voice", "cross-cultural", "machine-learning"], zone: "research", img: "https://picsum.photos/seed/feelingsame/300/300" },
+  { title: "Between Clap and Slap",   tags: ["sound", "gesture", "machine-learning", "perception"], zone: "research", img: "https://picsum.photos/seed/clapslap/300/300" },
+  { title: "Liminal Rock",            tags: ["MR", "narrative", "emotion"], zone: "interactive", img: "https://picsum.photos/seed/liminalrock/300/300" },
+  { title: "Meme Machine",            tags: ["machine-learning", "culture", "bias", "classification"], zone: "research", img: "https://picsum.photos/seed/mememachine/300/300" },
+  { title: "Read My Face Out Loud",   tags: ["sound", "biometric-trace", "gesture"], zone: "interactive", img: "https://picsum.photos/seed/readmyface/300/300" },
+  { title: "Gaslighting",             tags: ["culture", "bias", "identity"], series: "Neither 0 Nor 1", zone: "research", img: "https://picsum.photos/seed/gaslighting/300/300" },
+  { title: "Asian Women vs Women in Asia", tags: ["culture", "identity"], series: "Neither 0 Nor 1", zone: "research", img: "https://picsum.photos/seed/asianwomen/300/300" },
+  { title: "The Freelancer, Never Feeling Free", tags: ["culture", "identity", "capital"], series: "Neither 0 Nor 1", zone: "research", img: "https://picsum.photos/seed/freelancer/300/300" },
+  { title: "AI: An Imposter or Improver?", tags: ["machine-learning", "bias", "identity"], series: "Neither 0 Nor 1", zone: "research", img: "https://picsum.photos/seed/aiimposter/300/300" },
 
   // --- Music: 독립 트랙/공연도 같은 지도 안에, 태그로 자연스럽게 연결됨 ---
-  { title: "BOSS", tags: ["sound", "voice", "avant-pop", "release"], img: "https://picsum.photos/seed/bossqrian/300/300" },
-  { title: "QRIAN (EP)", tags: ["sound", "voice", "avant-pop", "release"], img: "https://picsum.photos/seed/qrianep/300/300" },
-  { title: "With This", tags: ["sound", "voice", "release"], img: "https://picsum.photos/seed/withthis/300/300" },
-  { title: "BYULGORAE", tags: ["sound", "performance", "curation"], img: "https://picsum.photos/seed/byulgorae/300/300" },
+  { title: "BOSS", tags: ["sound", "voice", "avant-pop", "release"], zone: "music", img: "https://picsum.photos/seed/bossqrian/300/300" },
+  { title: "QRIAN (EP)", tags: ["sound", "voice", "avant-pop", "release"], zone: "music", img: "https://picsum.photos/seed/qrianep/300/300" },
+  { title: "With This", tags: ["sound", "voice", "release"], zone: "music", img: "https://picsum.photos/seed/withthis/300/300" },
+  { title: "BYULGORAE", tags: ["sound", "performance", "curation"], zone: "music", img: "https://picsum.photos/seed/byulgorae/300/300" },
 
   // --- 협업 작업 — 실제 사이트에서 확인됨, 태그/설명은 아직 임시 ---
   // TODO: 실제 내용 확인 후 태그 다시 잡기
-  { title: "Lunar Abyss", tags: ["collaboration"], img: "https://picsum.photos/seed/lunarabyss/300/300" },
-  { title: "The Planet Of Pets", tags: ["collaboration"], img: "https://picsum.photos/seed/planetofpets/300/300" },
+  { title: "Lunar Abyss", tags: ["collaboration"], zone: "collaboration", img: "https://picsum.photos/seed/lunarabyss/300/300" },
+  { title: "The Planet Of Pets", tags: ["collaboration"], zone: "collaboration", img: "https://picsum.photos/seed/planetofpets/300/300" },
 ];
 
 let nodes = [];       // 각 작업의 물리 상태
@@ -285,6 +281,7 @@ function setup() {
       title: w.title,
       tags: w.tags,
       series: w.series || null,
+      zone: w.zone || null,
       x: sidebarOffsetX() + (width - sidebarOffsetX()) * 0.38 + cos(angle) * startRadius + random(-20, 20),
       y: sidebarOffsetY() + (height - sidebarOffsetY()) / 2 + sin(angle) * startRadius + random(-20, 20),
       vx: 0,
@@ -389,6 +386,8 @@ function draw() {
     let centerY = sidebarOffsetY() + (height - sidebarOffsetY()) / 2;
     n.vx += (centerX - n.x) * 0.00006;
     n.vy += (centerY - n.y) * 0.00006;
+
+    // 2.5) (구역 끌림 기능 제거 — 순수 태그 기반 관계로만 자리 잡음)
 
     n.vx *= 0.88; // 감쇠 — 진동하지 않고 서서히 자리 잡도록
     n.vy *= 0.88;
