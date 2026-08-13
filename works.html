@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Works — QRIAN</title>
+<style>
+  html, body {
+    margin: 0;
+    padding: 0;
+    background: #0A0D12;
+    overflow: hidden;
+    height: 100%;
+  }
+  canvas { display: block; }
+
+  #gooey-layer {
+    position: fixed;
+    top: 0; left: 0;
+  }
+
+  #tooltip {
+    position: fixed;
+    z-index: 20;
+    pointer-events: none;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    color: #0A0D12;
+    background: #E8ECEF;
+    padding: 6px 12px;
+    border-radius: 4px;
+    font-size: 12px;
+    letter-spacing: 0.02em;
+    opacity: 0;
+    transition: opacity 0.15s ease;
+    transform: translate(-50%, -140%);
+  }
+
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 28px 48px;
+    z-index: 10;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+  }
+  .logo { color: #E8ECEF; font-size: 15px; font-weight: 500; letter-spacing: 0.08em; text-decoration: none; }
+  .menu { display: flex; gap: 32px; list-style: none; margin: 0; padding: 0; }
+  .menu li a { color: #C7D0D3; font-size: 13px; letter-spacing: 0.04em; text-decoration: none; opacity: 0.75; transition: opacity 0.3s ease; }
+  .menu li a.active, .menu li a:hover { opacity: 1; }
+
+  .page-title {
+    position: fixed;
+    top: 84px; left: 48px;
+    z-index: 5;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    pointer-events: none;
+  }
+  .page-title h1 {
+    font-weight: 300;
+    font-size: 20px;
+    letter-spacing: 0.02em;
+    margin: 0;
+    color: #E8ECEF;
+    opacity: 0.85;
+  }
+  .page-title p {
+    font-size: 12px;
+    opacity: 0.4;
+    margin-top: 6px;
+    letter-spacing: 0.03em;
+    color: #E8ECEF;
+  }
+
+  /* 태그 라벨 (지금은 프로토타입이라 위치 확인용으로 보여줌) */
+  .tag-label {
+    position: fixed;
+    z-index: 5;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-size: 11px;
+    color: #6B7A80;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    pointer-events: none;
+  }
+
+  /* 호버 시 선명하게 뜨는 사진 — goo 블러 필터가 안 걸린 별도 레이어 */
+  #hover-photo {
+    position: fixed;
+    z-index: 15;
+    border-radius: 50%;
+    overflow: hidden;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.25s ease, transform 0.25s ease;
+    transform: translate(-50%, -50%) scale(0.92);
+    box-shadow: 0 0 24px rgba(188, 228, 230, 0.35);
+  }
+  #hover-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+</style>
+</head>
+<body>
+
+<div id="hover-photo"><img id="hover-img" src="" alt=""></div>
+
+<svg style="position:absolute; width:0; height:0;">
+  <filter id="goo">
+    <feGaussianBlur in="SourceGraphic" stdDeviation="14" result="soft" />
+  </filter>
+</svg>
+
+<nav>
+  <a class="logo" href="index.html">QRIAN</a>
+  <ul class="menu">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="emosmiths.html">Emosmiths</a></li>
+    <li><a href="works.html" class="active">Works</a></li>
+    <li><a href="music.html">Music</a></li>
+    <li><a href="biography.html">Biography</a></li>
+    <li><a href="cv.pdf">CV</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
+
+<div class="page-title">
+  <h1>Works</h1>
+  <p>Hover a droplet to see the piece · click to open</p>
+</div>
+
+<div id="tooltip"></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.min.js"></script>
+<script>
+// ============================================
+// STEP 4: 태그 기반 클러스터링 — "눈물들의 지도"
+// ============================================
+
+// --- 가상의 작업 데이터 (나중에 실제 프로젝트로 교체) ---
+const WORKS = [
+  { title: "Proof of Tears",          tags: ["MR", "sound", "resonance", "capital", "biometric-trace"], img: "https://picsum.photos/seed/prooftears/300/300" },
+  { title: "Mindful Resonance",       tags: ["MR", "sound", "resonance", "ritual"], img: "https://picsum.photos/seed/mindfulres/300/300" },
+  { title: "The Chimes — Spring v01", tags: ["sound", "gesture", "synthesis", "nature"], img: "https://picsum.photos/seed/chimes/300/300" },
+  { title: "Are We Feeling The Same?",tags: ["sound", "voice", "cross-cultural", "machine-learning"], img: "https://picsum.photos/seed/feelingsame/300/300" },
+  { title: "Between Clap and Slap",   tags: ["sound", "gesture", "machine-learning", "perception"], img: "https://picsum.photos/seed/clapslap/300/300" },
+  { title: "Liminal Rock",            tags: ["MR", "narrative", "emotion"], img: "https://picsum.photos/seed/liminalrock/300/300" },
+  { title: "Meme Machine",            tags: ["machine-learning", "culture", "bias", "classification"], img: "https://picsum.photos/seed/mememachine/300/300" },
+  { title: "Read My Face Out Loud",   tags: ["sound", "biometric-trace", "gesture"], img: "https://picsum.photos/seed/readmyface/300/300" },
+  { title: "Gaslighting",             tags: ["culture", "bias", "identity"], series: "Neither 0 Nor 1", img: "https://picsum.photos/seed/gaslighting/300/300" },
+  { title: "Asian Women vs Women in Asia", tags: ["culture", "identity"], series: "Neither 0 Nor 1", img: "https://picsum.photos/seed/asianwomen/300/300" },
+  { title: "The Freelancer, Never Feeling Free", tags: ["culture", "identity", "capital"], series: "Neither 0 Nor 1", img: "https://picsum.photos/seed/freelancer/300/300" },
+  { title: "AI: An Imposter or Improver?", tags: ["machine-learning", "bias", "identity"], series: "Neither 0 Nor 1", img: "https://picsum.photos/seed/aiimposter/300/300" },
+];
+
+let nodes = [];       // 각 작업의 물리 상태
+let tooltip;
+
+const BG = [10, 13, 18];
+const BLOB_COLOR = [188, 228, 230];
+
+function setup() {
+  let canvas = createCanvas(windowWidth, windowHeight);
+  pixelDensity(2);
+  canvas.parent(document.body);
+  canvas.style('position', 'fixed');
+  canvas.style('top', '0');
+  canvas.style('left', '0');
+  canvas.id('gooey-layer');
+  canvas.style('filter', 'url(#goo)');
+
+  tooltip = document.getElementById('tooltip');
+
+  // 각 작업을 화면 중앙 근처에 원형으로 흩뿌려서 시작 — 여기서부터
+  // 서로 끌고 밀며 스스로 지형을 만들어감 (고정된 축이 없음)
+  nodes = WORKS.map((w, i) => {
+    let angle = (i / WORKS.length) * TWO_PI;
+    let startRadius = 120;
+    return {
+      title: w.title,
+      tags: w.tags,
+      series: w.series || null,
+      x: width / 2 + cos(angle) * startRadius + random(-20, 20),
+      y: height / 2 + sin(angle) * startRadius + random(-20, 20),
+      vx: 0,
+      vy: 0,
+      r: 5 + w.tags.length * 0.6,
+      breatheOffset: random(TWO_PI),
+      imgUrl: w.img
+    };
+  });
+
+  frameRate(28);
+
+  // 프리뷰 패널 크기가 setup() 직후에 늦게 확정되는 경우를 대비한 안전장치
+  setTimeout(() => resizeCanvas(windowWidth, windowHeight), 150);
+}
+
+// 두 작업이 공유하는 태그 개수
+function sharedTagCount(a, b) {
+  return a.tags.filter(t => b.tags.includes(t)).length;
+}
+
+// 태그 겹침 "비율" (자카드 유사도) — 둘 다 태그가 많으면 겹쳐도 비율은 낮아짐
+// 이래야 "sound"처럼 흔한 태그 하나로 다 같이 뭉치는 걸 막을 수 있음
+function tagSimilarity(a, b) {
+  let shared = sharedTagCount(a, b);
+  if (shared === 0) return 0;
+  let unionSize = new Set([...a.tags, ...b.tags]).size;
+  return shared / unionSize; // 0~1
+}
+
+// 세로형 눈물 실루엣 경로 — 위는 뾰족, 아래는 둥글게
+// (raw canvas 경로라서 채우기/클리핑 둘 다에 재사용 가능)
+function teardropPath(cx, cy, r) {
+  let w = r * 1.1;   // 폭
+  let h = r * 2.1;   // 높이 (세로로 길게, 이전보다 비율 축소)
+  let top = cy - h / 2;
+  let bottom = cy + h / 2;
+  drawingContext.beginPath();
+  drawingContext.moveTo(cx, top); // 맨 위 뾰족한 점
+  drawingContext.bezierCurveTo(cx + w / 2, cy - h * 0.08, cx + w / 2, cy + h * 0.32, cx, bottom);
+  drawingContext.bezierCurveTo(cx - w / 2, cy + h * 0.32, cx - w / 2, cy - h * 0.08, cx, top);
+  drawingContext.closePath();
+}
+
+function draw() {
+  blendMode(BLEND);
+  background(BG[0], BG[1], BG[2]);
+  noStroke();
+  blendMode(ADD);
+
+  // 태그가 겹치는 모든 쌍을 실로 연결 — 지도 전체가 하나의 유기적 그물망이 되게
+  // 겹침이 강할수록(비슷할수록) 더 굵고 선명하게
+  for (let i = 0; i < nodes.length; i++) {
+    for (let j = i + 1; j < nodes.length; j++) {
+      let a = nodes[i], b = nodes[j];
+      let sim = tagSimilarity(a, b);
+      if (sim <= 0) continue;
+
+      let isSeriesMate = a.series && a.series === b.series;
+      let boost = isSeriesMate ? 1.6 : 1; // 시리즈는 그물망 안에서도 살짝 더 도드라지게
+
+      stroke(BLOB_COLOR[0], BLOB_COLOR[1], BLOB_COLOR[2], constrain(sim * 130 * boost, 12, 120));
+      strokeWeight(constrain(sim * 7 * boost, 2, 9)); // 얇으면 goo 블러에 씻겨 안 보임
+      line(a.x, a.y, b.x, b.y);
+    }
+  }
+  noStroke();
+
+  let hovered = null;
+
+  for (let n of nodes) {
+    // 1) 다른 모든 작업과의 관계로 힘을 계산 (고정된 축이 없음 — 관계 자체가 지형을 만듦)
+    for (let other of nodes) {
+      if (other === n) continue;
+      let dx = other.x - n.x;
+      let dy = other.y - n.y;
+      let d = constrain(mag(dx, dy), 20, 2000); // 0으로 나눠지는 것 방지 + 너무 먼 경우 제한
+
+      // 반발력: 항상 작동, 거리가 멀수록 약해짐 (Coulomb's law 방식)
+      // 이게 핵심 수정 — "포도알"처럼 뭉치지 않게 항상 밀어내는 배경 힘
+      let repel = 30000 / (d * d);
+      n.vx -= (dx / d) * repel;
+      n.vy -= (dy / d) * repel;
+
+      // 끌어당김: 태그 겹침 "비율"이 높을수록, 그리고 멀리 있을수록 세게 (스프링처럼)
+      let sim = tagSimilarity(n, other);
+      if (sim > 0) {
+        let pull = sim * d * 0.00035;
+        n.vx += (dx / d) * pull;
+        n.vy += (dy / d) * pull;
+      }
+
+      // 같은 시리즈면 훨씬 강하게 끌어당김 — 태그 유사성보다 우선하는 "가족" 결속
+      if (n.series && other.series === n.series) {
+        let seriesPull = d * 0.0012;
+        n.vx += (dx / d) * seriesPull;
+        n.vy += (dy / d) * seriesPull;
+      }
+    }
+
+    // 2) 화면 중앙으로의 아주 약한 중력 (전체가 화면 밖으로 흩어지지 않게)
+    n.vx += (width / 2 - n.x) * 0.00012;
+    n.vy += (height / 2 - n.y) * 0.00012;
+
+    n.vx *= 0.88; // 감쇠 — 진동하지 않고 서서히 자리 잡도록
+    n.vy *= 0.88;
+    n.x += n.vx;
+    n.y += n.vy;
+
+    // 숨쉬는 크기 (기존 앰비언트 블롭과 같은 리듬 언어)
+    let breathe = sin(frameCount * 0.02 + n.breatheOffset) * 3;
+    let displayR = n.r + breathe / 2;
+
+    let isHover = dist(mouseX, mouseY, n.x, n.y) < n.r;
+    if (isHover) hovered = n;
+
+    // 3) 뒤에 은은한 additive 글로우 (물기 느낌) — 세로형 눈물 모양
+    blendMode(ADD);
+    noStroke();
+    teardropPath(n.x, n.y, displayR + 3);
+    drawingContext.fillStyle = `rgba(${BLOB_COLOR[0]}, ${BLOB_COLOR[1]}, ${BLOB_COLOR[2]}, ${(isHover ? 90 : 50) / 255})`;
+    drawingContext.fill();
+
+    // 4) 기본 상태에서는 사진을 넣지 않음 — 작고 은은한 점으로만 존재
+    //    (사진은 호버했을 때 별도의 선명한 레이어로만 나타남, 아래 참고)
+    //    이래야 "몇 개를 확대해서 보는" 느낌이 아니라 "넓은 지도를 조망하는" 느낌이 남
+    blendMode(BLEND);
+    teardropPath(n.x, n.y, displayR);
+    drawingContext.fillStyle = `rgba(${BLOB_COLOR[0]}, ${BLOB_COLOR[1]}, ${BLOB_COLOR[2]}, ${(isHover ? 210 : 140) / 255})`;
+    drawingContext.fill();
+  }
+
+  // 툴팁 + 선명한 사진 표시
+  const hoverPhoto = document.getElementById('hover-photo');
+  const hoverImg = document.getElementById('hover-img');
+
+  if (hovered) {
+    tooltip.innerText = hovered.title + "  ·  " + hovered.tags.map(t => "#" + t).join(" ");
+    tooltip.style.left = hovered.x + 'px';
+    tooltip.style.top = hovered.y + 'px';
+    tooltip.style.opacity = 1;
+    document.body.style.cursor = 'pointer';
+
+    // 선명한 사진 레이어 — 블롭보다 살짝 크게, goo 필터 영향 없이 또렷하게
+    let sharpSize = (hovered.r + 8) * 2;
+    hoverPhoto.style.width = sharpSize + 'px';
+    hoverPhoto.style.height = sharpSize + 'px';
+    hoverPhoto.style.left = hovered.x + 'px';
+    hoverPhoto.style.top = hovered.y + 'px';
+    hoverPhoto.style.opacity = 1;
+    hoverPhoto.style.transform = 'translate(-50%, -50%) scale(1)';
+    if (hoverImg.src !== hovered.imgUrl) hoverImg.src = hovered.imgUrl;
+  } else {
+    tooltip.style.opacity = 0;
+    hoverPhoto.style.opacity = 0;
+    document.body.style.cursor = 'default';
+  }
+}
+
+function windowResized() {
+  resizeCanvas(windowWidth, windowHeight);
+}
+</script>
+</body>
+</html>
