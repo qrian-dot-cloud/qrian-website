@@ -133,15 +133,15 @@
   #hover-photo {
     position: fixed;
     top: 50%;
-    left: 50%;
+    right: 6vw;
     z-index: 8;
-    width: 70vmin;
-    height: 70vmin;
+    width: 40vmin;
+    height: 40vmin;
     overflow: hidden;
     pointer-events: none;
     opacity: 0;
     transition: opacity 0.35s ease;
-    transform: translate(-50%, -50%);
+    transform: translateY(-50%);
     -webkit-mask-image: radial-gradient(circle, black 40%, transparent 75%);
     mask-image: radial-gradient(circle, black 40%, transparent 75%);
   }
@@ -170,7 +170,7 @@
     .code-nav a { margin-right: 10px; }
     .footer-links { display: none; }
     .page-title { left: 16px !important; top: 64px !important; }
-    #hover-photo { width: 140px; height: 140px; }
+    #hover-photo { width: 55vmin; height: 55vmin; right: 50%; transform: translate(50%, -50%); }
   }
 </style>
 </head>
