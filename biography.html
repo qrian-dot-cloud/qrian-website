@@ -16,6 +16,13 @@
     font-family: 'Inter', sans-serif;
     color: #E8ECEF;
   }
+  #cursor-layer {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    z-index: 6;
+    pointer-events: none;
+  }
   .sidebar {
     position: fixed;
     top: 0; left: 0;
@@ -105,9 +112,41 @@
   .cv-contact a:hover {
     border-bottom-color: rgba(188, 228, 230, 0.8);
   }
+
+  @media (max-width: 640px) {
+    .sidebar {
+      width: 100%;
+      height: auto;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 16px;
+      background: rgba(10,13,18,0.85);
+      position: fixed;
+    }
+    .logo { font-size: 20px; }
+    .code-nav { font-size: 13px; margin-top: 0 !important; line-height: 1.3; }
+    .code-nav .fn { display: none; }
+    .code-nav br { display: none; }
+    .code-nav a { margin-right: 10px; }
+    .footer-links { display: none; }
+    main {
+      width: 100%;
+      max-width: 100%;
+      margin: 0;
+      padding: 84px 20px 80px;
+    }
+    h1 { font-size: 20px; }
+  }
 </style>
 </head>
 <body>
+
+<svg style="position:absolute; width:0; height:0;">
+  <filter id="goo">
+    <feGaussianBlur in="SourceGraphic" stdDeviation="14" result="soft" />
+  </filter>
+</svg>
 
 <div class="sidebar">
   <div>
@@ -142,5 +181,76 @@
   </div>
 </main>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.min.js"></script>
+<script>
+// 사이트 전체에서 따라다니는 커서 눈물 — 배경 블롭은 없이, 팔로워만 이 페이지 위에 얹음
+let followerX, followerY;
+let followerVX = 0, followerVY = 0;
+const SPRING = 0.035;
+const DAMPING = 0.72;
+let trail = [];
+const TRAIL_LENGTH = 6;
+const BLOB_COLOR = [188, 228, 230];
+
+function setup() {
+  let canvas = createCanvas(windowWidth, windowHeight);
+  pixelDensity(2);
+  canvas.parent(document.body);
+  canvas.id('cursor-layer');
+  canvas.style('position', 'fixed');
+  canvas.style('top', '0');
+  canvas.style('left', '0');
+  canvas.style('z-index', '6');
+  canvas.style('pointer-events', 'none');
+  canvas.style('filter', 'url(#goo)');
+  followerX = width / 2;
+  followerY = height / 2;
+  frameRate(30);
+}
+
+function draw() {
+  clear(); // 배경을 안 그리고 투명하게 유지 — 아래 페이지 내용이 그대로 비침
+
+  let ax = (mouseX - followerX) * SPRING;
+  let ay = (mouseY - followerY) * SPRING;
+  followerVX = (followerVX + ax) * DAMPING;
+  followerVY = (followerVY + ay) * DAMPING;
+  followerX += followerVX;
+  followerY += followerVY;
+
+  trail.push({ x: followerX, y: followerY });
+  if (trail.length > TRAIL_LENGTH) trail.shift();
+
+  blendMode(ADD);
+  noFill();
+  strokeCap(ROUND);
+  strokeJoin(ROUND);
+  for (let i = 0; i < trail.length - 1; i++) {
+    let t = i / trail.length;
+    let a = trail[i];
+    let b = trail[i + 1];
+    stroke(BLOB_COLOR[0], BLOB_COLOR[1], BLOB_COLOR[2], 65 * t);
+    strokeWeight(20);
+    line(a.x, a.y, b.x, b.y);
+  }
+  noStroke();
+
+  let speed = mag(followerVX, followerVY);
+  let angle = atan2(followerVY, followerVX);
+  let stretch = constrain(speed * 0.22, 0, 10);
+  let breathe = 16 + sin(frameCount * 0.02) * 2.5;
+
+  push();
+  translate(followerX, followerY);
+  rotate(angle);
+  fill(BLOB_COLOR[0], BLOB_COLOR[1], BLOB_COLOR[2], 150);
+  ellipse(0, 0, breathe + stretch, breathe - stretch * 0.5);
+  pop();
+}
+
+function windowResized() {
+  resizeCanvas(windowWidth, windowHeight);
+}
+</script>
 </body>
 </html>
