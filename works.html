@@ -132,25 +132,37 @@
   /* 호버 시 선명하게 뜨는 사진 — goo 블러 필터가 안 걸린 별도 레이어 */
   #hover-photo {
     position: fixed;
-    top: 50%;
-    right: 6vw;
+    top: 96px;
+    right: 48px;
     z-index: 8;
-    width: 40vmin;
-    height: 40vmin;
+    width: 32vmin;
+    height: 32vmin;
+    min-width: 180px;
+    min-height: 180px;
+    max-width: 320px;
+    max-height: 320px;
     overflow: hidden;
     pointer-events: none;
-    opacity: 0;
-    transition: opacity 0.35s ease;
-    transform: translateY(-50%);
-    -webkit-mask-image: radial-gradient(circle, black 40%, transparent 75%);
-    mask-image: radial-gradient(circle, black 40%, transparent 75%);
+    -webkit-mask-image: radial-gradient(circle closest-side, black 40%, transparent 95%);
+    mask-image: radial-gradient(circle closest-side, black 40%, transparent 95%);
+  }
+  #hover-photo .blob-bg {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle, rgba(188,228,230,0.4), rgba(188,228,230,0.06) 70%);
   }
   #hover-photo img {
+    position: absolute;
+    inset: 0;
     width: 100%;
     height: 100%;
     object-fit: cover;
     display: block;
-    transition: opacity 0.2s ease;
+    opacity: 0;
+    transition: opacity 0.35s ease;
+  }
+  #hover-photo img.active {
+    opacity: 1;
   }
 
   @media (max-width: 640px) {
@@ -170,13 +182,13 @@
     .code-nav a { margin-right: 10px; }
     .footer-links { display: none; }
     .page-title { left: 16px !important; top: 64px !important; }
-    #hover-photo { width: 55vmin; height: 55vmin; right: 50%; transform: translate(50%, -50%); }
+    #hover-photo { width: 30vmin; height: 30vmin; top: 76px; right: 20px; }
   }
 </style>
 </head>
 <body>
 
-<div id="hover-photo"><img id="hover-img" src="" alt=""></div>
+<div id="hover-photo"><div class="blob-bg"></div><img id="hover-img" src="" alt=""></div>
 
 <svg style="position:absolute; width:0; height:0;">
   <filter id="goo">
@@ -417,8 +429,7 @@ function draw() {
     drawingContext.fill();
   }
 
-  // 툴팁 + 선명한 사진 표시
-  const hoverPhoto = document.getElementById('hover-photo');
+  // 툴팁 + 코너의 눈물 점 → 사진 전환
   const hoverImg = document.getElementById('hover-img');
 
   if (hovered) {
@@ -428,12 +439,12 @@ function draw() {
     tooltip.style.opacity = 1;
     document.body.style.cursor = 'pointer';
 
-    // 화면 고정 배경 — 위치는 항상 같고, 사진만 샥샥 전환됨
-    hoverPhoto.style.opacity = 1;
+    // 코너의 기본 눈물 점이 사진으로 샥샥 전환됨 (위치는 고정)
     if (hoverImg.src !== hovered.imgUrl) hoverImg.src = hovered.imgUrl;
+    hoverImg.classList.add('active');
   } else {
     tooltip.style.opacity = 0;
-    hoverPhoto.style.opacity = 0;
+    hoverImg.classList.remove('active');
     document.body.style.cursor = 'default';
   }
 }
