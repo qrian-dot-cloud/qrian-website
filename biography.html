@@ -4,7 +4,150 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Biography — QRIAN</title>
+<style><!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Biography — QRIAN</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 <style>
+  html, body {
+    margin: 0;
+    padding: 0;
+    background: #0A0D12;
+    min-height: 100%;
+    font-family: 'Inter', sans-serif;
+    color: #E8ECEF;
+  }
+  .sidebar {
+    position: fixed;
+    top: 0; left: 0;
+    height: 100%;
+    width: 280px;
+    z-index: 10;
+    padding: 48px 40px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: transparent;
+  }
+  .logo {
+    font-family: 'Space Mono', monospace;
+    font-weight: 700;
+    font-size: 40px;
+    letter-spacing: -0.02em;
+    color: #F0F4F5;
+    text-decoration: none;
+    line-height: 1.1;
+  }
+  .code-nav {
+    font-family: 'Space Mono', monospace;
+    font-size: 26px;
+    line-height: 1.6;
+  }
+  .code-nav .fn { color: #8A9AA0; }
+  .code-nav a {
+    color: #BCE4E6;
+    text-decoration: none;
+    display: inline-block;
+    transform-origin: left center;
+    transition: transform 0.2s ease;
+  }
+  .code-nav a:hover {
+    transform: scale(1.06);
+  }
+  .footer-links {
+    font-family: 'Space Mono', monospace;
+    font-size: 11px;
+    color: #8A9AA0;
+    white-space: nowrap;
+  }
+  .footer-links a {
+    color: inherit;
+    text-decoration: none;
+  }
+  .footer-links a:hover {
+    color: #BCE4E6;
+  }
+
+  main {
+    max-width: 680px;
+    margin: 0 0 0 280px;
+    padding: 64px 48px 120px;
+  }
+  h1 {
+    font-family: 'Space Mono', monospace;
+    font-weight: 400;
+    font-size: 30px;
+    margin: 0 0 40px 0;
+    color: #F0F4F5;
+  }
+  p {
+    font-size: 15px;
+    line-height: 1.8;
+    color: #C7D0D3;
+    opacity: 0.9;
+    margin: 0 0 24px 0;
+  }
+  .cv-contact {
+    margin-top: 48px;
+    padding-top: 32px;
+    border-top: 1px solid rgba(188, 228, 230, 0.15);
+    font-family: 'Space Mono', monospace;
+    font-size: 13px;
+  }
+  .cv-contact a {
+    color: #BCE4E6;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(188, 228, 230, 0.35);
+  }
+  .cv-contact a:hover {
+    border-bottom-color: rgba(188, 228, 230, 0.8);
+  }
+</style>
+</head>
+<body>
+
+<div class="sidebar">
+  <div>
+    <a class="logo" href="index.html">QRIAN</a>
+    <div class="code-nav" style="margin-top: 48px;">
+      <span class="fn">print</span><br>
+      <a href="biography.html">("Hello,</a><br>
+      <a href="works.html">world!")</a>
+    </div>
+  </div>
+  <div class="footer-links">
+    © 2026 QRIAN. All rights reserved. Contact: <a href="mailto:qqqrian@gmail.com">qqqrian@gmail.com</a>
+  </div>
+</div>
+
+<main>
+  <h1>Biography</h1>
+
+  <!-- TODO: 아래는 초안이에요. 확정되면 이 텍스트 그대로 교체하시면 돼요 -->
+  <p>Kyuri Kim, born in Seoul, South Korea, is an electronic musician and interdisciplinary artist known as QRIAN. She is currently completing her MA in Computational Arts at Goldsmiths, University of London, extending her long-standing sound practice into computational, mixed reality, and data-driven forms of art-making.</p>
+
+  <p>She writes, performs and produces her own music with original recordings, electronic instruments and software, collecting noises from everyday life and generating or transforming different waves expressing narratives. Her past narratives include cross-cultural identity, socio-political discourse, locations and natures, emotions and moods, meanings or non-meanings. QRIAN's primary instrument is her voice and integrates technology into her performances in avant-pop ways.</p>
+
+  <p>She also curates and hosts BYULGORAE, a live electronic music event that supports and amplifies independent electronic artists' live music scene.</p>
+
+  <p>Her current work turns toward computational and mixed reality systems that translate bodily and emotional data — voice, gesture, biometric trace — into sound, image, and resonance. A central question drives this practice: mixed reality is rarely mixed at the level of sound — headset audio and the surrounding physical world remain two separate acoustic spaces — and her recent projects investigate what it would take to genuinely merge them. This inquiry anchors <em>Emosmiths</em>, an ongoing series beginning with <em>Proof of Tears</em>, a mixed reality and interactive sound installation that reimagines tears as a form of emotional capital.</p>
+
+  <p>Across sound, sculpture, mixed reality, and machine learning, QRIAN's practice asks how resonance between human and machine might reshape what counts as authentic, valuable, or real — leaving audiences with vivid, present-tense encounters between body, data, and machine.</p>
+
+  <div class="cv-contact">
+    <a href="cv.pdf">Download CV (PDF)</a> &nbsp;·&nbsp; <a href="mailto:qqqrian@gmail.com">qqqrian@gmail.com</a>
+  </div>
+</main>
+
+</body>
+</html>
+
   html, body {
     margin: 0;
     padding: 0;
