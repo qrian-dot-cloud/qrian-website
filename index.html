@@ -13,6 +13,235 @@
     height: 100%;
   }
   canvas { display: block; }
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>QRIAN</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  html, body {
+    margin: 0;
+    padding: 0;
+    background: #0A0D12;
+    overflow: hidden;
+    height: 100%;
+  }
+  canvas { display: block; }
+
+  #gooey-layer {
+    position: fixed;
+    top: 0; left: 0;
+  }
+
+  .sidebar {
+    position: fixed;
+    top: 0; left: 0;
+    height: 100%;
+    width: 280px;
+    z-index: 10;
+    padding: 48px 40px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: linear-gradient(90deg, rgba(10,13,18,0.35) 0%, rgba(10,13,18,0.15) 70%, transparent 100%);
+  }
+  .logo {
+    font-family: 'Space Mono', monospace;
+    font-weight: 700;
+    font-size: 40px;
+    letter-spacing: -0.02em;
+    color: #F0F4F5;
+    text-decoration: none;
+    line-height: 1.1;
+    text-shadow: 0 2px 12px rgba(10,13,18,0.9);
+  }
+  .code-nav {
+    font-family: 'Space Mono', monospace;
+    font-size: 26px;
+    line-height: 1.6;
+    text-shadow: 0 2px 12px rgba(10,13,18,0.9);
+  }
+  .code-nav .fn { color: #8A9AA0; }
+  .code-nav a {
+    color: #BCE4E6;
+    text-decoration: none;
+    display: inline-block;
+    transform-origin: left center;
+    transition: transform 0.2s ease;
+  }
+  .code-nav a:hover {
+    transform: scale(1.06);
+  }
+  .footer-links {
+    font-family: 'Space Mono', monospace;
+    font-size: 11px;
+    color: #8A9AA0;
+    white-space: nowrap;
+    text-shadow: 0 2px 12px rgba(10,13,18,0.9);
+  }
+  .footer-links a {
+    color: inherit;
+    text-decoration: none;
+  }
+  .footer-links a:hover {
+    color: #BCE4E6;
+  }
+
+  .tagline {
+    font-family: 'Inter', sans-serif;
+    font-weight: 300;
+    font-size: 13px;
+    line-height: 1.5;
+    color: #8A9AA0;
+    margin: 6px 0 0 0;
+    letter-spacing: 0.01em;
+    text-shadow: 0 2px 12px rgba(10,13,18,0.9);
+  }
+</style>
+</head>
+<body>
+
+<svg style="position:absolute; width:0; height:0;">
+  <filter id="goo">
+    <feGaussianBlur in="SourceGraphic" stdDeviation="14" result="soft" />
+  </filter>
+</svg>
+
+<div class="sidebar">
+  <div>
+    <a class="logo" href="index.html">QRIAN</a>
+    <div class="code-nav" style="margin-top: 48px;">
+      <span class="fn">print</span><br>
+      <a href="biography.html">("Hello,</a><br>
+      <a href="works.html">world!")</a>
+    </div>
+  </div>
+  <div class="footer-links">
+    © 2026 QRIAN. All rights reserved. Contact: <a href="mailto:qqqrian@gmail.com">qqqrian@gmail.com</a>
+  </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.min.js"></script>
+<script>
+let blobs = [];
+const NUM_BLOBS = 14;
+
+let followerX, followerY;
+let followerVX = 0, followerVY = 0;
+const SPRING = 0.035;
+const DAMPING = 0.72;
+let trail = [];
+const TRAIL_LENGTH = 6;
+
+const BG = [10, 13, 18];
+const BLOB_COLOR = [188, 228, 230];
+
+function setup() {
+  let canvas = createCanvas(windowWidth, windowHeight);
+  pixelDensity(2);
+  canvas.parent(document.body);
+  canvas.style('position', 'fixed');
+  canvas.style('top', '0');
+  canvas.style('left', '0');
+  canvas.id('gooey-layer');
+  canvas.style('filter', 'url(#goo)');
+
+  for (let i = 0; i < NUM_BLOBS; i++) {
+    blobs.push(makeBlob());
+  }
+
+  followerX = width / 2;
+  followerY = height / 2;
+
+  frameRate(28);
+
+  setTimeout(() => resizeCanvas(windowWidth, windowHeight), 150);
+}
+
+function makeBlob() {
+  return {
+    x: random(width),
+    y: random(height),
+    baseR: random(18, 42),
+    noiseOffX: random(1000),
+    noiseOffY: random(1000),
+    breatheOffset: random(TWO_PI),
+    driftSpeed: random(0.0009, 0.0018),
+    breatheSpeed: random(0.003, 0.005)
+  };
+}
+
+function draw() {
+  blendMode(BLEND);
+  background(BG[0], BG[1], BG[2]);
+  noStroke();
+  blendMode(ADD);
+  fill(BLOB_COLOR[0], BLOB_COLOR[1], BLOB_COLOR[2], 130);
+
+  for (let b of blobs) {
+    b.x += (noise(b.noiseOffX) - 0.5) * 0.7;
+    b.y += (noise(b.noiseOffY) - 0.5) * 0.7;
+    b.noiseOffX += b.driftSpeed;
+    b.noiseOffY += b.driftSpeed;
+
+    if (b.x < -50) b.x = width + 50;
+    if (b.x > width + 50) b.x = -50;
+    if (b.y < -50) b.y = height + 50;
+    if (b.y > height + 50) b.y = -50;
+
+    let breathe = sin(frameCount * b.breatheSpeed + b.breatheOffset);
+    let r = b.baseR + breathe * (b.baseR * 0.3);
+
+    circle(b.x, b.y, r);
+  }
+
+  let ax = (mouseX - followerX) * SPRING;
+  let ay = (mouseY - followerY) * SPRING;
+  followerVX = (followerVX + ax) * DAMPING;
+  followerVY = (followerVY + ay) * DAMPING;
+  followerX += followerVX;
+  followerY += followerVY;
+
+  trail.push({ x: followerX, y: followerY });
+  if (trail.length > TRAIL_LENGTH) trail.shift();
+
+  noFill();
+  strokeCap(ROUND);
+  strokeJoin(ROUND);
+  for (let i = 0; i < trail.length - 1; i++) {
+    let t = i / trail.length;
+    let a = trail[i];
+    let b = trail[i + 1];
+    stroke(BLOB_COLOR[0], BLOB_COLOR[1], BLOB_COLOR[2], 65 * t);
+    strokeWeight(26);
+    line(a.x, a.y, b.x, b.y);
+  }
+  noStroke();
+
+  let speed = mag(followerVX, followerVY);
+  let angle = atan2(followerVY, followerVX);
+  let stretch = constrain(speed * 0.22, 0, 10);
+  let breathe = 20 + sin(frameCount * 0.02) * 3;
+
+  push();
+  translate(followerX, followerY);
+  rotate(angle);
+  fill(BLOB_COLOR[0], BLOB_COLOR[1], BLOB_COLOR[2], 150);
+  ellipse(0, 0, breathe + stretch, breathe - stretch * 0.5);
+  pop();
+}
+
+function windowResized() {
+  resizeCanvas(windowWidth, windowHeight);
+}
+</script>
+</body>
+</html>
 
   #gooey-layer {
     position: fixed;
