@@ -209,7 +209,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.min.js"></script>
 <script src="sound.js"></script>
 <script>
-// 사이트 전체에서 따라다니는 커서 눈물 — 배경 블롭은 없이, 팔로워만 이 페이지 위에 얹음
+// cursor's tear follower
 let followerX, followerY;
 let followerVX = 0, followerVY = 0;
 const SPRING = 0.035;
@@ -230,7 +230,7 @@ function setup() {
   canvas.style('pointer-events', 'none');
   canvas.style('filter', 'url(#goo)');
 
-  // 메뉴 + 코너의 정적인 눈물 점에도 같은 화음 사운드 연결
+  // menu + corner's tear sound connection
   attachHoverChime('.code-nav a');
   attachHoverChime('#corner-drop');
 
@@ -240,7 +240,7 @@ function setup() {
 }
 
 function draw() {
-  clear(); // 배경을 안 그리고 투명하게 유지 — 아래 페이지 내용이 그대로 비침
+  clear(); // page content is shown transparently 
 
   let ax = (mouseX - followerX) * SPRING;
   let ay = (mouseY - followerY) * SPRING;
