@@ -77,6 +77,23 @@
     color: #BCE4E6;
   }
 
+  .tear-hint {
+  position: fixed;
+  bottom: 48px;
+  right: 48px;
+  z-index: 10;
+  text-align: right;
+  font-family: 'Space Mono', monospace;
+  font-size: 11px;
+  color: #8A9AA0;
+  max-width: 260px;
+  line-height: 1.6;
+  pointer-events: none;
+  }
+  @media (max-width: 640px) {
+  .tear-hint { display: none; }
+  }
+
   .tagline {
     font-family: 'Inter', sans-serif;
     font-weight: 300;
