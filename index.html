@@ -87,6 +87,24 @@
     letter-spacing: 0.01em;
     text-shadow: 0 2px 12px rgba(10,13,18,0.9);
   }
+
+  @media (max-width: 640px) {
+    .sidebar {
+      width: 100%;
+      height: auto;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 16px;
+      background: rgba(10,13,18,0.85);
+    }
+    .logo { font-size: 20px; }
+    .code-nav { font-size: 13px; margin-top: 0 !important; line-height: 1.3; }
+    .code-nav .fn { display: none; }
+    .code-nav br { display: none; }
+    .code-nav a { margin-right: 10px; }
+    .footer-links { display: none; }
+  }
 </style>
 </head>
 <body>
@@ -112,8 +130,10 @@
 </div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.min.js"></script>
+<script src="sound.js"></script>
 <script>
 let blobs = [];
+let wasTouchingBlob = false;
 const NUM_BLOBS = 14;
 
 let followerX, followerY;
@@ -143,6 +163,9 @@ function setup() {
   followerX = width / 2;
   followerY = height / 2;
 
+  // 사이드바 메뉴에도 같은 화음 사운드 연결
+  attachHoverChime('.code-nav a');
+
   frameRate(28);
 
   setTimeout(() => resizeCanvas(windowWidth, windowHeight), 150);
@@ -168,6 +191,7 @@ function draw() {
   blendMode(ADD);
   fill(BLOB_COLOR[0], BLOB_COLOR[1], BLOB_COLOR[2], 130);
 
+  let touchingBlob = false;
   for (let b of blobs) {
     b.x += (noise(b.noiseOffX) - 0.5) * 0.7;
     b.y += (noise(b.noiseOffY) - 0.5) * 0.7;
@@ -183,7 +207,18 @@ function draw() {
     let r = b.baseR + breathe * (b.baseR * 0.3);
 
     circle(b.x, b.y, r);
+
+    // 커서 눈물이 이 물방울에 닿았는지 체크 (사운드 트리거용)
+    if (dist(followerX, followerY, b.x, b.y) < r / 2 + 14) {
+      touchingBlob = true;
+    }
   }
+
+  // 막 닿은 순간에만 화음 재생 — 계속 겹쳐있어도 반복 재생 안 함
+  if (touchingBlob && !wasTouchingBlob) {
+    playSwoosh();
+  }
+  wasTouchingBlob = touchingBlob;
 
   let ax = (mouseX - followerX) * SPRING;
   let ay = (mouseY - followerY) * SPRING;
