@@ -35,7 +35,8 @@
     max-width: 320px;
     max-height: 320px;
     border-radius: 50%;
-    pointer-events: none;
+    pointer-events: auto;
+    cursor: default;
     -webkit-mask-image: radial-gradient(circle closest-side, black 40%, transparent 95%);
     mask-image: radial-gradient(circle closest-side, black 40%, transparent 95%);
     background: radial-gradient(circle, rgba(188,228,230,0.4), rgba(188,228,230,0.06) 70%);
@@ -204,6 +205,7 @@
 </main>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.min.js"></script>
+<script src="sound.js"></script>
 <script>
 // 사이트 전체에서 따라다니는 커서 눈물 — 배경 블롭은 없이, 팔로워만 이 페이지 위에 얹음
 let followerX, followerY;
@@ -225,6 +227,11 @@ function setup() {
   canvas.style('z-index', '6');
   canvas.style('pointer-events', 'none');
   canvas.style('filter', 'url(#goo)');
+
+  // 메뉴 + 코너의 정적인 눈물 점에도 같은 화음 사운드 연결
+  attachHoverChime('.code-nav a');
+  attachHoverChime('#corner-drop');
+
   followerX = width / 2;
   followerY = height / 2;
   frameRate(30);
