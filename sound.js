@@ -16,11 +16,11 @@ function initSoundEngine() {
   // first click - unlocking
   document.addEventListener('click', () => {
     if (!audioUnlocked && audioCtx) {
-      audioCtx.resume();
-      audioUnlocked = true;
+      audioCtx.resume().then(() => {
+        audioUnlocked = true;
+      });
     }
   });
-}
 
 // whenever hovered - slighly different but matched ambient harmonies are played 
 function playSwoosh() {
