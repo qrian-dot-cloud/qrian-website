@@ -1,14 +1,8 @@
-// ============================================
-// QRIAN — 공용 사운드 엔진
-// 모든 페이지(Home, Works, Biography...)에서 이 파일 하나를 불러다 씀
-// 여기만 고치면 사이트 전체 사운드가 한 번에 바뀜
-// ============================================
-
 let audioCtx = null;
 let audioUnlocked = false;
 
 const PENTATONIC_ROOTS = [261.63, 293.66, 329.63, 392.00, 440.00]; // C4 D4 E4 G4 A4
-// 루트 + 완전4도(5반음) + 단7도(10반음) = 7sus4 보이싱
+// root + sus4 + minor7th = 7sus4 voicing
 const CHORD_SEMITONES = [0, 5, 10];
 function semitoneRatio(n) { return Math.pow(2, n / 12); }
 
@@ -19,7 +13,7 @@ function initSoundEngine() {
     console.warn('오디오 컨텍스트 생성 실패, 시각적인 부분엔 영향 없음:', e);
   }
 
-  // 브라우저 자동재생 정책 때문에, 첫 클릭에서 오디오 잠금 해제
+  // first click - unlocking
   document.addEventListener('click', () => {
     if (!audioUnlocked && audioCtx) {
       audioCtx.resume();
@@ -28,7 +22,7 @@ function initSoundEngine() {
   });
 }
 
-// 호버할 때마다 살짝 다른, 하지만 항상 어울리는 앰비언트 화음을 재생함
+// whenever hovered - slighly different but matched ambient harmonies are played 
 function playSwoosh() {
   if (!audioCtx || !audioUnlocked) return;
   const now = audioCtx.currentTime;
@@ -70,13 +64,13 @@ function playSwoosh() {
   });
 }
 
-// 지정한 CSS 선택자에 해당하는 모든 요소에 "마우스 올리면 화음" 붙여주는 헬퍼
-// 사이드바 메뉴, 코너의 정적인 눈물 점 등 캔버스가 아닌 일반 DOM 요소에 사용
+// hovered -> sound played helper for every designated CSS components
+// side bar menu, the tears are not for canvas but for DOM components
 function attachHoverChime(selector) {
   document.querySelectorAll(selector).forEach((el) => {
     el.addEventListener('mouseenter', () => playSwoosh());
   });
 }
 
-// 페이지 로드되면 바로 오디오 엔진 준비
+// when loaded, ready for sound engine
 initSoundEngine();
