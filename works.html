@@ -129,14 +129,15 @@
     transition: opacity 0.3s ease;
   }
   #hover-caption .title {
-    font-size: 14px;
+    font-size: 19px;
     color: #E8ECEF;
-    margin-bottom: 4px;
+    margin-bottom: 6px;
   }
   #hover-caption .keywords {
-    font-size: 11px;
-    color: #7A9EA8;
-    letter-spacing: 0.02em;
+    font-size: 14px;
+    color: #9DB5BA;
+    letter-spacing: 0.01em;
+    line-height: 1.5;
   }
   #hover-caption.active { opacity: 1; }
 
@@ -190,29 +191,26 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.min.js"></script>
 <script>
 const WORKS = [
+  { title: "Lunar Abyss", tags: ["collaborative", "mediafacade", "projectionmapping"], zone: "collaborative", desc: "Media Facade Work — projection mapping, collaborative", img: "https://picsum.photos/seed/lunarabyss/300/300" },
+  { title: "The Planet Of Pets", tags: ["collaborative", "interactive", "mediawall"], zone: "collaborative", desc: "Interactive Media Wall — collaborative installation", img: "https://picsum.photos/seed/planetofpets/300/300" },
+  { title: "Meme Machine", tags: ["collaborative", "AI", "culture", "bias", "classification"], zone: "collaborative", desc: "AI Research Project — meme generation, cultural bias in classification", img: "https://picsum.photos/seed/mememachine/300/300" },
+  { title: "BOSS", tags: ["music", "release", "single"], zone: "music", desc: "Digital Single — written, produced, mixed by QRIAN", img: "https://picsum.photos/seed/bossqrian/300/300" },
+  { title: "QRIAN (EP)", tags: ["music", "release", "EP", "cross-cultural"], zone: "music", desc: "Debut EP — cross-cultural identity, original songwriting", img: "https://picsum.photos/seed/qrianep/300/300" },
+  { title: "With This", tags: ["music", "release", "single", "debut"], zone: "music", desc: "Debut Single — original recording", img: "https://picsum.photos/seed/withthis/300/300" },
+  { title: "BYULGORAE", tags: ["music", "performance", "curation", "liveevent"], zone: "music", desc: "Live Electronic Music Event — curated by QRIAN", img: "https://picsum.photos/seed/byulgorae/300/300" },
 
-  { title: "Lunar Abyss", tags: ["collaborative", "mediafacade", "projectionmapping"], zone: "collaborative", img: "https://picsum.photos/seed/lunarabyss/300/300" },
-  { title: "The Planet Of Pets", tags: ["collaborative", "interactive", "mediawall"], zone: "collaborative", img: "https://picsum.photos/seed/planetofpets/300/300" },
-  { title: "Meme Machine", tags: ["collaborative", "AI", "culture", "bias", "classification"], zone: "collaborative", img: "https://picsum.photos/seed/mememachine/300/300" },
+  { title: "Gaslighting",             tags: ["neither0nor1", "physical-computing", "perception", "power"], series: "Neither 0 Nor 1", zone: "research", desc: "Interactive Installation — organic elements, sound synthesis, LEDs", img: "https://picsum.photos/seed/gaslighting/300/300" },
+  { title: "Asian Women vs Women in Asia", tags: ["neither0nor1", "audio-visual", "cross-cultural", "performance"], series: "Neither 0 Nor 1", zone: "research", desc: "Audio-Visual Performance — voices, microphones, real-time data", img: "https://picsum.photos/seed/asianwomen/300/300" },
+  { title: "The Freelancer, Never Feeling Free", tags: ["neither0nor1", "music", "songwriting", "performance"], series: "Neither 0 Nor 1", zone: "research", desc: "Live Electronic Music Performance — original songwriting, production, voice", img: "https://picsum.photos/seed/freelancer/300/300" },
+  { title: "AI: An Imposter or Improver?", tags: ["neither0nor1", "film", "documentary", "AI"], series: "Neither 0 Nor 1", zone: "research", desc: "Video — independent experimental-documentary film", img: "https://picsum.photos/seed/aiimposter/300/300" },
 
-  { title: "BOSS", tags: ["music", "release", "single"], zone: "music", img: "https://picsum.photos/seed/bossqrian/300/300" },
-  { title: "QRIAN (EP)", tags: ["music", "release", "EP", "cross-cultural"], zone: "music", img: "https://picsum.photos/seed/qrianep/300/300" },
-  { title: "With This", tags: ["music", "release", "single", "debut"], zone: "music", img: "https://picsum.photos/seed/withthis/300/300" },
-  { title: "BYULGORAE", tags: ["music", "performance", "curation", "liveevent"], zone: "music", img: "https://picsum.photos/seed/byulgorae/300/300" },
-  
-  { title: "Gaslighting",             tags: ["neither0nor1", "physical-computing", "perception", "power"], series: "Neither 0 Nor 1", zone: "research", img: "https://picsum.photos/seed/gaslighting/300/300" },
-  { title: "Asian Women vs Women in Asia", tags: ["neither0nor1", "audio-visual", "cross-cultural", "performance"], series: "Neither 0 Nor 1", zone: "research", img: "https://picsum.photos/seed/asianwomen/300/300" },
-  { title: "The Freelancer, Never Feeling Free", tags: ["neither0nor1", "music", "songwriting", "performance"], series: "Neither 0 Nor 1", zone: "research", img: "https://picsum.photos/seed/freelancer/300/300" },
-  { title: "AI: An Imposter or Improver?", tags: ["neither0nor1", "film", "documentary", "AI"], series: "Neither 0 Nor 1", zone: "research", img: "https://picsum.photos/seed/aiimposter/300/300" },
-  
-  { title: "Mindful Resonance",       tags: ["MR", "sketch", "sound", "gesture"], zone: "interactive", img: "https://picsum.photos/seed/mindfulres/300/300" },
-  { title: "Spring v01",              tags: ["thechimes", "audio-visual", "gesture", "synthesis"], zone: "interactive", img: "https://picsum.photos/seed/chimes/300/300" },
-  { title: "Are We Feeling The Same?",tags: ["machine-learning", "emotion", "cross-cultural", "voice"], zone: "research", img: "https://picsum.photos/seed/feelingsame/300/300" },
-  { title: "Between Clap and Slap",   tags: ["machine-learning", "perception", "sound", "gesture"], zone: "research", img: "https://picsum.photos/seed/clapslap/300/300" },
-  { title: "Liminal Rock",            tags: ["sketch", "VR", "emotion"], zone: "interactive", img: "https://picsum.photos/seed/liminalrock/300/300" },
-  { title: "Read My Face Out Loud",   tags: ["audio-visual", "gesture", "synthesis", "emotion"], zone: "interactive", img: "https://picsum.photos/seed/readmyface/300/300" },
-  { title: "Proof of Tears",          tags: ["emosmiths", "installation", "MR", "sound", "voice"], zone: "emosmiths", link: "proof-of-tears.html", img: "https://picsum.photos/seed/prooftears/300/300" },
-
+  { title: "Mindful Resonance",       tags: ["MR", "sketch", "sound", "gesture"], zone: "interactive", desc: "Mixed Reality Sound Installation — hand gesture, resonance", img: "https://picsum.photos/seed/mindfulres/300/300" },
+  { title: "Spring v01",              tags: ["thechimes", "audio-visual", "gesture", "synthesis"], zone: "interactive", desc: "Audiovisual Performance — hand gesture, sound synthesis, particles", img: "https://picsum.photos/seed/chimes/300/300" },
+  { title: "Are We Feeling The Same?",tags: ["machine-learning", "emotion", "cross-cultural", "voice"], zone: "research", desc: "Machine Learning Research — voice, cross-lingual emotion classification", img: "https://picsum.photos/seed/feelingsame/300/300" },
+  { title: "Between Clap and Slap",   tags: ["machine-learning", "perception", "sound", "gesture"], zone: "research", desc: "Interactive Sound Research — gesture classification, machine listening", img: "https://picsum.photos/seed/clapslap/300/300" },
+  { title: "Liminal Rock",            tags: ["sketch", "VR", "emotion"], zone: "interactive", desc: "VR Experience — spatial narrative, emotional states", img: "https://picsum.photos/seed/liminalrock/300/300" },
+  { title: "Read My Face Out Loud",   tags: ["audio-visual", "gesture", "synthesis", "emotion"], zone: "interactive", desc: "Audiovisual Performance — facial data, sound synthesis", img: "https://picsum.photos/seed/readmyface/300/300" },
+  { title: "Proof of Tears",          tags: ["emosmiths", "installation", "MR", "sound", "voice"], zone: "emosmiths", link: "proof-of-tears.html", desc: "Mixed Reality Installation — soft sculpture, voice, resonant sound", img: "https://picsum.photos/seed/prooftears/300/300" },
 ];
 
 let nodes = [];
@@ -250,6 +248,7 @@ function setup() {
       zone: w.zone || null,
       link: w.link || null,
       pin: w.pin || null,
+      desc: w.desc || "",
       x: sidebarOffsetX() + (width - sidebarOffsetX()) * 0.38 + cos(angle) * startRadius + random(-20, 20),
       y: sidebarOffsetY() + (height - sidebarOffsetY()) / 2 + sin(angle) * startRadius + random(-20, 20),
       vx: 0,
@@ -419,7 +418,7 @@ function draw() {
     hoverImg.classList.add('active');
 
     hoverTitle.innerText = hovered.title;
-    hoverKeywords.innerText = hovered.tags.map(t => "#" + t).join("  ");
+    hoverKeywords.innerText = hovered.desc;
     hoverCaption.classList.add('active');
   } else {
     tooltip.style.opacity = 0;
@@ -435,7 +434,7 @@ function positionCaption() {
   const rect = photo.getBoundingClientRect();
   caption.style.top = (rect.bottom + 12) + 'px';
   caption.style.right = (window.innerWidth - rect.right) + 'px';
-  caption.style.maxWidth = rect.width + 'px';
+  caption.style.maxWidth = (rect.width * 1.4) + 'px';
 }
 
 function windowResized() {
