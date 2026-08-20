@@ -247,8 +247,8 @@ function setup() {
 
   tooltip = document.getElementById('tooltip');
 
-  // 사이드바 메뉴("Hello,"/"world!")에도 같은 화음 사운드 연결
-  attachHoverChime('.code-nav a');
+  // menu's sound
+  // attachHoverChime('.code-nav a');
 
   nodes = WORKS.map((w, i) => {
     let angle = (i / WORKS.length) * TWO_PI;
@@ -365,7 +365,7 @@ function draw() {
     if (isHover) hovered = n;
   }
 
-  // 연결선 — 노드 아래(기본), 알파 최소 15 (전에 25에서 낮춘 값)
+  // node's lines, alpha from 15 
   blendMode(ADD);
   for (let i = 0; i < nodes.length; i++) {
     for (let j = i + 1; j < nodes.length; j++) {
@@ -398,7 +398,7 @@ function draw() {
     drawingContext.fill();
   }
 
-  // 연결선 — 노드 위에 한 번 더 (겹쳐도 안 가려지게), 알파 최소 10
+  // node's lines, alpha from 10 (to show despite overlapping)
   blendMode(ADD);
   for (let i = 0; i < nodes.length; i++) {
     for (let j = i + 1; j < nodes.length; j++) {
