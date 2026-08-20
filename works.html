@@ -189,6 +189,7 @@
 <div id="tooltip"></div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.min.js"></script>
+<script src="sound.js"></script>
 <script>
 const WORKS = [
   { title: "Lunar Abyss", tags: ["collaborative", "mediafacade", "projectionmapping"], zone: "collaborative", desc: "Media Facade Work — projection mapping, collaborative", img: "https://picsum.photos/seed/lunarabyss/300/300" },
@@ -215,6 +216,7 @@ const WORKS = [
 
 let nodes = [];
 let tooltip;
+let prevHoveredTitle = null;
 
 const BG = [10, 13, 18];
 const BLOB_COLOR = [188, 228, 230];
@@ -237,6 +239,9 @@ function setup() {
   canvas.style('filter', 'url(#goo)');
 
   tooltip = document.getElementById('tooltip');
+
+  // 사이드바 메뉴("Hello,"/"world!")에도 같은 화음 사운드 연결
+  attachHoverChime('.code-nav a');
 
   nodes = WORKS.map((w, i) => {
     let angle = (i / WORKS.length) * TWO_PI;
@@ -406,6 +411,12 @@ function draw() {
   const hoverCaption = document.getElementById('hover-caption');
   const hoverTitle = document.getElementById('hover-title');
   const hoverKeywords = document.getElementById('hover-keywords');
+
+  let currentTitle = hovered ? hovered.title : null;
+  if (currentTitle && currentTitle !== prevHoveredTitle && audioUnlocked) {
+    playSwoosh();
+  }
+  prevHoveredTitle = currentTitle;
 
   if (hovered) {
     tooltip.innerText = hovered.title;
