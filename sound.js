@@ -21,6 +21,7 @@ function initSoundEngine() {
       });
     }
   });
+}
 
 // whenever hovered - slighly different but matched ambient harmonies are played 
 function playSwoosh() {
