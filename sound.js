@@ -10,7 +10,7 @@ function initSoundEngine() {
   try {
     audioCtx = new (window.AudioContext || window.webkitAudioContext)();
   } catch (e) {
-    console.warn('오디오 컨텍스트 생성 실패, 시각적인 부분엔 영향 없음:', e);
+    console.warn('Generating audio context is failed, visuals are working', e);
   }
 
   // first click - unlocking
