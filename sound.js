@@ -99,7 +99,9 @@ function playMenuBlip() {
   const body = audioCtx.createOscillator();
   const bodyGain = audioCtx.createGain();
   body.type = 'sine';
-  body.frequency.setValueAtTime(190, now + 0.02);
+
+  const freq = 190 + (Math.random() - 0.5) * 30; // 175-205Hz random
+  body.frequency.setValueAtTime(freq, now + 0.02);
 
   bodyGain.gain.setValueAtTime(0.0001, now + 0.02);
   bodyGain.gain.exponentialRampToValueAtTime(0.03, now + 0.08);
