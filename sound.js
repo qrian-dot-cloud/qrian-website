@@ -70,7 +70,7 @@ function playSwoosh() {
 function attachHoverChime(selector, soundFn) {
   const fn = soundFn || playSwoosh;
   document.querySelectorAll(selector).forEach((el) => {
-    el.addEventListener('mouseenter', () => playSwoosh());
+    el.addEventListener('mouseenter', () => fn());
   });
 }
 
