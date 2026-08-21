@@ -92,27 +92,9 @@ function playMenuBlip() {
 
   const masterFilter = audioCtx.createBiquadFilter();
   masterFilter.type = 'lowpass';
-  masterFilter.frequency.setValueAtTime(800, now);
+  masterFilter.frequency.setValueAtTime(1000, now);
   masterFilter.connect(audioCtx.destination);
   masterFilter.connect(delay);
-
-  [-6, 6].forEach((detuneCents) => {
-    const drop = audioCtx.createOscillator();
-    const dropGain = audioCtx.createGain();
-    drop.type = 'sine';
-    drop.detune.setValueAtTime(detuneCents, now);
-    drop.frequency.setValueAtTime(200, now);
-    drop.frequency.exponentialRampToValueAtTime(320, now + 0.16);
-
-    dropGain.gain.setValueAtTime(0.0001, now);
-    dropGain.gain.exponentialRampToValueAtTime(0.06, now + 0.02);
-    dropGain.gain.exponentialRampToValueAtTime(0.0001, now + 0.5);
-
-    drop.connect(dropGain);
-    dropGain.connect(masterFilter);
-    drop.start(now);
-    drop.stop(now + 0.55);
-  });
 
   const body = audioCtx.createOscillator();
   const bodyGain = audioCtx.createGain();
