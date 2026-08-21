@@ -267,7 +267,7 @@ function setup() {
   tooltip = document.getElementById('tooltip');
 
   // menu's sound
-  attachHoverChime('.code-nav a', .logo', playMenuBlip);
+  attachHoverChime('.code-nav a, .logo', playMenuBlip);
 
   nodes = WORKS.map((w, i) => {
     let angle = (i / WORKS.length) * TWO_PI;
