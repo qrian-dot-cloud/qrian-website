@@ -67,9 +67,11 @@ function playSwoosh() {
 
 // hovered -> sound played helper for every designated CSS components
 // side bar menu, the tears are not for canvas but for DOM components
-function attachHoverChime(selector) {
+
+function attachHoverChime(selector, soundFn) {
+  const fn = soundFn || playSwoosh; 
   document.querySelectorAll(selector).forEach((el) => {
-    el.addEventListener('mouseenter', () => playSwoosh());
+    el.addEventListener('mouseenter', () => fn());
   });
 }
 
