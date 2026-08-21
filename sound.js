@@ -92,7 +92,7 @@ function playMenuBlip() {
 
   const masterFilter = audioCtx.createBiquadFilter();
   masterFilter.type = 'lowpass';
-  masterFilter.frequency.setValueAtTime(1400, now);
+  masterFilter.frequency.setValueAtTime(1200, now);
   masterFilter.connect(audioCtx.destination);
   masterFilter.connect(delay);
 
@@ -100,7 +100,7 @@ function playMenuBlip() {
   const bodyGain = audioCtx.createGain();
   body.type = 'sine';
 
-  const freq = PENTATONIC_ROOTS[Math.floor(Math.random() * PENTATONIC_ROOTS.length)] / 2;
+  const freq = PENTATONIC_ROOTS[Math.floor(Math.random() * PENTATONIC_ROOTS.length)];
   body.frequency.setValueAtTime(freq, now + 0.02);
 
   bodyGain.gain.setValueAtTime(0.0001, now + 0.02);
