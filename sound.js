@@ -84,15 +84,15 @@ function playMenuBlip() {
   feedback.gain.setValueAtTime(0.35, now);
   const delayFilter = audioCtx.createBiquadFilter();
   delayFilter.type = 'lowpass';
-  // delayFilter.frequency.setValueAtTime(1200, now);
-  // delay.connect(feedback);
+  delayFilter.frequency.setValueAtTime(1200, now);
+  delay.connect(feedback);
   feedback.connect(delayFilter);
   delayFilter.connect(delay);
   delay.connect(audioCtx.destination);
 
   const masterFilter = audioCtx.createBiquadFilter();
   masterFilter.type = 'lowpass';
-  masterFilter.frequency.setValueAtTime(1600, now);
+  masterFilter.frequency.setValueAtTime(800, now);
   masterFilter.connect(audioCtx.destination);
   masterFilter.connect(delay);
 
@@ -101,7 +101,7 @@ function playMenuBlip() {
     const dropGain = audioCtx.createGain();
     drop.type = 'sine';
     drop.detune.setValueAtTime(detuneCents, now);
-    drop.frequency.setValueAtTime(1500, now);
+    drop.frequency.setValueAtTime(200, now);
     drop.frequency.exponentialRampToValueAtTime(320, now + 0.16);
 
     dropGain.gain.setValueAtTime(0.0001, now);
