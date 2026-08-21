@@ -84,8 +84,8 @@ function playMenuBlip() {
   feedback.gain.setValueAtTime(0.35, now);
   const delayFilter = audioCtx.createBiquadFilter();
   delayFilter.type = 'lowpass';
-  delayFilter.frequency.setValueAtTime(1200, now);
-  delay.connect(feedback);
+  // delayFilter.frequency.setValueAtTime(1200, now);
+  // delay.connect(feedback);
   feedback.connect(delayFilter);
   delayFilter.connect(delay);
   delay.connect(audioCtx.destination);
