@@ -146,6 +146,13 @@
     opacity: 0;
     transition: opacity 0.3s ease;
   }
+  #hover-caption .series {
+    font-size: 11px;
+    color: #7A9EA8;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+  }
   #hover-caption .title {
     font-size: 19px;
     color: #E8ECEF;
@@ -182,7 +189,7 @@
 <body>
 
 <div id="hover-photo"><div class="blob-bg"></div><img id="hover-img" src="" alt=""></div>
-<div id="hover-caption"><div class="title" id="hover-title"></div><div class="keywords" id="hover-keywords"></div></div>
+<div id="hover-caption"><div class="series" id="hover-series"></div><div class="title" id="hover-title"></div><div class="keywords" id="hover-keywords"></div></div>
 
 <svg style="position:absolute; width:0; height:0;">
   <filter id="goo">
@@ -222,7 +229,7 @@ const WORKS = [
   { title: "Meme Machine",            tags: ["collaborative", "AI", "culture", "bias", "classification"], zone: "collaborative", link: "meme-machine.html", desc: "Practice-Based Research (Computational perception, cultural lens, data imperialism)", img: "https://picsum.photos/seed/mememachine/300/300" },
   
   { title: "BOSS",                    tags: ["music", "release", "single"], zone: "music", link: "boss.html", desc: "Digital Single (written, composed, produced, mixed by QRIAN)", img: "https://picsum.photos/seed/bossqrian/300/300" },
-  { title: "QRIAN",                   tags: ["music", "release", "EP", "cross-cultural"], zone: "music", link: "qrian.html", desc: "Debut EP (written, composed, produced, mixed by QRIAN)", img: "https://picsum.photos/seed/qrianep/300/300" },
+  { title: "QRIAN",                   tags: ["music", "release", "EP", "cross-cultural"], zone: "music", link: "qrian-ep.html", desc: "Debut EP (written, composed, produced, mixed by QRIAN)", img: "https://picsum.photos/seed/qrianep/300/300" },
   { title: "With This",               tags: ["music", "release", "single", "debut"], zone: "music", link: "with-this.html", desc: "Debut Single (written, composed, produced, mixed by QRIAN)", img: "https://picsum.photos/seed/withthis/300/300" },
   { title: "BYULGORAE",               tags: ["music", "performance", "curation", "liveevent"], zone: "music", link: "byulgorae.html", desc: "Live Event (organised and hosted by QRIAN)", img: "https://picsum.photos/seed/byulgorae/300/300" },
 
@@ -386,7 +393,6 @@ function draw() {
     if (isHover) hovered = n;
   }
 
-  // node's lines, alpha from 15 
   blendMode(ADD);
   for (let i = 0; i < nodes.length; i++) {
     for (let j = i + 1; j < nodes.length; j++) {
@@ -419,7 +425,6 @@ function draw() {
     drawingContext.fill();
   }
 
-  // node's lines, alpha from 10 (to show despite overlapping)
   blendMode(ADD);
   for (let i = 0; i < nodes.length; i++) {
     for (let j = i + 1; j < nodes.length; j++) {
@@ -437,6 +442,7 @@ function draw() {
 
   const hoverImg = document.getElementById('hover-img');
   const hoverCaption = document.getElementById('hover-caption');
+  const hoverSeries = document.getElementById('hover-series');
   const hoverTitle = document.getElementById('hover-title');
   const hoverKeywords = document.getElementById('hover-keywords');
 
@@ -456,8 +462,11 @@ function draw() {
     if (hoverImg.src !== hovered.imgUrl) hoverImg.src = hovered.imgUrl;
     hoverImg.classList.add('active');
 
+    hoverSeries.innerText = hovered.series || '';
+    hoverSeries.style.display = hovered.series ? 'block' : 'none';
+
     hoverTitle.innerText = hovered.title;
-    hoverKeywords.innerText = hovered.desc;
+    hoverKeywords.innerHTML = hovered.desc.replace(' (', '<br>(');
     hoverCaption.classList.add('active');
   } else {
     tooltip.style.opacity = 0;
