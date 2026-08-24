@@ -123,20 +123,11 @@
 }
 
 #hover-caption .series {
-  /* color: var(--muted-2); */
-  color: var(--text);
-  text-transform: uppercase;
+  color: var(--muted-2);
+  /* text-transform: uppercase; */
   font-size: var(--world-series-size);
   line-height: 1.4;
   letter-spacing: 0.08em;
-}
-
-#hover-caption .series::before {
-  content: "<";
-}
-
-#hover-caption .series::after {
-  content: ">";
 }
 
 
