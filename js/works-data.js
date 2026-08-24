@@ -29,7 +29,7 @@ const WORKS = [
     tags: ["curation", "liveevent", "music", "performance"],
     zone: "music",
     link: "byulgorae.html",
-    desc: "Live Event (organised and hosted by QRIAN)",
+    desc: "Live Event (organised, hosted by QRIAN)",
     img: "https://picsum.photos/seed/byulgorae/300/300"
   },
   
