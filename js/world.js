@@ -480,7 +480,22 @@
       updateHoverDOM(hovered);
     };
 
-    p.touchStarted = function () {
+    p.touchStarted = function (event) {
+      /*
+        IMPORTANT:
+        taps on navigation / links must remain normal browser taps.
+        The world interaction should only consume taps on the canvas area.
+      */
+      const target = event && event.target;
+
+      if (
+        target &&
+        target.closest &&
+        target.closest('a, .sidebar, button, input, textarea, select')
+      ) {
+        return true;
+      }
+
       if (!isMobileMode()) return true;
 
       lastTouchAt = Date.now();
@@ -513,7 +528,17 @@
       return false;
     };
 
-    p.mouseClicked = function () {
+    p.mouseClicked = function (event) {
+      const target = event && event.target;
+
+      if (
+        target &&
+        target.closest &&
+        target.closest('a, .sidebar, button, input, textarea, select')
+      ) {
+        return true;
+      }
+
       /*
         Mobile Safari/Chrome may create a synthetic mouse click after touch.
         Ignore it, so one tap never previews AND enters at the same time.

@@ -39,4 +39,19 @@
       </div>`
     );
   }
+
+  /*
+    Keep p5 canvas interactions from swallowing sidebar navigation taps.
+    Navigation remains native browser behaviour.
+  */
+  document.querySelectorAll('.sidebar a').forEach((link) => {
+    link.addEventListener('touchstart', (event) => {
+      event.stopPropagation();
+    }, { passive: true });
+
+    link.addEventListener('click', (event) => {
+      event.stopPropagation();
+    });
+  });
+
 })();
