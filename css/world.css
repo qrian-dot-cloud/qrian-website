@@ -107,15 +107,6 @@
   opacity: 1;
 }
 
-#hover-caption .series {
-  margin-bottom: 4px;
-  color: var(--muted-2);
-  text-transform: uppercase;
-  font-size: var(--world-series-size);
-  line-height: 1.4;
-  letter-spacing: 0.08em;
-}
-
 #hover-caption .title {
   margin-bottom: 5px;
   color: var(--text);
@@ -130,6 +121,15 @@
   letter-spacing: 0.01em;
 }
 
+#hover-caption .series {
+  margin-top: 8px;
+  /* margin-bottom: 4px; */
+  color: var(--muted-2);
+  text-transform: uppercase;
+  font-size: var(--world-series-size);
+  line-height: 1.4;
+  letter-spacing: 0.08em;
+}
 
 
 
