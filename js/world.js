@@ -169,6 +169,92 @@
       }
     }
 
+
+    function renderWorkDescription(element, text) {
+      if (!element) return;
+
+      /*
+        Expected format:
+        "Virtual Reality Experience (quest3, scene/sound design, spatial narrative)"
+
+        Renders as:
+        Virtual Reality Experience
+        quest3 · scene/sound design · spatial narrative
+
+        Each small detail is kept intact, so wrapping happens
+        BETWEEN items rather than in the middle of a phrase.
+      */
+      const value = text || '';
+
+      if (element.dataset.description === value) return;
+      element.dataset.description = value;
+
+      const match = value.match(/^(.+?)\s*\((.+)\)\s*$/);
+
+      element.replaceChildren();
+
+      // If a description has no "(...)" structure, keep it simple.
+      if (!match) {
+        element.textContent = value;
+        return;
+      }
+
+      const type = match[1].trim();
+      const details = match[2]
+        .split(',')
+        .map((item) => item.trim())
+        .filter(Boolean);
+
+      const typeEl = document.createElement('div');
+      typeEl.textContent = type;
+
+      /*
+        Slightly larger than the metadata below,
+        but still subordinate to the project title.
+      */
+      typeEl.style.fontSize = 'clamp(11px, 0.9vw, 13px)';
+      typeEl.style.lineHeight = '1.35';
+      typeEl.style.color = '#AFC3C7';
+
+      const detailsEl = document.createElement('div');
+      detailsEl.style.display = 'flex';
+      detailsEl.style.flexWrap = 'wrap';
+      detailsEl.style.justifyContent =
+        isMobileMode() ? 'center' : 'flex-end';
+      detailsEl.style.columnGap = '7px';
+      detailsEl.style.rowGap = '2px';
+      detailsEl.style.marginTop = '4px';
+      detailsEl.style.fontFamily = '"Space Mono", monospace';
+      detailsEl.style.fontSize = '8px';
+      detailsEl.style.lineHeight = '1.45';
+      detailsEl.style.color = '#71858B';
+
+      details.forEach((detail, index) => {
+        const item = document.createElement('span');
+
+        item.textContent =
+          index < details.length - 1
+            ? `${detail} ·`
+            : detail;
+
+        /*
+          Prevent:
+          scene/sound
+          design
+
+          but still allow:
+          quest3 · scene/sound design ·
+          spatial narrative
+        */
+        item.style.whiteSpace = 'nowrap';
+
+        detailsEl.appendChild(item);
+      });
+
+      element.appendChild(typeEl);
+      element.appendChild(detailsEl);
+    }
+
     function updateHoverDOM(hovered) {
       const hoverImg = document.getElementById('hover-img');
       const hoverCaption = document.getElementById('hover-caption');
@@ -231,8 +317,7 @@
       }
 
       if (hoverKeywords) {
-        hoverKeywords.innerHTML =
-          hovered.desc.replace(' (', '<br>(');
+        renderWorkDescription(hoverKeywords, hovered.desc);
       }
 
       hoverCaption?.classList.add('active');
