@@ -27,7 +27,7 @@
     function isMobileMode() {
       return (
         window.innerWidth <= 640 ||
-        window.matchMedia('(hover: none) and (pointer: coarse)').matches
+        window.matchMedia('(: none) and (pointer: coarse)').matches
       );
     }
 
@@ -140,8 +140,8 @@
     }
 
     function positionCaption() {
-      const photo = document.getElementById('hover-photo');
-      const caption = document.getElementById('hover-caption');
+      const photo = document.getElementById('-photo');
+      const caption = document.getElementById('-caption');
 
       if (!photo || !caption) return;
 
@@ -172,30 +172,30 @@
 
 
     function setupEmptyBigTearSound() {
-      const hoverPhoto = document.getElementById('hover-photo');
-      const hoverImg = document.getElementById('hover-img');
+      const Photo = document.getElementById('-photo');
+      const Img = document.getElementById('-img');
 
-      if (!hoverPhoto || !hoverImg) return;
+      if (!Photo || !Img) return;
 
       window.addEventListener('mousemove', (event) => {
-        // Desktop hover interaction only.
+        // Desktop  interaction only.
         if (isMobileMode()) {
-          wasHoveringEmptyBigTear = false;
+          wasingEmptyBigTear = false;
           return;
         }
 
         /*
-          When a small network tear is hovered, its project image
+          When a small network tear is ed, its project image
           appears in the big tear. In that state the small tear
           already triggers playSwoosh(), so the big tear should not
           trigger another sound.
         */
-        if (hoverImg.classList.contains('active')) {
-          wasHoveringEmptyBigTear = false;
+        if (Img.classList.contains('active')) {
+          wasingEmptyBigTear = false;
           return;
         }
 
-        const rect = hoverPhoto.getBoundingClientRect();
+        const rect = Photo.getBoundingClientRect();
 
         const centerX = rect.left + rect.width / 2;
         const centerY = rect.top + rect.height / 2;
@@ -213,7 +213,7 @@
         const isInside = dx * dx + dy * dy <= 1;
 
         // Play once when the cursor ENTERS the empty big tear.
-        if (isInside && !wasHoveringEmptyBigTear) {
+        if (isInside && !wasingEmptyBigTear) {
           if (
             typeof audioUnlocked !== 'undefined' &&
             audioUnlocked &&
@@ -222,10 +222,10 @@
             playSwoosh();
           }
 
-          wasHoveringEmptyBigTear = true;
+          wasingEmptyBigTear = true;
         }
 
-        // Cursor must leave before another hover can retrigger sound.
+        // Cursor must leave before another  can retrigger sound.
         if (!isInside) {
           wasHoveringEmptyBigTear = false;
         }
@@ -369,23 +369,6 @@
         hoverImg.classList.add('active');
       }
 
-      // if (hoverSeries) {
-      //   hoverSeries.textContent = hovered.series || '';
-      //   hoverSeries.style.display =
-      //     hovered.series ? 'block' : 'none';
-      // }
-
-      if (hoverSeries) {
-        hoverSeries.textContent = hovered.series
-          ? `SERIES.${hovered.series
-              .toLowerCase()
-              .replace(/\s+/g, '')}`
-          : '';
-
-        hoverSeries.style.display =
-          hovered.series ? 'block' : 'none';
-      }
-
       if (hoverTitle) {
         hoverTitle.textContent = hovered.title;
       }
@@ -396,6 +379,12 @@
 
       hoverCaption?.classList.add('active');
     }
+
+      if (hoverSeries) {
+        hoverSeries.textContent = hovered.series || '';
+        hoverSeries.style.display =
+          hovered.series ? 'block' : 'none';
+      }
 
     p.setup = function () {
       const canvas = p.createCanvas(window.innerWidth, window.innerHeight);
