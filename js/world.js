@@ -99,7 +99,7 @@
         */
         return {
           x: p.width * 0.5,
-          y: p.height * 0.62
+          y: p.height * 0.70
         };
       }
 
