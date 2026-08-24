@@ -369,8 +369,19 @@
         hoverImg.classList.add('active');
       }
 
+      // if (hoverSeries) {
+      //   hoverSeries.textContent = hovered.series || '';
+      //   hoverSeries.style.display =
+      //     hovered.series ? 'block' : 'none';
+      // }
+
       if (hoverSeries) {
-        hoverSeries.textContent = hovered.series || '';
+        hoverSeries.textContent = hovered.series
+          ? `SERIES.${hovered.series
+              .toLowerCase()
+              .replace(/\s+/g, '')}`
+          : '';
+
         hoverSeries.style.display =
           hovered.series ? 'block' : 'none';
       }
