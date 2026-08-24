@@ -27,7 +27,7 @@
     function isMobileMode() {
       return (
         window.innerWidth <= 640 ||
-        window.matchMedia('(: none) and (pointer: coarse)').matches
+        window.matchMedia('(hover: none) and (pointer: coarse)').matches
       );
     }
 
@@ -140,8 +140,8 @@
     }
 
     function positionCaption() {
-      const photo = document.getElementById('-photo');
-      const caption = document.getElementById('-caption');
+      const photo = document.getElementById('hover-photo');
+      const caption = document.getElementById('hover-caption');
 
       if (!photo || !caption) return;
 
@@ -172,15 +172,15 @@
 
 
     function setupEmptyBigTearSound() {
-      const Photo = document.getElementById('-photo');
-      const Img = document.getElementById('-img');
+      const hoverPhoto = document.getElementById('hover-photo');
+      const hoverImg = document.getElementById('hover-img');
 
-      if (!Photo || !Img) return;
+      if (!hoverPhoto || !hoverImg) return;
 
       window.addEventListener('mousemove', (event) => {
         // Desktop  interaction only.
         if (isMobileMode()) {
-          wasingEmptyBigTear = false;
+          wasHoveringEmptyBigTear = false;
           return;
         }
 
@@ -190,12 +190,12 @@
           already triggers playSwoosh(), so the big tear should not
           trigger another sound.
         */
-        if (Img.classList.contains('active')) {
-          wasingEmptyBigTear = false;
+        if (hoverImg.classList.contains('active')) {
+          wasHoveringEmptyBigTear = false;
           return;
         }
 
-        const rect = Photo.getBoundingClientRect();
+        const rect = hoverPhoto.getBoundingClientRect();
 
         const centerX = rect.left + rect.width / 2;
         const centerY = rect.top + rect.height / 2;
@@ -213,7 +213,7 @@
         const isInside = dx * dx + dy * dy <= 1;
 
         // Play once when the cursor ENTERS the empty big tear.
-        if (isInside && !wasingEmptyBigTear) {
+        if (isInside && !wasHoveringEmptyBigTear) {
           if (
             typeof audioUnlocked !== 'undefined' &&
             audioUnlocked &&
@@ -222,7 +222,7 @@
             playSwoosh();
           }
 
-          wasingEmptyBigTear = true;
+          wasHoveringEmptyBigTear = true;
         }
 
         // Cursor must leave before another  can retrigger sound.
@@ -377,14 +377,14 @@
         renderWorkDescription(hoverKeywords, hovered.desc);
       }
 
-      hoverCaption?.classList.add('active');
-    }
-
       if (hoverSeries) {
         hoverSeries.textContent = hovered.series || '';
         hoverSeries.style.display =
           hovered.series ? 'block' : 'none';
       }
+
+      hoverCaption?.classList.add('active');
+    }
 
     p.setup = function () {
       const canvas = p.createCanvas(window.innerWidth, window.innerHeight);
