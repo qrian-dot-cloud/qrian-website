@@ -22,6 +22,7 @@
     let previousHoveredTitle = null;
     let selectedMobileNode = null;
     let lastTouchAt = 0;
+    let wasHoveringEmptyBigTear = false;
 
     function isMobileMode() {
       return (
@@ -167,6 +168,68 @@
         caption.style.maxWidth = `${rect.width * 1.45}px`;
         caption.style.textAlign = 'right';
       }
+    }
+
+
+    function setupEmptyBigTearSound() {
+      const hoverPhoto = document.getElementById('hover-photo');
+      const hoverImg = document.getElementById('hover-img');
+
+      if (!hoverPhoto || !hoverImg) return;
+
+      window.addEventListener('mousemove', (event) => {
+        // Desktop hover interaction only.
+        if (isMobileMode()) {
+          wasHoveringEmptyBigTear = false;
+          return;
+        }
+
+        /*
+          When a small network tear is hovered, its project image
+          appears in the big tear. In that state the small tear
+          already triggers playSwoosh(), so the big tear should not
+          trigger another sound.
+        */
+        if (hoverImg.classList.contains('active')) {
+          wasHoveringEmptyBigTear = false;
+          return;
+        }
+
+        const rect = hoverPhoto.getBoundingClientRect();
+
+        const centerX = rect.left + rect.width / 2;
+        const centerY = rect.top + rect.height / 2;
+
+        /*
+          Use an ellipse hit area matching the visible big tear
+          closely enough without changing pointer-events/CSS.
+        */
+        const radiusX = rect.width / 2;
+        const radiusY = rect.height / 2;
+
+        const dx = (event.clientX - centerX) / radiusX;
+        const dy = (event.clientY - centerY) / radiusY;
+
+        const isInside = dx * dx + dy * dy <= 1;
+
+        // Play once when the cursor ENTERS the empty big tear.
+        if (isInside && !wasHoveringEmptyBigTear) {
+          if (
+            typeof audioUnlocked !== 'undefined' &&
+            audioUnlocked &&
+            typeof playSwoosh === 'function'
+          ) {
+            playSwoosh();
+          }
+
+          wasHoveringEmptyBigTear = true;
+        }
+
+        // Cursor must leave before another hover can retrigger sound.
+        if (!isInside) {
+          wasHoveringEmptyBigTear = false;
+        }
+      });
     }
 
 
@@ -331,6 +394,8 @@
       canvas.style('filter', 'url(#goo-world)');
 
       tooltip = document.getElementById('tooltip');
+
+      setupEmptyBigTearSound();
 
       const center = centerOfWorld();
 
