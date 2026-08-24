@@ -5,15 +5,15 @@ const WORKS = [
     tags: ["music", "release", "digital single"],
     zone: "music",
     link: "boss.html",
-    desc: "Digital Single (written, composed, produced, mixed by QRIAN)",
+    desc: "Digital Single Release (written, composed, produced, mixed by QRIAN)",
     img: "https://picsum.photos/seed/bossqrian/300/300"
   },
   {
-    title: "QRIAN",
+    title: "EP - QRIAN",
     tags: ["music", "release", "debut", "EP", "cross-cultural identity"],
     zone: "music",
     link: "qrian-ep.html",
-    desc: "Debut EP (written, composed, produced, mixed by QRIAN)",
+    desc: "Debut EP Release (written, composed, produced, mixed by QRIAN)",
     img: "https://picsum.photos/seed/qrianep/300/300"
   },
   {
@@ -21,7 +21,7 @@ const WORKS = [
     tags: ["music", "release", "digital single", "debut"],
     zone: "music",
     link: "with-this.html",
-    desc: "Debut Single (written, composed, produced, mixed by QRIAN)",
+    desc: "Debut Single Release (written, composed, produced, mixed by QRIAN)",
     img: "https://picsum.photos/seed/withthis/300/300"
   },
   {
