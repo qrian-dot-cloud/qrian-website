@@ -18,7 +18,7 @@
 
   --world-title-size: 19px;
   --world-desc-size: 12px;
-  --world-series-size: 10px;
+  --world-series-size: 14px;
   --world-tooltip-size: 11px;
   --world-caption-gap: 12px;
 
@@ -115,6 +115,7 @@
 }
 
 #hover-caption .keywords {
+  margin-bottom: 4px;
   color: #9DB5BA;
   font-size: var(--world-desc-size);
   line-height: 1.45;
@@ -122,8 +123,6 @@
 }
 
 #hover-caption .series {
-  margin-top: 8px;
-  /* margin-bottom: 4px; */
   color: var(--muted-2);
   text-transform: uppercase;
   font-size: var(--world-series-size);
