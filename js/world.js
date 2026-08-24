@@ -212,8 +212,8 @@
         Slightly larger than the metadata below,
         but still subordinate to the project title.
       */
-      typeEl.style.fontSize = 'clamp(11px, 0.9vw, 13px)';
-      typeEl.style.lineHeight = '1.35';
+      typeEl.style.fontSize = 'clamp(13px, 0.9vw, 13px)';
+      typeEl.style.lineHeight = '1.65';
       typeEl.style.color = '#AFC3C7';
 
       const detailsEl = document.createElement('div');
@@ -223,9 +223,9 @@
         isMobileMode() ? 'center' : 'flex-end';
       detailsEl.style.columnGap = '7px';
       detailsEl.style.rowGap = '2px';
-      detailsEl.style.marginTop = '4px';
+      detailsEl.style.marginTop = '6px';
       detailsEl.style.fontFamily = '"Space Mono", monospace';
-      detailsEl.style.fontSize = '8px';
+      detailsEl.style.fontSize = '9px';
       detailsEl.style.lineHeight = '1.45';
       detailsEl.style.color = '#71858B';
 
