@@ -1,29 +1,5 @@
 const WORKS = [
-  {
-    title: "Lunar Abyss",
-    tags: ["collaborative", "mediafacade", "projectionmapping"],
-    zone: "collaborative",
-    link: "lunar-abyss.html",
-    desc: "Media Facade (Audio-visual design, projection mapping, environmental narrative)",
-    img: "https://picsum.photos/seed/lunarabyss/300/300"
-  },
-  {
-    title: "The Planet Of Pets",
-    tags: ["collaborative", "interactive", "mediawall"],
-    zone: "collaborative",
-    link: "the-planet-of-pets.html",
-    desc: "Interactive Media Wall (Drawing interface, kinetic audio-visual interaction, AI modeling)",
-    img: "https://picsum.photos/seed/planetofpets/300/300"
-  },
-  {
-    title: "Meme Machine",
-    tags: ["collaborative", "AI", "culture", "bias", "classification"],
-    zone: "collaborative",
-    link: "meme-machine.html",
-    desc: "Practice-Based Research (Computational perception, cultural lens, data imperialism)",
-    img: "https://picsum.photos/seed/mememachine/300/300"
-  },
-
+  //music
   {
     title: "BOSS",
     tags: ["music", "release", "single"],
@@ -56,7 +32,34 @@ const WORKS = [
     desc: "Live Event (organised and hosted by QRIAN)",
     img: "https://picsum.photos/seed/byulgorae/300/300"
   },
+  
+  //collabrative projects
+  {
+    title: "Lunar Abyss",
+    tags: ["collaborative", "mediafacade", "projectionmapping"],
+    zone: "collaborative",
+    link: "lunar-abyss.html",
+    desc: "Media Facade (Audio-visual design, projection mapping, environmental narrative)",
+    img: "https://picsum.photos/seed/lunarabyss/300/300"
+  },
+  {
+    title: "The Planet Of Pets",
+    tags: ["collaborative", "interactive", "mediawall"],
+    zone: "collaborative",
+    link: "the-planet-of-pets.html",
+    desc: "Interactive Media Wall (Drawing interface, kinetic audio-visual interaction, AI modeling)",
+    img: "https://picsum.photos/seed/planetofpets/300/300"
+  },
+  {
+    title: "Meme Machine",
+    tags: ["collaborative", "AI", "culture", "bias", "classification"],
+    zone: "collaborative",
+    link: "meme-machine.html",
+    desc: "Practice-Based Research (Computational perception, cultural lens, data imperialism)",
+    img: "https://picsum.photos/seed/mememachine/300/300"
+  },
 
+  //independent projects - series <neither 0 nor 1>
   {
     title: "Gaslighting",
     tags: ["neither0nor1", "physical-computing", "perception", "power"],
@@ -94,6 +97,7 @@ const WORKS = [
     img: "https://picsum.photos/seed/aiimposter/300/300"
   },
 
+  //independent projects - practice-based research
   {
     title: "Are We Feeling The Same?",
     tags: ["machine-learning", "emotion", "cross-cultural", "voice"],
@@ -110,7 +114,8 @@ const WORKS = [
     desc: "Practice-Based Research (machine listening, perceptual mediation, algorithmic authority)",
     img: "https://picsum.photos/seed/clapslap/300/300"
   },
-
+  
+  //independent projects - recent series
   {
     title: "Spring v01",
     tags: ["thechimes", "audio-visual", "gesture", "synthesis"],
@@ -130,6 +135,7 @@ const WORKS = [
     img: "https://picsum.photos/seed/prooftears/300/300"
   },
 
+  //independent projects - recent interactive ones
   {
     title: "Read My Face Out Loud",
     tags: ["audio-visual", "gesture", "synthesis", "emotion"],
