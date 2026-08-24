@@ -115,7 +115,7 @@
 }
 
 #hover-caption .keywords {
-  margin-bottom: 4px;
+  margin-bottom: 6px;
   color: #9DB5BA;
   font-size: var(--world-desc-size);
   line-height: 1.45;
@@ -125,19 +125,19 @@
 #hover-caption .series {
   /* color: var(--muted-2); */
   color: var(--text);
-  /* text-transform: uppercase; */
+  text-transform: uppercase;
   font-size: var(--world-series-size);
   line-height: 1.4;
   letter-spacing: 0.08em;
 }
 
-/* #hover-caption .series::before {
+#hover-caption .series::before {
   content: "<";
 }
 
 #hover-caption .series::after {
   content: ">";
-} */
+}
 
 
 
