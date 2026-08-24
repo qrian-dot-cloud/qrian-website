@@ -378,10 +378,12 @@
       }
 
       if (hoverSeries) {
-        hoverSeries.textContent = hovered.series || '';
+        hoverSeries.textContent =
+        hovered.series ? `/* Series: ${hovered.series} */` : '';
+
         hoverSeries.style.display =
-          hovered.series ? 'block' : 'none';
-      }
+        hovered.series ? 'block' : 'none';
+    }
 
       hoverCaption?.classList.add('active');
     }
