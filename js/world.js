@@ -179,13 +179,10 @@
 
         Renders as:
         Virtual Reality Experience
+        quest3 · scene/sound design · spatial narrative
 
-        quest3
-        scene/sound design
-        spatial narrative
-
-        The number of small lines follows the comma-separated items
-        inside the parentheses.
+        Each small detail is kept intact, so wrapping happens
+        BETWEEN items rather than in the middle of a phrase.
       */
       const value = text || '';
 
@@ -196,7 +193,7 @@
 
       element.replaceChildren();
 
-      // If there is no "(...)" structure, keep the original text.
+      // If a description has no "(...)" structure, keep it simple.
       if (!match) {
         element.textContent = value;
         return;
@@ -212,25 +209,45 @@
       typeEl.textContent = type;
 
       /*
-        More prominent than before,
+        Slightly larger than the metadata below,
         but still subordinate to the project title.
       */
-      typeEl.style.fontSize = 'clamp(13px, 1.05vw, 15px)';
+      typeEl.style.fontSize = 'clamp(11px, 0.9vw, 13px)';
       typeEl.style.lineHeight = '1.35';
-      typeEl.style.color = '#B9CDD1';
+      typeEl.style.color = '#AFC3C7';
 
       const detailsEl = document.createElement('div');
-      detailsEl.style.marginTop = '7px';
+      detailsEl.style.display = 'flex';
+      detailsEl.style.flexWrap = 'wrap';
+      detailsEl.style.justifyContent =
+        isMobileMode() ? 'center' : 'flex-end';
+      detailsEl.style.columnGap = '7px';
+      detailsEl.style.rowGap = '2px';
+      detailsEl.style.marginTop = '4px';
       detailsEl.style.fontFamily = '"Space Mono", monospace';
-      detailsEl.style.fontSize = '9px';
-      detailsEl.style.lineHeight = '1.55';
+      detailsEl.style.fontSize = '8px';
+      detailsEl.style.lineHeight = '1.45';
       detailsEl.style.color = '#71858B';
-      detailsEl.style.textAlign = isMobileMode() ? 'center' : 'right';
 
-      details.forEach((detail) => {
-        const item = document.createElement('div');
-        item.textContent = detail;
+      details.forEach((detail, index) => {
+        const item = document.createElement('span');
+
+        item.textContent =
+          index < details.length - 1
+            ? `${detail} ·`
+            : detail;
+
+        /*
+          Prevent:
+          scene/sound
+          design
+
+          but still allow:
+          quest3 · scene/sound design ·
+          spatial narrative
+        */
         item.style.whiteSpace = 'nowrap';
+
         detailsEl.appendChild(item);
       });
 
