@@ -159,7 +159,7 @@
 
   /* Top preview tear/image sits on the phone's centre axis. */
   #hover-photo {
-    top: 76px;
+    top: 68px;
     left: 50%;
     right: auto;
     transform: translateX(-50%);
