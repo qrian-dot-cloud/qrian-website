@@ -6,7 +6,7 @@ const WORKS = [
     zone: "music",
     link: "boss.html",
     desc: "Digital Single Release (written, composed, produced, mixed by QRIAN)",
-    img: "https://picsum.photos/seed/bossqrian/300/300"
+    img: "assets/images/world/boss.webp"
   },
   {
     title: "QRIAN (EP)",
@@ -14,7 +14,7 @@ const WORKS = [
     zone: "music",
     link: "qrian-ep.html",
     desc: "Debut EP Release (written, composed, produced, mixed by QRIAN)",
-    img: "https://picsum.photos/seed/qrianep/300/300"
+    img: "assets/images/world/qrian-ep.webp"
   },
   {
     title: "With This",
@@ -22,7 +22,7 @@ const WORKS = [
     zone: "music",
     link: "with-this.html",
     desc: "Debut Single Release (written, composed, produced, mixed by QRIAN)",
-    img: "https://picsum.photos/seed/withthis/300/300"
+    img: "assets/images/world/with-this.webp"
   },
   {
     title: "BYULGORAE",
@@ -30,7 +30,7 @@ const WORKS = [
     zone: "music",
     link: "byulgorae.html",
     desc: "Live Event (organised, hosted by QRIAN)",
-    img: "https://picsum.photos/seed/byulgorae/300/300"
+    img: "assets/images/world/byulgorae.webp"
   },
   
   //collabrative projects
@@ -40,7 +40,7 @@ const WORKS = [
     zone: "collaborative",
     link: "lunar-abyss.html",
     desc: "Media Facade (audio-visual design, projection mapping, environmental narrative)",
-    img: "https://picsum.photos/seed/lunarabyss/300/300"
+    img: "assets/images/world/lunar-abyss.webp"
   },
   {
     title: "The Planet Of Pets",
@@ -48,7 +48,7 @@ const WORKS = [
     zone: "collaborative",
     link: "the-planet-of-pets.html",
     desc: "Interactive Media Wall (drawing interface, kinetic audio-visual interaction, AI modeling)",
-    img: "https://picsum.photos/seed/planetofpets/300/300"
+    img: "assets/images/world/the-planet-of-pets.webp"
   },
   {
     title: "Meme Machine",
@@ -56,7 +56,7 @@ const WORKS = [
     zone: "collaborative",
     link: "meme-machine.html",
     desc: "Practice-Based Research (computational perception, cultural lens, data imperialism)",
-    img: "https://picsum.photos/seed/mememachine/300/300"
+    img: "assets/images/world/meme-machine.webp"
   },
 
   //independent projects - series <neither 0 nor 1>
@@ -67,7 +67,7 @@ const WORKS = [
     zone: "interactive",
     link: "gaslighting.html",
     desc: "Interactive Installation (organic elements, sound synthesis, LEDs)",
-    img: "https://picsum.photos/seed/gaslighting/300/300"
+    img: "assets/images/world/gaslighting.webp"
   },
   {
     title: "Asian Women vs Women in Asia",
@@ -76,7 +76,7 @@ const WORKS = [
     zone: "performance",
     link: "asian-women-vs-women-in-asia.html",
     desc: "Audio-Visual Performance (voices, microphones, real-time data)",
-    img: "https://picsum.photos/seed/asianwomen/300/300"
+    img: "assets/images/world/asian-women-vs-women-in-asia.webp"
   },
   {
     title: "The Freelancer, Never Feeling Free",
@@ -85,7 +85,7 @@ const WORKS = [
     zone: "performance",
     link: "the-freelancer-never-feeling-free.html",
     desc: "Live Electronic Music Performance (original songwriting, production, voice)",
-    img: "https://picsum.photos/seed/freelancer/300/300"
+    img: "assets/images/world/the-freelancer-never-feeling-free.webp"
   },
   {
     title: "AI: An Imposter or Improver?",
@@ -94,7 +94,7 @@ const WORKS = [
     zone: "film",
     link: "ai-an-imposter-or-an-improver.html",
     desc: "Video (independent experimental-documentary film)",
-    img: "https://picsum.photos/seed/aiimposter/300/300"
+    img: "assets/images/world/ai-an-imposter-or-an-improver.webp"
   },
 
   //independent projects - practice-based research
@@ -104,7 +104,7 @@ const WORKS = [
     zone: "interactive",
     link: "are-we-feeling-the-same.html",
     desc: "Practice-Based Research (machine learning, cross-lingual emotion classification, voices)",
-    img: "https://picsum.photos/seed/feelingsame/300/300"
+    img: "assets/images/world/are-we-feeling-the-same.webp"
   },
   {
     title: "Between Clap and Slap",
@@ -112,7 +112,7 @@ const WORKS = [
     zone: "interactive",
     link: "between-clap-and-slap.html",
     desc: "Practice-Based Research (machine listening, perceptual mediation, algorithmic authority)",
-    img: "https://picsum.photos/seed/clapslap/300/300"
+    img: "assets/images/world/between-clap-and-slap.webp"
   },
   
   //independent projects - recent series
@@ -123,7 +123,7 @@ const WORKS = [
     zone: "interactive",
     link: "spring-v01.html",
     desc: "Audio-Visual System (hand gesture, sound synthesis, embodiment)",
-    img: "https://picsum.photos/seed/chimes/300/300"
+    img: "assets/images/world/spring-v01.webp"
   },
   {
     title: "Proof of Tears",
@@ -132,7 +132,7 @@ const WORKS = [
     zone: "interactive",
     link: "proof-of-tears.html",
     desc: "Interactive Installation (mixed reality, sound synthesis, soft sculpture)",
-    img: "https://picsum.photos/seed/prooftears/300/300"
+    img: "assets/images/world/proof-of-tears.webp"
   },
 
   //independent projects - recent interactive ones
@@ -142,7 +142,7 @@ const WORKS = [
     zone: "interactive",
     link: "read-my-face-out-loud.html",
     desc: "Audio-Visual Performance (facial data API, sound synthesis, embodiment)",
-    img: "https://picsum.photos/seed/readmyface/300/300"
+    img: "assets/images/world/read-my-face-out-loud.webp"
   },
   {
     title: "Mindful Resonance",
@@ -150,7 +150,7 @@ const WORKS = [
     zone: "interactive",
     link: "mindful-resonance.html",
     desc: "Mixed Reality System (quest3, hand gesture, sound synthesis)",
-    img: "https://picsum.photos/seed/mindfulres/300/300"
+    img: "assets/images/world/mindful-resonance.webp"
   },
   {
     title: "Liminal Rock",
@@ -158,6 +158,6 @@ const WORKS = [
     zone: "interactive",
     link: "liminal-rock.html",
     desc: "Virtual Reality Experience (quest3, scene/sound design, spatial narrative)",
-    img: "https://picsum.photos/seed/liminalrock/300/300"
+    img: "assets/images/world/liminal-rock.webp"
   }
 ];
