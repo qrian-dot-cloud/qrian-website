@@ -9,7 +9,7 @@ const WORKS = [
     img: "https://picsum.photos/seed/bossqrian/300/300"
   },
   {
-    title: "EP - QRIAN",
+    title: "QRIAN (EP)",
     tags: ["music", "release", "debut", "EP", "cross-cultural identity"],
     zone: "music",
     link: "qrian-ep.html",
