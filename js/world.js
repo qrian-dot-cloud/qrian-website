@@ -379,7 +379,7 @@
 
       if (hoverSeries) {
         hoverSeries.textContent =
-        hovered.series ? `/* Series: ${hovered.series} */` : '';
+        hovered.series ? `/* ${hovered.series} */` : '';
 
         hoverSeries.style.display =
         hovered.series ? 'block' : 'none';
