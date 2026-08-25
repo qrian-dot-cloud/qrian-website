@@ -378,8 +378,9 @@
       }
 
       if (hoverSeries) {
-        hoverSeries.textContent =
-        hovered.series ? `/* ${hovered.series} */` : '';
+        hoverSeries.textContent = hovered.series
+        ? `#${hovered.series.replace(/\s+/g, '')}`
+        : '';
 
         hoverSeries.style.display =
         hovered.series ? 'block' : 'none';
