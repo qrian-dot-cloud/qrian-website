@@ -122,7 +122,7 @@ const WORKS = [
     series: "The Chimes",
     zone: "interactive",
     link: "spring-v01.html",
-    desc: "Audio-Visual System (hand gesture, sound synthesis, embodiment)",
+    desc: "Audio-Visual System (gesture, sound synthesis, embodiment)",
     img: "assets/images/world/spring-v01.webp"
   },
   {
@@ -149,7 +149,7 @@ const WORKS = [
     tags: ["MR", "sketch", "sound", "gesture", "embodiment"],
     zone: "interactive",
     link: "mindful-resonance.html",
-    desc: "Mixed Reality System (quest3, hand gesture, sound synthesis)",
+    desc: "Mixed Reality System (quest3, gesture, sound synthesis)",
     img: "assets/images/world/mindful-resonance.webp"
   },
   {
