@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Speaking in QRIAN — QRIAN</title>
+
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/project.css">
+
+  <style>
+    /* Page-specific archive styling */
+    .archive-list {
+      margin-top: 22px;
+      border-top: 1px solid rgba(188, 228, 230, 0.12);
+    }
+
+    .archive-item {
+      display: grid;
+      grid-template-columns: 72px 1fr;
+      gap: 18px;
+      padding: 16px 0;
+      border-bottom: 1px solid rgba(188, 228, 230, 0.12);
+    }
+
+    .archive-year {
+      color: var(--muted-2);
+      font-family: 'Space Mono', monospace;
+      font-size: 11px;
+      line-height: 1.6;
+    }
+
+    .archive-name {
+      color: var(--body-text);
+      font-size: 15px;
+      line-height: 1.65;
+    }
+
+    .archive-note {
+      margin-top: 4px;
+      color: var(--muted-2);
+      font-family: 'Space Mono', monospace;
+      font-size: 10px;
+      line-height: 1.55;
+    }
+
+    .project-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 18px;
+      margin-top: 18px;
+      font-family: 'Space Mono', monospace;
+      font-size: 12px;
+    }
+
+    .project-links a {
+      color: var(--accent);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(188, 228, 230, 0.3);
+    }
+
+    .project-links a:hover {
+      border-bottom-color: rgba(188, 228, 230, 0.8);
+    }
+
+    .video-frame {
+      aspect-ratio: 16 / 9;
+    }
+
+    .video-frame iframe {
+      width: 100%;
+      height: 100%;
+      display: block;
+      border: 0;
+    }
+
+    @media (max-width: 640px) {
+      .archive-item {
+        grid-template-columns: 54px 1fr;
+        gap: 12px;
+      }
+    }
+  </style>
+</head>
+
+<body class="project-page" data-hide-hint="true">
+
+  <main class="project-main">
+
+    <!-- Replace with your chosen live / DJ hero image -->
+    <section class="project-hero">
+      <img
+        src="assets/images/speaking-in-qrian/hero.webp"
+        alt="QRIAN live music performance"
+      >
+    </section>
+
+    <section class="project-intro">
+      <div class="project-eyebrow">Music Practice</div>
+
+      <h1 class="project-title">Speaking in QRIAN</h1>
+
+      <div class="project-medium">
+        Live Music Performance & DJing
+      </div>
+
+      <p class="project-concept">
+        Speaking in QRIAN brings together QRIAN's live electronic music and DJ practice.
+        Extending from songwriting and self-produced releases into performance, it traces
+        music as a shifting language across voice, electronics, club environments and
+        live contexts.
+      </p>
+    </section>
+
+
+    <!-- LIVE PERFORMANCE -->
+    <section class="project-section">
+      <h2 class="project-section-title">Selected Live Performances</h2>
+
+      <div class="archive-list">
+
+        <div class="archive-item">
+          <div class="archive-year">2024</div>
+          <div>
+            <div class="archive-name">BYULGORAE — Senggi Studio, Seoul</div>
+            <div class="archive-note">live electronic music performance</div>
+          </div>
+        </div>
+
+        <div class="archive-item">
+          <div class="archive-year">2024</div>
+          <div>
+            <div class="archive-name">BYULGORAE — Seendosi, Seoul</div>
+            <div class="archive-note">live electronic music performance</div>
+          </div>
+        </div>
+
+        <div class="archive-item">
+          <div class="archive-year">2020</div>
+          <div>
+            <div class="archive-name">Ghost Coming — Ilmin Museum of Art, Seoul</div>
+            <div class="archive-note">live performance</div>
+          </div>
+        </div>
+
+        <div class="archive-item">
+          <div class="archive-year">2019</div>
+          <div>
+            <div class="archive-name">Earwire Showcase — Seendosi, Seoul</div>
+            <div class="archive-note">live performance</div>
+          </div>
+        </div>
+
+        <div class="archive-item">
+          <div class="archive-year">2018</div>
+          <div>
+            <div class="archive-name">PureGold — The Albany, London</div>
+            <div class="archive-note">live performance</div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- LIVE IMAGES -->
+    <section class="project-gallery two" aria-label="Speaking in QRIAN live performance gallery">
+      <figure>
+        <img
+          src="assets/images/speaking-in-qrian/live-01.webp"
+          alt="QRIAN live performance"
+        >
+      </figure>
+
+      <figure>
+        <img
+          src="assets/images/speaking-in-qrian/live-02.webp"
+          alt="QRIAN live performance"
+        >
+      </figure>
+    </section>
+
+
+    <!-- ARCHIVED LIVE VIDEO -->
+    <section class="project-section">
+      <h2 class="project-section-title">Archived Live</h2>
+
+      <p class="project-copy">
+        An archived full live performance of the debut EP <em>QRIAN</em>.
+      </p>
+    </section>
+
+    <section class="project-media-full">
+      <div class="video-frame">
+        <iframe
+          src="https://www.youtube-nocookie.com/embed/9rhwEhzduik"
+          title="QRIAN EP full live performance"
+          loading="lazy"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen>
+        </iframe>
+      </div>
+    </section>
+
+
+    <!-- DJING -->
+    <section class="project-section">
+      <h2 class="project-section-title">DJing & Mixsets</h2>
+
+      <p class="project-copy">
+        Alongside live performance, QRIAN has DJed in Seoul's underground club
+        spaces since 2023, including ACS and Cakeshop. Archived mixsets move
+        through electronic club music including jungle, grime and UK garage.
+      </p>
+
+      <div class="project-links">
+        <a
+          href="https://soundcloud.com/qrian/mixset-qrian-mix"
+          target="_blank"
+          rel="noopener"
+        >
+          Jungle / Grime / UK Garage Mixset ↗
+        </a>
+      </div>
+    </section>
+
+
+    <!-- DJ IMAGES -->
+    <section class="project-gallery two" aria-label="QRIAN DJ gallery">
+      <figure>
+        <img
+          src="assets/images/speaking-in-qrian/dj-01.webp"
+          alt="QRIAN DJ set"
+        >
+      </figure>
+
+      <figure>
+        <img
+          src="assets/images/speaking-in-qrian/dj-02.webp"
+          alt="QRIAN DJ set"
+        >
+      </figure>
+    </section>
+
+
+    <!-- RELATED MUSIC -->
+    <section class="project-section">
+      <h2 class="project-section-title">Related Music</h2>
+
+      <p class="project-copy">
+        The wider music practice also includes QRIAN's self-written,
+        composed and produced releases and live-event production.
+      </p>
+
+      <div class="project-links">
+        <a href="boss.html">BOSS →</a>
+        <a href="qrian-ep.html">QRIAN →</a>
+        <a href="with-this.html">With This →</a>
+        <a href="byulgorae.html">BYULGORAE →</a>
+      </div>
+    </section>
+
+
+    <section class="project-meta">
+      <div class="project-context">
+        2018–present · live music performance / DJing
+      </div>
+    </section>
+
+  </main>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.min.js"></script>
+  <script src="js/sound.js"></script>
+  <script src="js/site-shell.js"></script>
+  <script src="js/cursor.js"></script>
+
+</body>
+</html>
