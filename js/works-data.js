@@ -32,6 +32,14 @@ const WORKS = [
     desc: "Live Event (organised, hosted by QRIAN)",
     img: "assets/images/world/byulgorae.webp"
   },
+  {
+  title: "Speaking in QRIAN",
+  tags: ["music", "performance", "live", "DJing"],
+  zone: "music",
+  link: "speaking-in-qrian.html",
+  desc: "Live Music Performance & DJing (live performance sets, archived DJ mixsets)",
+  img: "assets/images/world/speaking-in-qrian.webp"
+  },
   
   //collabrative projects
   {
