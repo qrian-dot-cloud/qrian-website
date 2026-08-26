@@ -6,30 +6,72 @@
   <title>QRIAN — QRIAN</title>
   <link rel="stylesheet" href="css/base.css">
   <link rel="stylesheet" href="css/project.css">
+
+  <!-- Temporary migration helpers. Safe to move into project.css later. -->
+  <style id="qrian-migration-style">
+    .legacy-copy + .legacy-copy { margin-top: 18px; }
+    .legacy-subheading {
+      margin: 28px 0 10px;
+      color: var(--accent);
+      font-family: 'Space Mono', monospace;
+      font-size: 11px;
+      font-weight: 400;
+      line-height: 1.6;
+    }
+    .legacy-list {
+      margin: 16px 0 0;
+      padding-left: 1.25em;
+      color: var(--body-text);
+      font-size: 15px;
+      line-height: 1.75;
+    }
+    .legacy-list li + li { margin-top: 6px; }
+    .migrated-legacy-section a,
+    .legacy-source-link {
+      color: var(--accent);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(188, 228, 230, 0.3);
+    }
+    .legacy-source-link {
+      margin-left: 8px;
+      font-family: 'Space Mono', monospace;
+      font-size: 9px;
+      white-space: nowrap;
+    }
+  </style>
+
 </head>
 <body class="project-page" data-hide-hint="true">
 
 
   <main class="project-main">
     <section class="project-hero">
-      <img src="assets/images/qrian/hero.webp" alt="QRIAN">
+      <img src="assets/images/qrian-ep/hero.webp" alt="QRIAN">
     </section>
 
     <section class="project-intro">
       <h1 class="project-title">QRIAN</h1>
       <div class="project-medium">Debut EP — written, composed, produced and mixed by QRIAN</div>
-      <p class="project-concept">
-        <!-- Add the project concept/description here. -->
-      </p>
-      <div class="project-todo">
-        TODO → Replace the placeholder hero, then add only the sections this work needs.
-        You do not have to keep the same layout as other projects.
-      </div>
+      <p class="project-concept">Debut EP [QRIAN] released on 15th October 2019<br>All Tracks Written, Composed, Performed, Produced (5th Track Co-Produced) and Co-Mixed by QRIAN</p>
+</section>
+
+    
+    <!-- LEGACY MIGRATION SOURCE: _pages_html/speaking-in-qrian.html -->
+
+    <section class="project-section migrated-legacy-section">
+      <h3 class="legacy-subheading">Related Press</h3>
+      <ul class="legacy-list">
+        <li><a href="https://www.koreanindie.com/2019/12/20/best-of-2019-dannys-picks" target="_blank" rel="noopener">'Best of 2019 : Danny’s Picks' Korean Indie ↗</a></li>
+      </ul>
+      <h3 class="legacy-subheading">Related Live</h3>
+      <ul class="legacy-list">
+        <li><a href="https://ilmin.org/ima_on/2020_sp_ghost-coming-2020-x-room-3/" target="_blank" rel="noopener">'An-Nyung-Ha-Sae-Yo' Performed at Ilmin Museum of Art ↗</a></li>
+        <li>Archived EP Full Tracks Live Performance, Available on YouTube <a class="legacy-source-link" href="https://youtu.be/9rhwEhzduik" target="_blank" rel="noopener">source ↗</a> <a class="legacy-source-link" href="https://youtu.be/9rhwEhzduik?feature=shared" target="_blank" rel="noopener">source ↗</a></li>
+      </ul>
     </section>
 
-    <section class="project-meta">
-      <div class="keywords">#music #release #EP #cross-cultural</div>
-    </section>
+<section class="project-meta">
+</section>
 
   </main>
 

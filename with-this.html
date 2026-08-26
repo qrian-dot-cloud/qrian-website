@@ -6,6 +6,40 @@
   <title>With This — QRIAN</title>
   <link rel="stylesheet" href="css/base.css">
   <link rel="stylesheet" href="css/project.css">
+
+  <!-- Temporary migration helpers. Safe to move into project.css later. -->
+  <style id="qrian-migration-style">
+    .legacy-copy + .legacy-copy { margin-top: 18px; }
+    .legacy-subheading {
+      margin: 28px 0 10px;
+      color: var(--accent);
+      font-family: 'Space Mono', monospace;
+      font-size: 11px;
+      font-weight: 400;
+      line-height: 1.6;
+    }
+    .legacy-list {
+      margin: 16px 0 0;
+      padding-left: 1.25em;
+      color: var(--body-text);
+      font-size: 15px;
+      line-height: 1.75;
+    }
+    .legacy-list li + li { margin-top: 6px; }
+    .migrated-legacy-section a,
+    .legacy-source-link {
+      color: var(--accent);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(188, 228, 230, 0.3);
+    }
+    .legacy-source-link {
+      margin-left: 8px;
+      font-family: 'Space Mono', monospace;
+      font-size: 9px;
+      white-space: nowrap;
+    }
+  </style>
+
 </head>
 <body class="project-page" data-hide-hint="true">
 
@@ -18,18 +52,21 @@
     <section class="project-intro">
       <h1 class="project-title">With This</h1>
       <div class="project-medium">Debut Single — written, composed, produced and mixed by QRIAN</div>
-      <p class="project-concept">
-        <!-- Add the project concept/description here. -->
-      </p>
-      <div class="project-todo">
-        TODO → Replace the placeholder hero, then add only the sections this work needs.
-        You do not have to keep the same layout as other projects.
-      </div>
+      <p class="project-concept">Debut Single [With This] released on 24th September 2019<br>Written, Composed, Performed, Produced and Co-Mixed by QRIAN</p>
+</section>
+
+    
+    <!-- LEGACY MIGRATION SOURCE: _pages_html/speaking-in-qrian.html -->
+
+    <section class="project-section migrated-legacy-section">
+      <p class="project-copy legacy-copy"><a href="https://youtube.com/playlist?list=PLpRw9sox1r9_7cXyQVYncQBrVswsHrBLp&amp;feature=shared" target="_blank" rel="noopener">Playlist on YouTube ↗</a></p>
+      <p class="project-copy legacy-copy"><a href="https://www.google.com/url?q=https%3A%2F%2Fmusic.apple.com%2Fkr%2Falbum%2Fqrian-ep%2F1483561170&amp;sa=D&amp;sntz=1&amp;usg=AOvVaw3KFqPGDXSlmHi9x_Nyyi-U" target="_blank" rel="noopener">Playlist on Apple Music ↗</a></p>
+      <p class="project-copy legacy-copy"><a href="https://www.google.com/url?q=https%3A%2F%2Fopen.spotify.com%2Falbum%2F6ucsEmNWDMPznvLVOhRvcT&amp;sa=D&amp;sntz=1&amp;usg=AOvVaw3POpD9IwuTysb_7fka7XAt" target="_blank" rel="noopener">Playlist on Spotify ↗</a></p>
+      <p class="project-copy legacy-copy"><a href="https://www.google.com/url?q=https%3A%2F%2Fmusic.amazon.co.uk%2Falbums%2FB07Z4S2WVF&amp;sa=D&amp;sntz=1&amp;usg=AOvVaw2kinkzPB2GrOWJ_X33X_x1" target="_blank" rel="noopener">Playlist on Amazon Music ↗</a></p>
     </section>
 
-    <section class="project-meta">
-      <div class="keywords">#music #release #single #debut</div>
-    </section>
+<section class="project-meta">
+</section>
 
   </main>
 

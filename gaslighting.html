@@ -6,31 +6,99 @@
   <title>Gaslighting — QRIAN</title>
   <link rel="stylesheet" href="css/base.css">
   <link rel="stylesheet" href="css/project.css">
+
+  <!-- Temporary migration helpers. Safe to move into project.css later. -->
+  <style id="qrian-migration-style">
+    .legacy-copy + .legacy-copy { margin-top: 18px; }
+    .legacy-subheading {
+      margin: 28px 0 10px;
+      color: var(--accent);
+      font-family: 'Space Mono', monospace;
+      font-size: 11px;
+      font-weight: 400;
+      line-height: 1.6;
+    }
+    .legacy-list {
+      margin: 16px 0 0;
+      padding-left: 1.25em;
+      color: var(--body-text);
+      font-size: 15px;
+      line-height: 1.75;
+    }
+    .legacy-list li + li { margin-top: 6px; }
+    .migrated-legacy-section a,
+    .legacy-source-link {
+      color: var(--accent);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(188, 228, 230, 0.3);
+    }
+    .legacy-source-link {
+      margin-left: 8px;
+      font-family: 'Space Mono', monospace;
+      font-size: 9px;
+      white-space: nowrap;
+    }
+  </style>
+
 </head>
 <body class="project-page" data-hide-hint="true">
 
 
   <main class="project-main">
     <section class="project-hero">
-      <img src="https://picsum.photos/seed/gaslighting-hero/1600/1000" alt="Gaslighting">
+      <img src="assets/images/gaslighting/hero.webp" alt="Gaslighting">
     </section>
 
     <section class="project-intro">
       <div class="project-eyebrow">Neither 0 Nor 1</div>
       <h1 class="project-title">Gaslighting</h1>
       <div class="project-medium">Interactive Installation — Organic elements, sound synthesis, LEDs</div>
-      <p class="project-concept">Part of the Neither 0 Nor 1 series, exploring how manipulation and doubt operate through physical, sensory interaction.</p>
+      <p class="project-concept">Exploring the ideation of questioning the terms 'gaslighting' and 'kongkakkji,' this piece examines power dynamics, interplaying between gaslight-inspired light, and sound with signals generated from kongkakkji (s), which can entirely be determined and operated by the participating individual through their interaction with the switch, using their 'power'.</p>
     </section>
 
-    <section class="project-gallery" aria-label="Gaslighting gallery">
-      <figure><img src="https://picsum.photos/seed/gaslighting-1/600/450" alt=""></figure>
-      <figure><img src="https://picsum.photos/seed/gaslighting-2/600/450" alt=""></figure>
-      <figure><img src="https://picsum.photos/seed/gaslighting-3/600/450" alt=""></figure>
+    <!-- LEGACY MIGRATION SOURCE: _pages_html/independent-projects_neither-0-nor-1-2024_gaslighting.html -->
+
+    <section class="project-section migrated-legacy-section">
+      <p class="project-copy legacy-copy">The pulse and frequency of the sound can be interrupted, varied, and stopped by the hands of the participating individual on kongkakkji (s) in the heart-shaped clay plate as a tangible interface. The signs of heart and an affirmation mark respectively indicate love and warning, inviting participants to experience and question the illusory or delusional relation between love and abuse.</p>
+      <p class="project-copy legacy-copy">This time, I intended to focus on physical computing with a purely hardware-based approach, aligning with the theme of objects representing emotions between humans. Once the singular and basic circuit for the sound was confirmed with the signal interruption from the green beans, I began creating the circuit using Tinkercad. The three breadboards were configured for two LEDs, 555 timers, and LM386N amplifiers.</p>
+      <p class="project-copy legacy-copy">The gaslight-inspired light, referencing the film Gaslight (1940), was crafted with clay, with a plastic used as a recyclable container. The flame-like plastic, which diffuses the orange and yellow LED lights to resemble the flame of the gaslight, was cut from a disposable spoon. By selecting these casual, everyday materials, I also reflected the increasingly common occurrences of cognitive dissonance in our daily lives within this modernised society.</p>
+      <p class="project-copy legacy-copy">(Gaslight 50:57)</p>
+      <p class="project-copy legacy-copy">On the left side where the participant's heart is located, I tried to express the rapid pulse of the heart in auditory form through the frequency of sound from the bean pods, kongkakkji (s). When touched by hands, the sound becomes more electric and intensified, evoking the sensation of an electric shock much like the feeling of love. The eye-like piezo speakers further emphasise the concept of 'kongkakkji,' which is commonly described in Korean as 'wearing kongkakkji on the eyes'. However, the kongkakkji (s) are not located on the eyes, but in the heart-shaped clay plate, since this illusory chemistry is ultimately about love—a love that touches our hearts.</p>
     </section>
 
-    <section class="project-meta">
-      <div class="keywords">#neither0nor1 #physical-computing #perception #power</div>
-      <div class="project-context">Goldsmiths, University of London</div>
+    <!-- Temporary migrated media archive from assets/images/gaslighting/ -->
+    <section class="project-gallery migrated-asset-gallery" aria-label="gaslighting migrated media">
+      <figure>
+        <img src="assets/images/gaslighting/bts.webp" alt="" loading="lazy">
+      </figure>
+      <figure>
+        <img src="assets/images/gaslighting/detail-01.webp" alt="" loading="lazy">
+      </figure>
+      <figure>
+        <img src="assets/images/gaslighting/detail-02.webp" alt="" loading="lazy">
+      </figure>
+      <figure>
+        <img src="assets/images/gaslighting/detail-03.webp" alt="" loading="lazy">
+      </figure>
+      <figure>
+        <img src="assets/images/gaslighting/full.webp" alt="" loading="lazy">
+      </figure>
+      <figure>
+        <img src="assets/images/gaslighting/process-01.webp" alt="" loading="lazy">
+      </figure>
+      <figure>
+        <img src="assets/images/gaslighting/process-02.webp" alt="" loading="lazy">
+      </figure>
+      <figure>
+        <img src="assets/images/gaslighting/process-03.webp" alt="" loading="lazy">
+      </figure>
+      <figure>
+        <img src="assets/images/gaslighting/reference.webp" alt="" loading="lazy">
+      </figure>
+    </section>
+
+<section class="project-meta">
+<div class="project-context">Goldsmiths, University of London</div>
     </section>
 
     <nav class="series-nav" aria-label="Neither 0 Nor 1 series">

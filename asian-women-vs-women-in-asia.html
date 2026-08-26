@@ -6,6 +6,40 @@
   <title>Asian Women vs Women in Asia — QRIAN</title>
   <link rel="stylesheet" href="css/base.css">
   <link rel="stylesheet" href="css/project.css">
+
+  <!-- Temporary migration helpers. Safe to move into project.css later. -->
+  <style id="qrian-migration-style">
+    .legacy-copy + .legacy-copy { margin-top: 18px; }
+    .legacy-subheading {
+      margin: 28px 0 10px;
+      color: var(--accent);
+      font-family: 'Space Mono', monospace;
+      font-size: 11px;
+      font-weight: 400;
+      line-height: 1.6;
+    }
+    .legacy-list {
+      margin: 16px 0 0;
+      padding-left: 1.25em;
+      color: var(--body-text);
+      font-size: 15px;
+      line-height: 1.75;
+    }
+    .legacy-list li + li { margin-top: 6px; }
+    .migrated-legacy-section a,
+    .legacy-source-link {
+      color: var(--accent);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(188, 228, 230, 0.3);
+    }
+    .legacy-source-link {
+      margin-left: 8px;
+      font-family: 'Space Mono', monospace;
+      font-size: 9px;
+      white-space: nowrap;
+    }
+  </style>
+
 </head>
 <body class="project-page" data-hide-hint="true">
 
@@ -19,7 +53,7 @@
       <div class="project-eyebrow">Neither 0 Nor 1</div>
       <h1 class="project-title">Asian Women vs Women in Asia</h1>
       <div class="project-medium">Audio-Visual Performance — Voices, microphones, real-time data</div>
-      <p class="project-concept">Part of the Neither 0 Nor 1 series, examining the gap between diasporic and local identity through voice and live data.</p>
+      <p class="project-concept">Expanding on the ideation of identity as an Asian woman, whether living in Asia or coming from Asia, Carolyn and I had somewhat opposing ideas, which I found thought-provoking. It suggests that anyone who has stayed in an environment longer tends to have deeper experiences and, as a result, can be more critical. I envisioned this form of art by creating real-time data art using TouchDesigner, incorporating the Asian population and its female demographic.</p>
     </section>
 
     <section class="project-gallery" aria-label="Asian Women vs Women in Asia gallery">
@@ -39,9 +73,25 @@
       <figure><img src="assets/images/asian-women-vs-women-in-asia/still-05.webp" alt=""></figure>
     </section>
 
-    <section class="project-meta">
-      <div class="keywords">#neither0nor1 #audio-visual #cross-cultural #performance</div>
-      <div class="project-context">Goldsmiths, University of London</div>
+    
+    <!-- LEGACY MIGRATION SOURCE: _pages_html/independent-projects_neither-0-nor-1-2024_asian-women-vs-women-in-asia.html -->
+
+    <section class="project-section migrated-legacy-section">
+      <p class="project-copy legacy-copy">The performance features voices as expressions of opinions, presented in both English and Korean, prioritising the speaker's more comfortable language. Thus, Carolyn speaks in English first, while I begin in Korean. The natural mistakes that may occur while reading the words, along with subtle imperfect localisation, become accidental yet meaningful elements, reflecting the underlying concepts and perspectives.</p>
+      <p class="project-copy legacy-copy">Figure 1. Map image of the five regions of Asia</p>
+      <p class="project-copy legacy-copy">Figure 2. Asian population counter</p>
+      <p class="project-copy legacy-copy">The inserted data also includes the RGB information of the Asian map image from Pariona (2023) (Figure 1) for the geometry instance of the normal, with the female population number influencing the R value of the colour operator, since I intended to create a visualisation of a wave, not in blue but in red, symbolising the colour of blood to represent the essence and vitality of humans, irrespective of surface colour. The population data, originally sourced from Countrymeters (n.d.) (Figure 2), was fetched into Google Sheets and published into the web (Figure 3), prominently influencing this visual, being converted into LFOs, with their frequency cycles determining the wave's shape, flow, and amplitude.</p>
+      <p class="project-copy legacy-copy">Figure 3. The process of fetching and publishing real-time data</p>
+      <p class="project-copy legacy-copy">As the data renews every minute to reflect real-time updates, the visual eventually loses its colour and movement at certain points during the performance. In the second part of the performance, the amplitude increases significantly, forming a wave reminiscent of the sea—a metaphorical wave that represents the journey of moving to another country, the migration. As the wave evolves, it transforms into a gate, symbolising the hurdles we face—ones we must open, overcome, or leave closed—to cross boundaries or return to our home country.</p>
+      <p class="project-copy legacy-copy">Source List</p>
+      <ul class="legacy-list">
+        <li>Countrymeters (n.d.), Asian Population clock (live). Available at: https://countrymeters.info/en/Asia [Accessed 13 December 2024]</li>
+        <li>Pariona, A. (2023), What are the five regions of Asia? WorldAtlas, 25 October 2023. Available at: https://www.worldatlas.com/geography/what-are-the-five-regions-of-asia.html [Accessed 13 December 2024]</li>
+      </ul>
+    </section>
+
+<section class="project-meta">
+<div class="project-context">Goldsmiths, University of London</div>
     </section>
 
     <nav class="series-nav" aria-label="Neither 0 Nor 1 series">

@@ -6,30 +6,204 @@
   <title>The Planet Of Pets — QRIAN</title>
   <link rel="stylesheet" href="css/base.css">
   <link rel="stylesheet" href="css/project.css">
+
+  <!-- Temporary migration helpers. Safe to move into project.css later. -->
+  <style id="qrian-migration-style">
+    .legacy-copy + .legacy-copy { margin-top: 18px; }
+    .legacy-subheading {
+      margin: 28px 0 10px;
+      color: var(--accent);
+      font-family: 'Space Mono', monospace;
+      font-size: 11px;
+      font-weight: 400;
+      line-height: 1.6;
+    }
+    .legacy-list {
+      margin: 16px 0 0;
+      padding-left: 1.25em;
+      color: var(--body-text);
+      font-size: 15px;
+      line-height: 1.75;
+    }
+    .legacy-list li + li { margin-top: 6px; }
+    .migrated-legacy-section a,
+    .legacy-source-link {
+      color: var(--accent);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(188, 228, 230, 0.3);
+    }
+    .legacy-source-link {
+      margin-left: 8px;
+      font-family: 'Space Mono', monospace;
+      font-size: 9px;
+      white-space: nowrap;
+    }
+  </style>
+
 </head>
 <body class="project-page" data-hide-hint="true">
 
 
   <main class="project-main">
     <section class="project-hero">
-      <img src="https://picsum.photos/seed/planetofpets-hero/1600/1000" alt="The Planet Of Pets">
+      <img src="assets/images/the-planet-of-pets/hero.webp" alt="The Planet Of Pets">
     </section>
 
     <section class="project-intro">
       <h1 class="project-title">The Planet Of Pets</h1>
       <div class="project-medium">Interactive Media Wall — Drawing interface, kinetic audio-visual interaction, AI modeling</div>
-      <p class="project-concept">
-        <!-- Add the project concept/description here. -->
-      </p>
-      <div class="project-todo">
-        TODO → Replace the placeholder hero, then add only the sections this work needs.
-        You do not have to keep the same layout as other projects.
-      </div>
+      <p class="project-concept">Through the initial ideation of an interactive system using p5.js, I developed the full content plan that balanced creative intent with technical feasibility, ensuring its completion within a two-week timeframe. The artwork centred on the theme of animal loss, providing a moment of healing and personalisation for audiences to reconnect with their lost yet cherished companions through interactive art. I led the full production process, overseeing all outputs from a team of three including myself. My key contributions included:</p>
+</section>
+
+    
+    <!-- LEGACY MIGRATION SOURCE: _pages_html/collaborative-projects_the-planet-of-pets-2025.html -->
+
+    <section class="project-section migrated-legacy-section">
+      <ul class="legacy-list">
+        <li>Project Management</li>
+        <li>Co-Content Planning &amp; Directing</li>
+        <li>System Operation Co-Development</li>
+        <li>Particle Visuals Co-Design</li>
+        <li>Music Production &amp; Sound Design</li>
+      </ul>
+    </section>
+    <section class="project-section migrated-legacy-section">
+      <h2 class="project-section-title">live scene</h2>
+      <p class="project-copy legacy-copy">Interactive Media Wall Digital art interface, kinetic audio-visual interaction, AI modeling</p>
+    </section>
+    <section class="project-section migrated-legacy-section">
+      <h2 class="project-section-title">Behind the Scene</h2>
+      <p class="project-copy legacy-copy">Using an Azure Kinect DK, I mapped the user interaction zone to dynamic content in TouchDesigner and Unreal Engine 5 via an OSC connection, conducting user flow simulations and development check-ups to ensure high accuracy and optimised performance throughout the project. The Kinect data was also referenced to trigger a blue pin light via DMX out in TouchDesigner.</p>
+      <p class="project-copy legacy-copy">In TouchDesigner, I designed the interactive flows where the sound design and music I created transitioned naturally as users entered the designated zone. In Unreal Engine 5, I implemented particle-based sound effects that responded to each step forward, enhancing the immersive quality of the experience through spatial and reactive audio design that aligned with the thematic concept.</p>
+      <p class="project-copy legacy-copy">For the final step, the highlight of the user flow in Unreal Engine 5, I designed an exploratory Niagara particle system where multiple emitters interact dynamically to evoke a sense of wonder. All accompanying sound effects were also exclusively produced with Ableton Live and Push II. The sound and visual design strike a balance, neither oversimplified nor overly complex, evoking a sense of fantasy while remaining grounded in realism. The tone is nostalgic and imaginative, yet neither overtly sorrowful nor purely lighthearted. Chord progressions, layered sound design, and additional SFX were harmonised to achieve this atmospheric and melodic balance.</p>
+      <p class="project-copy legacy-copy">Due to the limited timeframe, creating complete 3D models of the dogs was impossible. However, without them, the theme could not be fully conveyed. To address this, I suggested incorporating AI-generated dog models on the other side of the wall, using a tool called Meshy AI. As two members of our team, including myself, had a deep personal connection to this theme, two dog species were designed from the prompt to resemble the stars, our own beloved pets. One of the models was specifically intended to resemble the dog from A Dog’s Purpose.</p>
+      <p class="project-copy legacy-copy">The UI system text was refined to guide the audience’s immersive focus from the very entry point. The DMX lighting system in the zone was synchronised with user flow via Kinect data. I adjusted the overall lighting including its colour, intensity, and zoom, to heighten the mood and invite the audience into a distinctive ambiance. The soft blue pin light that trailed but looked guiding each user’s steps, created an atmosphere that was both mysterious and sacred.</p>
+    </section>
+    <section class="project-section migrated-legacy-section">
+      <h2 class="project-section-title">Business Proposal &amp; Content Planning</h2>
+      <p class="project-copy legacy-copy">This project was carried out based on this content plan I created, which featured a conceptual business framework, content storyboard, and user flow for the assigned time-warp zone, themed around a specific film. Under the theme of A Dog's Purpose, the concept reinterpreted and amplified the idea of reincarnation, offering audiences the experience of reconnecting with their closest companion who had crossed the rainbow bridge, a metaphor for the passage between life and death that I developed for this theme. I then managed the project by directing content details and components, coordinating schedules, and ensuring alignment between team members' creative processes, including my own, and the technical operations required for the finalised artwork and its uniterrupted interaction flow.</p>
     </section>
 
-    <section class="project-meta">
-      <div class="keywords">#collaborative #interactive #mediawall</div>
+    <!-- Temporary migrated media archive from assets/images/the-planet-of-pets/ -->
+    <section class="project-gallery migrated-asset-gallery" aria-label="the-planet-of-pets migrated media">
+      <figure>
+        <img src="assets/images/the-planet-of-pets/ppt-01.webp" alt="" loading="lazy">
+      </figure>
+      <figure>
+        <img src="assets/images/the-planet-of-pets/ppt-02.webp" alt="" loading="lazy">
+      </figure>
+      <figure>
+        <img src="assets/images/the-planet-of-pets/ppt-03.webp" alt="" loading="lazy">
+      </figure>
+      <figure>
+        <img src="assets/images/the-planet-of-pets/ppt-04.webp" alt="" loading="lazy">
+      </figure>
+      <figure>
+        <img src="assets/images/the-planet-of-pets/ppt-05.webp" alt="" loading="lazy">
+      </figure>
+      <figure>
+        <img src="assets/images/the-planet-of-pets/ppt-06.webp" alt="" loading="lazy">
+      </figure>
+      <figure>
+        <img src="assets/images/the-planet-of-pets/ppt-07.webp" alt="" loading="lazy">
+      </figure>
+      <figure>
+        <img src="assets/images/the-planet-of-pets/ppt-08.webp" alt="" loading="lazy">
+      </figure>
+      <figure>
+        <img src="assets/images/the-planet-of-pets/ppt-09.webp" alt="" loading="lazy">
+      </figure>
+      <figure>
+        <img src="assets/images/the-planet-of-pets/ppt-10.webp" alt="" loading="lazy">
+      </figure>
+      <figure>
+        <img src="assets/images/the-planet-of-pets/ppt-11.webp" alt="" loading="lazy">
+      </figure>
+      <figure>
+        <img src="assets/images/the-planet-of-pets/ppt-12.webp" alt="" loading="lazy">
+      </figure>
+      <figure>
+        <img src="assets/images/the-planet-of-pets/ppt-13.webp" alt="" loading="lazy">
+      </figure>
+      <figure>
+        <img src="assets/images/the-planet-of-pets/ppt-14.webp" alt="" loading="lazy">
+      </figure>
+      <figure>
+        <img src="assets/images/the-planet-of-pets/ppt-15.webp" alt="" loading="lazy">
+      </figure>
+      <figure>
+        <img src="assets/images/the-planet-of-pets/ppt-16.webp" alt="" loading="lazy">
+      </figure>
+      <figure>
+        <img src="assets/images/the-planet-of-pets/ppt-17.webp" alt="" loading="lazy">
+      </figure>
+      <figure>
+        <img src="assets/images/the-planet-of-pets/ppt-18.webp" alt="" loading="lazy">
+      </figure>
+      <figure>
+        <img src="assets/images/the-planet-of-pets/ppt-19.webp" alt="" loading="lazy">
+      </figure>
+      <figure>
+        <img src="assets/images/the-planet-of-pets/ppt-20.webp" alt="" loading="lazy">
+      </figure>
+      <figure>
+        <img src="assets/images/the-planet-of-pets/ppt-21.webp" alt="" loading="lazy">
+      </figure>
+      <figure>
+        <img src="assets/images/the-planet-of-pets/ppt-22.webp" alt="" loading="lazy">
+      </figure>
+      <figure>
+        <img src="assets/images/the-planet-of-pets/ppt-23.webp" alt="" loading="lazy">
+      </figure>
+      <figure>
+        <img src="assets/images/the-planet-of-pets/ppt-24.webp" alt="" loading="lazy">
+      </figure>
+      <figure>
+        <img src="assets/images/the-planet-of-pets/ppt-25.webp" alt="" loading="lazy">
+      </figure>
+      <figure>
+        <img src="assets/images/the-planet-of-pets/ppt-26.webp" alt="" loading="lazy">
+      </figure>
+      <figure>
+        <img src="assets/images/the-planet-of-pets/ppt-27.webp" alt="" loading="lazy">
+      </figure>
+      <figure>
+        <img src="assets/images/the-planet-of-pets/process-01.gif" alt="" loading="lazy">
+      </figure>
+      <figure>
+        <img src="assets/images/the-planet-of-pets/process-01.webp" alt="" loading="lazy">
+      </figure>
+      <figure>
+        <img src="assets/images/the-planet-of-pets/process-02.gif" alt="" loading="lazy">
+      </figure>
+      <figure>
+        <img src="assets/images/the-planet-of-pets/process-02.webp" alt="" loading="lazy">
+      </figure>
+      <figure>
+        <img src="assets/images/the-planet-of-pets/process-03.gif" alt="" loading="lazy">
+      </figure>
+      <figure>
+        <img src="assets/images/the-planet-of-pets/process-03.webp" alt="" loading="lazy">
+      </figure>
+      <figure>
+        <img src="assets/images/the-planet-of-pets/process.webp" alt="" loading="lazy">
+      </figure>
+      <figure>
+        <img src="assets/images/the-planet-of-pets/still-01.webp" alt="" loading="lazy">
+      </figure>
+      <figure>
+        <img src="assets/images/the-planet-of-pets/still-02.webp" alt="" loading="lazy">
+      </figure>
+      <figure>
+        <img src="assets/images/the-planet-of-pets/still-03.webp" alt="" loading="lazy">
+      </figure>
+      <figure>
+        <img src="assets/images/the-planet-of-pets/still-04.webp" alt="" loading="lazy">
+      </figure>
     </section>
+
+<section class="project-meta">
+</section>
 
   </main>
 
