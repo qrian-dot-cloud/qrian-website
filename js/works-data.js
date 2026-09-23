@@ -149,7 +149,7 @@ const WORKS = [
   tags: ["sketch", "audio-visual", "interactive", "coding"],
   zone: "interactive",
   link: "creative-coding-sketches.html",
-  desc: "Audio-visual/interactive sketches (p5.js, python, sound/image/data)",
+  desc: "Audio-Visual, Interactive & Poetic Experiments (archived coding sketches, p5.js/Python)",
   img: "assets/images/world/creative-coding-sketches.webp"
   },
   {
