@@ -145,6 +145,14 @@ const WORKS = [
 
   //independent projects - recent interactive ones
   {
+  title: "Creative Coding Sketches",
+  tags: ["sketch", "audio-visual", "interactive", "coding"],
+  zone: "interactive",
+  link: "creative-coding-sketches.html",
+  desc: "Audio-visual/interactive sketches (p5.js, python, data)",
+  img: "assets/images/world/creative-coding-sketches.webp"
+  },
+  {
     title: "Read My Face Out Loud",
     tags: ["audio-visual", "gesture", "sound", "synthesis", "emotion", "performance"],
     zone: "interactive",
