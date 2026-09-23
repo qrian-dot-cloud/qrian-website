@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Creative Coding Sketches — QRIAN</title>
+
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/project.css">
+</head>
+
+<body class="project-page" data-hide-hint="true">
+
+  <main class="project-main">
+
+    <!-- INTRO -->
+    <section class="project-intro">
+
+      <div class="project-eyebrow">
+        Ongoing Practice
+      </div>
+
+      <h1 class="project-title">
+        Creative Coding Sketches
+      </h1>
+
+      <div class="project-medium">
+        Audio-Visual, Interactive & Data Experiments
+      </div>
+
+      <p class="project-concept">
+        An ongoing collection of small computational experiments exploring
+        real-time interaction, generative systems, sound, image, and data.
+      </p>
+
+    </section>
+
+
+    <!-- CONTEXT -->
+    <section class="project-section">
+
+      <h2 class="project-section-title">
+        Sketches
+      </h2>
+
+      <p class="project-copy">
+        These sketches form a space for testing audiovisual relationships,
+        computational behaviours, and different forms of interaction outside
+        the structure of larger projects.
+      </p>
+
+    </section>
+
+
+    <!--
+      SELECTED SKETCHES
+
+      Add individual sketches here later.
+
+      Example:
+
+      <section class="project-section">
+
+        <h2 class="project-section-title">
+          SKETCH TITLE
+        </h2>
+
+        <p class="project-copy">
+          Short description of the experiment.
+        </p>
+
+      </section>
+
+      <section class="project-media-full">
+        <img
+          src="assets/images/creative-coding-sketches/sketch-01.webp"
+          alt="SKETCH TITLE"
+        >
+      </section>
+
+    -->
+
+
+    <!-- META -->
+    <section class="project-meta">
+
+      <div class="keywords">
+        #creative-coding #audio-visual #interaction #data #generative-systems
+      </div>
+
+      <div>
+        Ongoing
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.min.js"></script>
+  <script src="js/sound.js"></script>
+  <script src="js/site-shell.js"></script>
+  <script src="js/cursor.js"></script>
+
+</body>
+</html>
