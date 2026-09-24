@@ -3,39 +3,154 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+
   <title>Read My Face Out Loud — QRIAN</title>
+
   <link rel="stylesheet" href="css/base.css">
   <link rel="stylesheet" href="css/project.css">
 </head>
+
 <body class="project-page" data-hide-hint="true">
 
-
   <main class="project-main">
+
+    <!-- HERO -->
     <section class="project-hero">
-      <img src="https://picsum.photos/seed/readmyface-hero/1600/1000" alt="Read My Face Out Loud">
+      <img
+        src="assets/images/read-my-face-out-loud/hero.webp"
+        alt="Read My Face Out Loud"
+      >
     </section>
 
+
+    <!-- INTRO -->
     <section class="project-intro">
-      <h1 class="project-title">Read My Face Out Loud</h1>
-      <div class="project-medium">Audio-Visual Performance — facial data API, sound synthesis, embodiment</div>
-      <p class="project-concept">
-        <!-- Add the project concept/description here. -->
-      </p>
-      <div class="project-todo">
-        TODO → Replace the placeholder hero, then add only the sections this work needs.
-        You do not have to keep the same layout as other projects.
+
+      <h1 class="project-title">
+        Read My Face Out Loud
+      </h1>
+
+      <div class="project-medium">
+        Audio-Visual Performance — facial emotion recognition, sound synthesis, real-time visualisation
       </div>
+
+      <p class="project-concept">
+        <em>Read My Face Out Loud</em> explores a reciprocal relationship
+        between facial expression and machine interpretation.
+        Facial emotion and position are translated into sound and responsive visuals,
+        creating a continuous feedback loop between performer and system.
+      </p>
+
     </section>
 
+
+    <!-- VIDEO -->
+    <section class="project-video">
+      <iframe
+        src="https://www.youtube-nocookie.com/embed/K-DiIlkALeQ"
+        title="Read My Face Out Loud — performance documentation"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen>
+      </iframe>
+    </section>
+
+
+    <!-- SYSTEM -->
+    <section class="project-section">
+
+      <h2 class="project-section-title">
+        System
+      </h2>
+
+      <p class="project-copy">
+        Facial emotion data is processed in Max/MSP, where detected emotions
+        trigger different musical modes in real time. Facial position data is
+        exchanged through OSC and used to introduce variations in pitch and rhythm.
+      </p>
+
+      <p class="project-copy">
+        In parallel, TouchDesigner processes facial movement and transforms it
+        into abstract, wave-like visual structures. Sound, image, facial movement,
+        and machine interpretation continuously affect one another.
+      </p>
+
+    </section>
+
+
+    <!-- PROCESS -->
+    <section class="project-gallery">
+
+      <figure>
+        <img
+          src="assets/images/read-my-face-out-loud/max-patch.webp"
+          alt="Max/MSP patch for facial emotion recognition and sound synthesis"
+        >
+      </figure>
+
+      <figure>
+        <img
+          src="assets/images/read-my-face-out-loud/touchdesigner.webp"
+          alt="TouchDesigner network generating responsive visuals"
+        >
+      </figure>
+
+      <figure>
+        <img
+          src="assets/images/read-my-face-out-loud/system.webp"
+          alt="Max/MSP and TouchDesigner running simultaneously"
+        >
+      </figure>
+
+    </section>
+
+
+    <!-- EMBODIED FEEDBACK -->
+    <section class="project-section">
+
+      <h2 class="project-section-title">
+        Embodied Feedback
+      </h2>
+
+      <p class="project-copy">
+        The performer can intentionally alter facial expressions to influence
+        sonic and visual responses, while involuntary changes are also continuously
+        interpreted by the system.
+      </p>
+
+      <p class="project-copy">
+        The gap between felt emotion and machine-recognised emotion becomes part
+        of the performance itself, encouraging exaggerated expressions and sustained
+        physical awareness in response to the audiovisual feedback.
+      </p>
+
+    </section>
+
+
+    <!-- PRACTICE IMAGE -->
+    <section class="project-media-full">
+      <img
+        src="assets/images/read-my-face-out-loud/practice.webp"
+        alt="Live practice of Read My Face Out Loud"
+      >
+    </section>
+
+
+    <!-- META -->
     <section class="project-meta">
-      <div class="keywords">#audio-visual #gesture #synthesis #emotion</div>
+
+      <div class="keywords">
+        #audio-visual #facial-data #sound-synthesis #emotion #feedback #embodiment
+      </div>
+
     </section>
 
   </main>
+
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.min.js"></script>
   <script src="js/sound.js"></script>
   <script src="js/site-shell.js"></script>
   <script src="js/cursor.js"></script>
+
 </body>
 </html>
