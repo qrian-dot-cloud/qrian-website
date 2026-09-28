@@ -376,7 +376,8 @@
           const yearEl = document.createElement('span');
           yearEl.className = 'world-year';
           yearEl.textContent = hovered.year;
-          hoveredTitle.appendChild(yearEl); 
+          hoverTitle.appendChild(yearEl); 
+        }
       }
 
       if (hoverKeywords) {
