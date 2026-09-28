@@ -190,8 +190,8 @@ const WORKS = [
   {
     title: "Liminal Rock",
     year: "2026",
-    tags: ["sketch", "VR", "emotion", "narrative", "collaborative"],
-    zone: "interactive",
+    tags: ["sketch", "VR", "emotion", "narrative"],
+    zone: "collaborative",
     link: "liminal-rock.html",
     desc: "Virtual Reality Experience (quest3, scene/sound design, spatial narrative)",
     img: "assets/images/world/liminal-rock.webp"
