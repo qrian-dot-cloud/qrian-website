@@ -238,6 +238,10 @@
     margin-bottom: 4px;
   }
 
+  #hover-caption .world-year {
+  font-size: var(--world-title-size);
+  }
+  
   #hover-caption .work-details {
     justify-content: center;
   }
