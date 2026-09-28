@@ -52,7 +52,7 @@ const WORKS = [
   },
   {
     title: "The Planet Of Pets",
-    tags: ["collaborative", "interactive", "mediawall", "audio-visual"],
+    tags: ["collaborative", "interactive", "media-wall", "audio-visual"],
     zone: "collaborative",
     link: "the-planet-of-pets.html",
     desc: "Interactive Media Wall (drawing interface, kinetic audio-visual interaction, AI modeling)",
@@ -60,10 +60,10 @@ const WORKS = [
   },
   {
     title: "Meme Machine",
-    tags: ["collaborative", "AI", "language", "culture", "bias", "data", "perception"],
+    tags: ["collaborative", "AI", "language", "cross-cultural identity", "bias", "data", "perception"],
     zone: "collaborative",
     link: "meme-machine.html",
-    desc: "Practice-Based Research (computational perception, cultural lens, data imperialism)",
+    desc: "Generative AI Experimenet (computational perception, cultural lens, data imperialism)",
     img: "assets/images/world/meme-machine.webp"
   },
 
@@ -108,7 +108,7 @@ const WORKS = [
   //independent projects - practice-based research
   {
     title: "Are We Feeling The Same?",
-    tags: ["machine-learning", "emotion", "language", "cross-cultural identity", "voice"],
+    tags: ["machine-listening", "machine-learning", "emotion", "language", "cross-cultural identity", "voice", "perception"],
     zone: "interactive",
     link: "are-we-feeling-the-same.html",
     desc: "Machine Listening System (machine learning, cross-lingual emotion classification, voices)",
@@ -116,7 +116,7 @@ const WORKS = [
   },
   {
     title: "Between Clap and Slap",
-    tags: ["machine-learning", "embodiment", "perception", "sound", "gesture"],
+    tags: ["machine-listening", "machine-learning", "embodiment", "perception", "sound", "gesture", "emotion"],
     zone: "interactive",
     link: "between-clap-and-slap.html",
     desc: "Machine Listening System (machine learning, perceptual mediation, algorithmic authority)",
@@ -135,7 +135,7 @@ const WORKS = [
   },
   {
     title: "Proof of Tears",
-    tags: ["emosmiths", "MR", "sound", "synthesis", "voice", "emotion", "sci-fi", "installation"],
+    tags: ["emosmiths", "MR", "sound", "synthesis", "voice", "emotion", "sci-fi", "installation", "embodiment"],
     series: "Emosmiths",
     zone: "interactive",
     link: "proof-of-tears.html",
@@ -146,7 +146,7 @@ const WORKS = [
   //independent projects - recent interactive ones
   {
   title: "Creative Coding Sketches",
-  tags: ["sketch", "audio-visual", "interactive", "coding"],
+  tags: ["sketch", "audio-visual", "interactive", "coding", "sound"],
   zone: "interactive",
   link: "creative-coding-sketches.html",
   desc: "Audio-Visual, Interactive & Poetic Experiments (archived coding sketches, p5.js/Python)",
@@ -154,10 +154,10 @@ const WORKS = [
   },
   {
     title: "Read My Face Out Loud",
-    tags: ["audio-visual", "gesture", "sound", "synthesis", "emotion", "performance"],
+    tags: ["audio-visual", "machine-vision", "machine-learning", "sound", "synthesis", "emotion", "performance"],
     zone: "interactive",
     link: "read-my-face-out-loud.html",
-    desc: "Audio-Visual Performance (facial data API, sound synthesis, embodiment)",
+    desc: "Audio-Visual Performance (facial emotion recognition API, sound synthesis, embodiment)",
     img: "assets/images/world/read-my-face-out-loud.webp"
   },
   {
@@ -170,7 +170,7 @@ const WORKS = [
   },
   {
     title: "Liminal Rock",
-    tags: ["sketch", "VR", "emotion"],
+    tags: ["sketch", "VR", "emotion", "narrative"],
     zone: "interactive",
     link: "liminal-rock.html",
     desc: "Virtual Reality Experience (quest3, scene/sound design, spatial narrative)",
