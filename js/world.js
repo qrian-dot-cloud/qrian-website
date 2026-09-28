@@ -371,6 +371,12 @@
 
       if (hoverTitle) {
         hoverTitle.textContent = hovered.title;
+
+        if (hovered.year) {
+          const yearEl = document.createElement('span');
+          yearEl.className = 'world-year';
+          yearEl.textContent = hovered.year;
+          hoveredTitle.appendChild(yearEl); 
       }
 
       if (hoverKeywords) {
@@ -408,6 +414,7 @@
 
         return {
           title: work.title,
+          year: work.year || null,
           tags: work.tags,
           series: work.series || null,
           zone: work.zone || null,
