@@ -5,7 +5,10 @@
 
   --world-photo-size       = top-right hover image size
   --world-title-size       = project title size
-  --world-desc-size        = description size
+  --world-year-size        = year next to title
+  --world-type-size        = main subtitle / work type
+  --world-desc-size        = fallback description size
+  --world-detail-size      = smaller material / technique details
   --world-series-size      = series label size
   --world-caption-gap      = gap below the image
   --world-node-scale       = overall tear-node size
@@ -17,7 +20,10 @@
   --world-photo-max: 320px;
 
   --world-title-size: 21px;
+  --world-year-size: 12px;
+  --world-type-size: 13px;
   --world-desc-size: 11px;
+  --world-detail-size: 9px;
   --world-series-size: 9px;
   --world-tooltip-size: 11px;
   --world-caption-gap: 12px;
@@ -60,8 +66,10 @@
   max-height: var(--world-photo-max);
   overflow: hidden;
   pointer-events: none;
+
   -webkit-mask-image:
     radial-gradient(circle closest-side, black 40%, transparent 95%);
+
   mask-image:
     radial-gradient(circle closest-side, black 40%, transparent 95%);
 }
@@ -69,6 +77,7 @@
 #hover-photo .blob-bg {
   position: absolute;
   inset: 0;
+
   background:
     radial-gradient(
       circle,
@@ -107,6 +116,11 @@
   opacity: 1;
 }
 
+
+/* --------------------------------
+   PROJECT TITLE + YEAR
+--------------------------------- */
+
 #hover-caption .title {
   margin-bottom: 5px;
   color: var(--text);
@@ -114,15 +128,18 @@
   line-height: 1.25;
 }
 
-/* Year next to project title */
 #hover-caption .world-year {
   color: var(--muted-2);
-  font-size: 12px;
+  font-size: var(--world-year-size);
   font-weight: 400;
   white-space: nowrap;
 }
 
-/* Whole description area */
+
+/* --------------------------------
+   DESCRIPTION
+--------------------------------- */
+
 #hover-caption .keywords {
   margin-bottom: 8px;
   color: #9DB5BA;
@@ -131,15 +148,14 @@
   letter-spacing: 0.01em;
 }
 
-/* Main work type:
-   e.g. Machine Listening System */
+/* */
 #hover-caption .work-type {
   color: #AFC3C7;
-  font-size: 13px;
+  font-size: var(--world-type-size);
   line-height: 1.65;
 }
 
-/* Smaller material / technique details */
+/* */
 #hover-caption .work-details {
   display: flex;
   flex-wrap: wrap;
@@ -150,14 +166,18 @@
 
   color: #71858B;
   font-family: 'Space Mono', monospace;
-  font-size: 9px;
+  font-size: var(--world-detail-size);
   line-height: 1.45;
 }
 
-/* Keep each phrase intact while allowing wrapping between phrases */
 #hover-caption .work-detail {
   white-space: nowrap;
 }
+
+
+/* --------------------------------
+   SERIES
+--------------------------------- */
 
 #hover-caption .series {
   color: var(--muted-2);
@@ -179,26 +199,22 @@
 }
 
 @media (max-width: 640px) {
+
   :root {
     --world-photo-size: 42vw;
     --world-photo-min: 132px;
     --world-photo-max: 176px;
 
     --world-title-size: 13px;
+    --world-year-size: 11px;
+    --world-type-size: 11px;
     --world-desc-size: 10px;
+    --world-detail-size: 9px;
     --world-series-size: 9px;
     --world-tooltip-size: 10px;
 
     /* Slightly larger tear nodes visually on touch screens. */
     --world-node-scale: 1.12;
-  }
-
-  #hover-caption .work-type {
-    font-size: 10px;
-  }
-  
-  #hover-caption .work-details {
-    justify-content: center;
   }
 
   /* Top preview tear/image sits on the phone's centre axis. */
@@ -220,23 +236,23 @@
     text-align: center;
   }
 
-  #hover-caption .series {
-    margin-bottom: 3px;
-  }
-
   #hover-caption .title {
     margin-bottom: 4px;
   }
 
-  #hover-caption .world-year {
-  font-size: 8px;
+  #hover-caption .work-details {
+    justify-content: center;
   }
 
   #hover-caption .keywords {
     line-height: 1.35;
   }
 
-  /* Mouse-following label is a desktop-only interaction. */
+  #hover-caption .series {
+    margin-bottom: 3px;
+  }
+
+  /* Mouse-following interaction. */
   #tooltip {
     display: none;
   }
