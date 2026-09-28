@@ -114,6 +114,13 @@
   line-height: 1.25;
 }
 
+#hover-caption .world-year {
+  font-size: 11px;
+  color: var(--muted-2);
+  font-weight: 400;
+  white-space: nowrap;
+}
+
 #hover-caption .keywords {
   margin-bottom: 8px;
   color: #9DB5BA;
@@ -155,6 +162,14 @@
 
     /* Slightly larger tear nodes visually on touch screens. */
     --world-node-scale: 1.12;
+  }
+
+  #hover-caption .world-year {
+    font-size: 8px;
+  }
+
+  #hover-caption .keywords > div:first-child {
+    font-size: 10px !important;
   }
 
   /* Top preview tear/image sits on the phone's centre axis. */
