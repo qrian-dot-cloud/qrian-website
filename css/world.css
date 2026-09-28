@@ -129,7 +129,7 @@
 }
 
 #hover-caption .world-year {
-  font-size: var(--world-title-size);
+  font-size: calc(var(--world-title-size) - 1px);
   font-weight: 400;
   white-space: nowrap;
 }
