@@ -138,15 +138,6 @@ const WORKS = [
   },
   
   //independent projects - VR/MR works
-    {
-    title: "Mindful Resonance",
-    year: "2026",
-    tags: ["MR", "sketch", "sound", "gesture", "embodiment"],
-    zone: "interactive",
-    link: "mindful-resonance.html",
-    desc: "Mixed Reality System (quest3, gesture, sound synthesis)",
-    img: "assets/images/world/mindful-resonance.webp"
-  },
   {
     title: "Liminal Rock",
     year: "2026",
@@ -155,6 +146,15 @@ const WORKS = [
     link: "liminal-rock.html",
     desc: "Virtual Reality Experience (quest3, scene/sound design, spatial narrative)",
     img: "assets/images/world/liminal-rock.webp"
+  },
+  {
+    title: "Mindful Resonance",
+    year: "2026",
+    tags: ["MR", "sketch", "sound", "gesture", "embodiment"],
+    zone: "interactive",
+    link: "mindful-resonance.html",
+    desc: "Mixed Reality System (quest3, gesture, sound synthesis)",
+    img: "assets/images/world/mindful-resonance.webp"
   },
   
   //independent projects - series ones
