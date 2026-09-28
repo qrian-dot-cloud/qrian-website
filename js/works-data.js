@@ -33,7 +33,7 @@ const WORKS = [
     tags: ["curation", "liveevent", "music", "performance"],
     zone: "music",
     link: "byulgorae.html",
-    desc: "Live Event Production (organised, hosted by QRIAN)",
+    desc: "Live Event Production (organised & hosted by QRIAN)",
     img: "assets/images/world/byulgorae.webp"
   },
   {
