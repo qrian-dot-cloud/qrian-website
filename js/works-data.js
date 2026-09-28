@@ -111,7 +111,7 @@ const WORKS = [
     tags: ["machine-learning", "emotion", "language", "cross-cultural identity", "voice"],
     zone: "interactive",
     link: "are-we-feeling-the-same.html",
-    desc: "Practice-Based Research (machine learning, cross-lingual emotion classification, voices)",
+    desc: "Machine Listening System (machine learning, cross-lingual emotion classification, voices)",
     img: "assets/images/world/are-we-feeling-the-same.webp"
   },
   {
@@ -119,7 +119,7 @@ const WORKS = [
     tags: ["machine-learning", "embodiment", "perception", "sound", "gesture"],
     zone: "interactive",
     link: "between-clap-and-slap.html",
-    desc: "Practice-Based Research (machine listening, perceptual mediation, algorithmic authority)",
+    desc: "Machine Listening System (machine learning, perceptual mediation, algorithmic authority)",
     img: "assets/images/world/between-clap-and-slap.webp"
   },
   
