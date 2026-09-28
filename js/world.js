@@ -375,7 +375,7 @@
         if (hovered.year) {
           const yearEl = document.createElement('span');
           yearEl.className = 'world-year';
-          yearEl.textContent = hovered.year;
+          yearEl.textContent = `(${hovered.year})`;
           hoverTitle.appendChild(yearEl); 
         }
       }
