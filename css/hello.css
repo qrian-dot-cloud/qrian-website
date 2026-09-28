@@ -1,3 +1,7 @@
+.tear-hint {
+  display: none;
+}
+
 .hello-main {
   width: calc(100% - var(--sidebar-width));
   max-width: 960px;
