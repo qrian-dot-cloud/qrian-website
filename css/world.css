@@ -114,19 +114,49 @@
   line-height: 1.25;
 }
 
+/* Year next to project title */
 #hover-caption .world-year {
-  font-size: 13px;
   color: var(--muted-2);
+  font-size: 12px;
   font-weight: 400;
   white-space: nowrap;
 }
 
+/* Whole description area */
 #hover-caption .keywords {
   margin-bottom: 8px;
   color: #9DB5BA;
   font-size: var(--world-desc-size);
   line-height: 1.45;
   letter-spacing: 0.01em;
+}
+
+/* Main work type:
+   e.g. Machine Listening System */
+#hover-caption .work-type {
+  color: #AFC3C7;
+  font-size: 13px;
+  line-height: 1.65;
+}
+
+/* Smaller material / technique details */
+#hover-caption .work-details {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  column-gap: 7px;
+  row-gap: 2px;
+  margin-top: 6px;
+
+  color: #71858B;
+  font-family: 'Space Mono', monospace;
+  font-size: 9px;
+  line-height: 1.45;
+}
+
+/* Keep each phrase intact while allowing wrapping between phrases */
+#hover-caption .work-detail {
+  white-space: nowrap;
 }
 
 #hover-caption .series {
@@ -136,7 +166,6 @@
   line-height: 1.4;
   letter-spacing: 0.08em;
 }
-
 
 
 /* --------------------------------
@@ -164,12 +193,12 @@
     --world-node-scale: 1.12;
   }
 
-  #hover-caption .world-year {
-    font-size: 8px;
+  #hover-caption .work-type {
+    font-size: 10px;
   }
-
-  #hover-caption .keywords > div:first-child {
-    font-size: 10px !important;
+  
+  #hover-caption .work-details {
+    justify-content: center;
   }
 
   /* Top preview tear/image sits on the phone's centre axis. */
@@ -197,6 +226,10 @@
 
   #hover-caption .title {
     margin-bottom: 4px;
+  }
+
+  #hover-caption .world-year {
+  font-size: 8px;
   }
 
   #hover-caption .keywords {
