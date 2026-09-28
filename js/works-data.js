@@ -71,7 +71,7 @@ const WORKS = [
     tags: ["collaborative", "AI", "language", "cross-cultural identity", "bias", "data", "perception"],
     zone: "collaborative",
     link: "meme-machine.html",
-    desc: "Generative AI Experimenet (computational perception, cultural lens, data imperialism)",
+    desc: "Generative AI Experiment (computational perception, cultural lens, data imperialism)",
     img: "assets/images/world/meme-machine.webp"
   },
 
@@ -89,7 +89,7 @@ const WORKS = [
   {
     title: "Asian Women vs Women in Asia",
     year: "2024",
-    tags: ["neither0nor1", "audio-visual", "cross-cultural identity", "data", "performance"],
+    tags: ["neither0nor1", "audio-visual", "cross-cultural identity", "data", "voice", "performance"],
     series: "Neither 0 Nor 1",
     zone: "performance",
     link: "asian-women-vs-women-in-asia.html",
