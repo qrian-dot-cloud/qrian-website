@@ -156,8 +156,8 @@
         caption.style.left = '50%';
         caption.style.right = 'auto';
         caption.style.transform = 'translateX(-50%)';
-        caption.style.width = 'min(84vw, 340px)';
-        caption.style.maxWidth = '340px';
+        caption.style.width = 'min(84vw, 360px)';
+        caption.style.maxWidth = '360px';
         caption.style.textAlign = 'center';
       } else {
         caption.style.left = 'auto';
@@ -165,7 +165,7 @@
           `${window.innerWidth - rect.right}px`;
         caption.style.transform = 'none';
         caption.style.width = 'auto';
-        caption.style.maxWidth = `${rect.width * 1.85}px`;
+        caption.style.maxWidth = `${rect.width * 1.9}px`;
         caption.style.textAlign = 'right';
       }
     }
