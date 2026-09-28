@@ -74,15 +74,6 @@ const WORKS = [
     desc: "Generative AI Experiment (computational perception, cultural lens, data imperialism)",
     img: "assets/images/world/meme-machine.webp"
   },
-    {
-    title: "Liminal Rock",
-    year: "2026",
-    tags: ["sketch", "VR", "emotion", "narrative"],
-    zone: "collaborative",
-    link: "liminal-rock.html",
-    desc: "Virtual Reality Experience (quest3, scene/sound design, spatial narrative)",
-    img: "assets/images/world/liminal-rock.webp"
-  },
 
   //independent projects - series <neither 0 nor 1>
   {
@@ -195,5 +186,14 @@ const WORKS = [
     link: "mindful-resonance.html",
     desc: "Mixed Reality System (quest3, gesture, sound synthesis)",
     img: "assets/images/world/mindful-resonance.webp"
+  },
+  {
+    title: "Liminal Rock",
+    year: "2026",
+    tags: ["sketch", "VR", "emotion", "narrative"],
+    zone: "interactivce",
+    link: "liminal-rock.html",
+    desc: "Virtual Reality Experience (quest3, scene/sound design, spatial narrative)",
+    img: "assets/images/world/liminal-rock.webp"
   }
 ];
