@@ -2,6 +2,7 @@ const WORKS = [
   //music
   {
     title: "BOSS",
+    year: "2023",
     tags: ["music", "release", "digital single"],
     zone: "music",
     link: "boss.html",
@@ -10,6 +11,7 @@ const WORKS = [
   },
   {
     title: "QRIAN (EP)",
+    year: "2019",
     tags: ["music", "release", "debut", "EP", "cross-cultural identity"],
     zone: "music",
     link: "qrian-ep.html",
@@ -18,6 +20,7 @@ const WORKS = [
   },
   {
     title: "With This",
+    year: "2019",
     tags: ["music", "release", "digital single", "debut"],
     zone: "music",
     link: "with-this.html",
@@ -26,6 +29,7 @@ const WORKS = [
   },
   {
     title: "BYULGORAE",
+    year: "2024-",
     tags: ["curation", "liveevent", "music", "performance"],
     zone: "music",
     link: "byulgorae.html",
@@ -34,6 +38,7 @@ const WORKS = [
   },
   {
   title: "Speaking in QRIAN",
+  year: "2018-",
   tags: ["music", "performance", "live", "DJing"],
   zone: "music",
   link: "speaking-in-qrian.html",
@@ -44,6 +49,7 @@ const WORKS = [
   //collabrative projects
   {
     title: "Lunar Abyss",
+    year: "2025",
     tags: ["collaborative", "mediafacade", "projectionmapping", "audio-visual"],
     zone: "collaborative",
     link: "lunar-abyss.html",
@@ -52,6 +58,7 @@ const WORKS = [
   },
   {
     title: "The Planet Of Pets",
+    year: "2025",
     tags: ["collaborative", "interactive", "media-wall", "audio-visual"],
     zone: "collaborative",
     link: "the-planet-of-pets.html",
@@ -60,6 +67,7 @@ const WORKS = [
   },
   {
     title: "Meme Machine",
+    year: "2025",
     tags: ["collaborative", "AI", "language", "cross-cultural identity", "bias", "data", "perception"],
     zone: "collaborative",
     link: "meme-machine.html",
@@ -70,6 +78,7 @@ const WORKS = [
   //independent projects - series <neither 0 nor 1>
   {
     title: "Gaslighting",
+    year: "2024",
     tags: ["neither0nor1", "physical-computing", "perception", "emotion", "installation"],
     series: "Neither 0 Nor 1",
     zone: "interactive",
@@ -79,6 +88,7 @@ const WORKS = [
   },
   {
     title: "Asian Women vs Women in Asia",
+    year: "2024",
     tags: ["neither0nor1", "audio-visual", "cross-cultural identity", "data", "performance"],
     series: "Neither 0 Nor 1",
     zone: "performance",
@@ -88,6 +98,7 @@ const WORKS = [
   },
   {
     title: "The Freelancer, Never Feeling Free",
+    year: "2024",
     tags: ["neither0nor1", "music", "songwriting", "performance"],
     series: "Neither 0 Nor 1",
     zone: "performance",
@@ -97,6 +108,7 @@ const WORKS = [
   },
   {
     title: "AI: An Imposter or Improver?",
+    year: "2024",
     tags: ["neither0nor1", "film", "documentary", "AI", "perception"],
     series: "Neither 0 Nor 1",
     zone: "film",
@@ -108,6 +120,7 @@ const WORKS = [
   //independent projects - practice-based research
   {
     title: "Are We Feeling The Same?",
+    year: "2026",
     tags: ["machine-listening", "machine-learning", "emotion", "language", "cross-cultural identity", "voice", "perception"],
     zone: "interactive",
     link: "are-we-feeling-the-same.html",
@@ -116,6 +129,7 @@ const WORKS = [
   },
   {
     title: "Between Clap and Slap",
+    year: "2026",
     tags: ["machine-listening", "machine-learning", "embodiment", "perception", "sound", "gesture", "emotion"],
     zone: "interactive",
     link: "between-clap-and-slap.html",
@@ -126,6 +140,7 @@ const WORKS = [
   //independent projects - recent series
   {
     title: "Spring v01",
+    year: "2026",
     tags: ["thechimes", "audio-visual", "gesture", "sound", "synthesis", "embodiment"],
     series: "The Chimes",
     zone: "interactive",
@@ -135,6 +150,7 @@ const WORKS = [
   },
   {
     title: "Proof of Tears",
+    year: "2026",
     tags: ["emosmiths", "MR", "sound", "synthesis", "voice", "emotion", "sci-fi", "installation", "embodiment"],
     series: "Emosmiths",
     zone: "interactive",
@@ -146,6 +162,7 @@ const WORKS = [
   //independent projects - recent interactive ones
   {
   title: "Creative Coding Sketches",
+  year: "2025-",
   tags: ["sketch", "audio-visual", "interactive", "coding", "sound"],
   zone: "interactive",
   link: "creative-coding-sketches.html",
@@ -154,6 +171,7 @@ const WORKS = [
   },
   {
     title: "Read My Face Out Loud",
+    year: "2025",
     tags: ["audio-visual", "machine-vision", "machine-learning", "sound", "synthesis", "emotion", "performance"],
     zone: "interactive",
     link: "read-my-face-out-loud.html",
@@ -162,6 +180,7 @@ const WORKS = [
   },
   {
     title: "Mindful Resonance",
+    year: "2026",
     tags: ["MR", "sketch", "sound", "gesture", "embodiment"],
     zone: "interactive",
     link: "mindful-resonance.html",
@@ -170,6 +189,7 @@ const WORKS = [
   },
   {
     title: "Liminal Rock",
+    year: "2026",
     tags: ["sketch", "VR", "emotion", "narrative"],
     zone: "interactive",
     link: "liminal-rock.html",
