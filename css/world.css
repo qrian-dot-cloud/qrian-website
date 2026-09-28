@@ -20,7 +20,7 @@
   --world-photo-max: 320px;
 
   --world-title-size: 21px;
-  --world-year-size: 12px;
+  /* --world-year-size: 20px; */
   --world-type-size: 13px;
   --world-desc-size: 11px;
   --world-detail-size: 9px;
@@ -204,7 +204,7 @@
     --world-photo-min: 132px;
     --world-photo-max: 176px;
 
-    --world-title-size: 13px;
+    --world-title-size: 14px;
     --world-type-size: 11px;
     --world-desc-size: 10px;
     --world-detail-size: 9px;
