@@ -161,24 +161,6 @@ const WORKS = [
 
   //independent projects - recent interactive ones
   {
-  title: "Creative Coding Sketches",
-  year: "2025-",
-  tags: ["sketch", "audio-visual", "interactive", "coding", "sound"],
-  zone: "interactive",
-  link: "creative-coding-sketches.html",
-  desc: "Audio-Visual, Interactive & Poetic Experiments (p5.js/Python, archived coding sketches)",
-  img: "assets/images/world/creative-coding-sketches.webp"
-  },
-  {
-    title: "Read My Face Out Loud",
-    year: "2025",
-    tags: ["audio-visual", "machine-vision", "machine-learning", "sound", "synthesis", "emotion", "performance"],
-    zone: "interactive",
-    link: "read-my-face-out-loud.html",
-    desc: "Audio-Visual Performance (facial emotion recognition API, sound synthesis, embodiment)",
-    img: "assets/images/world/read-my-face-out-loud.webp"
-  },
-  {
     title: "Mindful Resonance",
     year: "2026",
     tags: ["MR", "sketch", "sound", "gesture", "embodiment"],
@@ -195,5 +177,23 @@ const WORKS = [
     link: "liminal-rock.html",
     desc: "Virtual Reality Experience (quest3, scene/sound design, spatial narrative)",
     img: "assets/images/world/liminal-rock.webp"
+  },
+  {
+  title: "Creative Coding Sketches",
+  year: "2025-",
+  tags: ["sketch", "audio-visual", "interactive", "coding", "sound"],
+  zone: "interactive",
+  link: "creative-coding-sketches.html",
+  desc: "Audio-Visual, Interactive & Poetic Experiments (p5.js/Python, archived coding sketches)",
+  img: "assets/images/world/creative-coding-sketches.webp"
+  },
+  {
+    title: "Read My Face Out Loud",
+    year: "2025",
+    tags: ["audio-visual", "machine-vision", "machine-learning", "sound", "synthesis", "emotion", "performance"],
+    zone: "interactive",
+    link: "read-my-face-out-loud.html",
+    desc: "Audio-Visual Performance (facial emotion recognition API, sound synthesis, embodiment)",
+    img: "assets/images/world/read-my-face-out-loud.webp"
   }
 ];
