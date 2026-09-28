@@ -165,7 +165,7 @@
           `${window.innerWidth - rect.right}px`;
         caption.style.transform = 'none';
         caption.style.width = 'auto';
-        caption.style.maxWidth = `${rect.width * 1.75}px`;
+        caption.style.maxWidth = `${rect.width * 1.85}px`;
         caption.style.textAlign = 'right';
       }
     }
