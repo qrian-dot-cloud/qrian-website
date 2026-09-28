@@ -117,7 +117,7 @@ const WORKS = [
     img: "assets/images/world/ai-an-imposter-or-an-improver.webp"
   },
 
-  //independent projects - practice-based research
+  //independent projects - practice-based research 
   {
     title: "Are We Feeling The Same?",
     year: "2026",
@@ -137,7 +137,27 @@ const WORKS = [
     img: "assets/images/world/between-clap-and-slap.webp"
   },
   
-  //independent projects - recent series
+  //independent projects - VR/MR works
+    {
+    title: "Mindful Resonance",
+    year: "2026",
+    tags: ["MR", "sketch", "sound", "gesture", "embodiment"],
+    zone: "interactive",
+    link: "mindful-resonance.html",
+    desc: "Mixed Reality System (quest3, gesture, sound synthesis)",
+    img: "assets/images/world/mindful-resonance.webp"
+  },
+  {
+    title: "Liminal Rock",
+    year: "2026",
+    tags: ["sketch", "VR", "emotion", "narrative"],
+    zone: "interactivce",
+    link: "liminal-rock.html",
+    desc: "Virtual Reality Experience (quest3, scene/sound design, spatial narrative)",
+    img: "assets/images/world/liminal-rock.webp"
+  },
+  
+  //independent projects - series ones
   {
     title: "Spring v01",
     year: "2026",
@@ -160,24 +180,6 @@ const WORKS = [
   },
 
   //independent projects - recent interactive ones
-  {
-    title: "Mindful Resonance",
-    year: "2026",
-    tags: ["MR", "sketch", "sound", "gesture", "embodiment"],
-    zone: "interactive",
-    link: "mindful-resonance.html",
-    desc: "Mixed Reality System (quest3, gesture, sound synthesis)",
-    img: "assets/images/world/mindful-resonance.webp"
-  },
-  {
-    title: "Liminal Rock",
-    year: "2026",
-    tags: ["sketch", "VR", "emotion", "narrative"],
-    zone: "interactivce",
-    link: "liminal-rock.html",
-    desc: "Virtual Reality Experience (quest3, scene/sound design, spatial narrative)",
-    img: "assets/images/world/liminal-rock.webp"
-  },
   {
   title: "Creative Coding Sketches",
   year: "2025-",
