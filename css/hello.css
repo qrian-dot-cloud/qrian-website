@@ -2,6 +2,13 @@
   display: none;
 }
 
+#corner-drop {
+  background-image: url('../assets/images/hello/03.webp');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
 .hello-main {
   width: calc(100% - var(--sidebar-width));
   max-width: 960px;
