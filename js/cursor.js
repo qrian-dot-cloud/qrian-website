@@ -41,8 +41,16 @@
     let followerVX = 0;
     let followerVY = 0;
 
-    const SPRING = 0.035;
-    const DAMPING = 0.72;
+    const DESKTOP_SPRING = 0.035;
+    const DESKTOP_DAMPING = 0.72;
+    
+    const MOBILE_SPRING = 0.09;
+    const MOBILE_DAMPING = 0.64;
+
+    const MOBILE_POINTER = window.matchMedia(
+      '(hover: none), (pointer: coarse)'
+    );
+    
     const TRAIL_LENGTH = 6;
     const COLOR = [188, 228, 230];
     const trail = [];
@@ -65,11 +73,19 @@
     p.draw = function () {
       p.clear();
 
-      const ax = (p.mouseX - followerX) * SPRING;
-      const ay = (p.mouseY - followerY) * SPRING;
-
-      followerVX = (followerVX + ax) * DAMPING;
-      followerVY = (followerVY + ay) * DAMPING;
+      const spring = MOBILE_POINTER.matches
+        ? MOBILE_SPRING
+        : DESKTOP_SPRING;
+      
+      const damping = MOBILE_POINTER.matches
+        ? MOBILE_DAMPING
+        : DESKTOP_DAMPING;
+      
+      const ax = (p.mouseX - followerX) * spring;
+      const ay = (p.mouseY - followerY) * spring;
+      
+      followerVX = (followerVX + ax) * damping;
+      followerVY = (followerVY + ay) * damping;
       followerX += followerVX;
       followerY += followerVY;
 
