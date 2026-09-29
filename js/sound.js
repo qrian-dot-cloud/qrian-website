@@ -109,6 +109,15 @@ async function ensureAudioUnlocked() {
   return unlockPromise;
 }
 
+function configureAudioSession() {
+  if ('audioSession' in navigator) {
+    try {
+      navigator.audioSession.type = 'playback';
+    } catch (e) {
+      console.warn('Could not set audio session type:', e);
+    }
+  }
+}
 
 function initSoundEngine() {
   /*
