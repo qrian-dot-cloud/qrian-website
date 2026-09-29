@@ -2,6 +2,7 @@ let audioCtx = null;
 let audioUnlocked = false;
 let unlockPromise = null;
 
+const MASTER_VOLUME = 1.25;
 const PENTATONIC_ROOTS = [
   261.63,
   293.66,
@@ -222,7 +223,7 @@ async function playSwoosh() {
 
 
     const peakVol =
-      0.045 /
+      (0.045 * MASTER_VOLUME) /
       CHORD_SEMITONES.length *
       (1 - i * 0.12);
 
@@ -357,7 +358,7 @@ async function playMenuBlip() {
   );
 
   bodyGain.gain.exponentialRampToValueAtTime(
-    0.03,
+    0.03 * MASTER_VOLUME,
     now + 0.08
   );
 
