@@ -129,6 +129,7 @@ function initSoundEngine() {
   */
 
   const unlock = () => {
+    configureAudioSession();
     ensureAudioUnlocked();
   };
 
