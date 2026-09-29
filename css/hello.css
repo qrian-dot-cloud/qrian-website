@@ -9,6 +9,14 @@
   background-repeat: no-repeat;
 }
 
+#corner-drop:hover {
+  background-image: radial-gradient(
+    circle,
+    rgba(188, 228, 230, 0.4),
+    rgba(188, 228, 230, 0.06) 70%
+  );
+}
+
 .hello-main {
   width: calc(100% - var(--sidebar-width));
   max-width: 960px;
