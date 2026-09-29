@@ -74,6 +74,8 @@ function primeAudioContext() {
 
 
 async function ensureAudioUnlocked() {
+  configureAudioSession();
+  
   const ctx = getAudioContext();
 
   if (!ctx) return false;
@@ -128,6 +130,8 @@ function initSoundEngine() {
     We listen globally so interaction with the page can
     wake the audio engine before canvas-generated sounds occur.
   */
+
+  configureAudioSession();
 
   const unlock = () => {
     configureAudioSession();
