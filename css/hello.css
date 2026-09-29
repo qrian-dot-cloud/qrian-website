@@ -3,18 +3,35 @@
 }
 
 #corner-drop {
-  background-image: url('../assets/images/hello/03.webp');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
+  position: absolute;
 
-#corner-drop:hover {
-  background-image: radial-gradient(
+  /* original tear */
+  background: radial-gradient(
     circle,
     rgba(188, 228, 230, 0.4),
     rgba(188, 228, 230, 0.06) 70%
   );
+}
+
+/* profile image layer */
+#corner-drop::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background-image: url('../assets/images/hello/03.webp');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  opacity: 1;
+  transition: opacity 0.45s ease;
+  pointer-events: none;
+}
+
+/* hover → profile slowly fades out, tear underneath appears */
+#corner-drop:hover::before {
+  opacity: 0;
 }
 
 .hello-main {
