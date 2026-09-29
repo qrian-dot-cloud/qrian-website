@@ -33,9 +33,7 @@
     body.insertAdjacentHTML(
       'beforeend',
       `<div class="tear-hint">
-        /* Your tear resonates when it meets other tears.
-        <br>
-        Click once to wake it. */
+        /* Your tear resonates when it meets other tears. */
       </div>`
     );
   }
