@@ -33,7 +33,7 @@
     body.insertAdjacentHTML(
       'beforeend',
       `<div class="tear-hint">
-        /* your tear tracing your movements <br>
+        /* the tear tracing your movements <br>
         resonates when it meets other tears */
       </div>`
     );
