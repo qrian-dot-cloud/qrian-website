@@ -215,8 +215,6 @@
         // Play once when the cursor ENTERS the empty big tear.
         if (isInside && !wasHoveringEmptyBigTear) {
           if (
-            typeof audioUnlocked !== 'undefined' &&
-            audioUnlocked &&
             typeof playSwoosh === 'function'
           ) {
             playSwoosh();
@@ -303,8 +301,6 @@
       if (
         currentTitle &&
         currentTitle !== previousHoveredTitle &&
-        typeof audioUnlocked !== 'undefined' &&
-        audioUnlocked &&
         typeof playSwoosh === 'function'
       ) {
         playSwoosh();
