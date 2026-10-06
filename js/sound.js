@@ -74,7 +74,6 @@ function primeAudioContext() {
 
 
 async function ensureAudioUnlocked() {
-  configureAudioSession();
   
   const ctx = getAudioContext();
 
