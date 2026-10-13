@@ -229,18 +229,26 @@
         (event) => {
           if (event.pointerType === 'mouse') return;
           if (!isMobileMode()) return;
-    
-          if (
-            isInsideBigTear(event.clientX, event.clientY) &&
-            typeof playSwoosh === 'function'
-          ) {
+      
+          if (!isInsideBigTear(event.clientX, event.clientY)) {
+            return;
+          }
+      
+          // A project is already previewed:
+          // tapping the large tear enters that project.
+          if (selectedMobileNode && selectedMobileNode.link) {
+            window.location.href = selectedMobileNode.link;
+            return;
+          }
+      
+          // No preview:
+          // the large tear simply resonates.
+          if (typeof playSwoosh === 'function') {
             playSwoosh();
           }
         },
         { passive: true }
       );
-    }
-
 
     function renderWorkDescription(element, text) {
       if (!element) return;
