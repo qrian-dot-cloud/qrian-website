@@ -249,6 +249,7 @@
         },
         { passive: true }
       );
+    }
 
     function renderWorkDescription(element, text) {
       if (!element) return;
