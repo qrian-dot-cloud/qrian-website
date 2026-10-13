@@ -174,60 +174,71 @@
     function setupEmptyBigTearSound() {
       const hoverPhoto = document.getElementById('hover-photo');
       const hoverImg = document.getElementById('hover-img');
-
+    
       if (!hoverPhoto || !hoverImg) return;
-
+    
+      function isInsideBigTear(clientX, clientY) {
+        const rect = hoverPhoto.getBoundingClientRect();
+    
+        const centerX = rect.left + rect.width / 2;
+        const centerY = rect.top + rect.height / 2;
+    
+        const radiusX = rect.width / 2;
+        const radiusY = rect.height / 2;
+    
+        const dx = (clientX - centerX) / radiusX;
+        const dy = (clientY - centerY) / radiusY;
+    
+        return dx * dx + dy * dy <= 1;
+      }
+    
+      // Desktop: cursor enters the big tear
       window.addEventListener('mousemove', (event) => {
-        // Desktop  interaction only.
         if (isMobileMode()) {
           wasHoveringEmptyBigTear = false;
           return;
         }
-
-        /*
-          When a small network tear is ed, its project image
-          appears in the big tear. In that state the small tear
-          already triggers playSwoosh(), so the big tear should not
-          trigger another sound.
-        */
+    
+        // Network tear preview is already producing its own sound
         if (hoverImg.classList.contains('active')) {
           wasHoveringEmptyBigTear = false;
           return;
         }
-
-        const rect = hoverPhoto.getBoundingClientRect();
-
-        const centerX = rect.left + rect.width / 2;
-        const centerY = rect.top + rect.height / 2;
-
-        /*
-          Use an ellipse hit area matching the visible big tear
-          closely enough without changing pointer-events/CSS.
-        */
-        const radiusX = rect.width / 2;
-        const radiusY = rect.height / 2;
-
-        const dx = (event.clientX - centerX) / radiusX;
-        const dy = (event.clientY - centerY) / radiusY;
-
-        const isInside = dx * dx + dy * dy <= 1;
-
-        // Play once when the cursor ENTERS the empty big tear.
+    
+        const isInside = isInsideBigTear(
+          event.clientX,
+          event.clientY
+        );
+    
         if (isInside && !wasHoveringEmptyBigTear) {
-          if (
-            typeof playSwoosh === 'function'
-          ) {
+          if (typeof playSwoosh === 'function') {
             playSwoosh();
           }
-
+    
           wasHoveringEmptyBigTear = true;
         }
-
-        // Cursor must leave before another  can retrigger sound.
+    
         if (!isInside) {
           wasHoveringEmptyBigTear = false;
         }
       });
+    
+      // Mobile: touching the big tear
+      window.addEventListener(
+        'pointerdown',
+        (event) => {
+          if (event.pointerType === 'mouse') return;
+          if (!isMobileMode()) return;
+    
+          if (
+            isInsideBigTear(event.clientX, event.clientY) &&
+            typeof playSwoosh === 'function'
+          ) {
+            playSwoosh();
+          }
+        },
+        { passive: true }
+      );
     }
 
 
