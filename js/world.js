@@ -92,18 +92,26 @@
     }
 
     function centerOfWorld() {
-      if (isMobileMode()) {
-        /*
-          Mobile composition:
-          exact horizontal centre, with the network slightly lower
-          so the top preview tear has its own space.
-        */
+      // Phone: full-width mobile composition
+      if (isMobileMode() && window.innerWidth <= 640) {
         return {
           x: p.width * 0.5,
           y: p.height * 0.7
         };
       }
-
+    
+      // Tablet / touch device with desktop sidebar
+      if (isMobileMode() && window.innerWidth > 640) {
+        const left = sidebarOffsetX();
+        const availableWidth = p.width - left;
+    
+        return {
+          x: left + availableWidth * 0.5,
+          y: p.height * 0.68
+        };
+      }
+    
+      // Desktop
       return {
         x:
           sidebarOffsetX() +
