@@ -279,3 +279,9 @@
     line-height: 1.5;
   }
 }
+
+@media (hover: none) and (pointer: coarse) {
+  #hover-caption .work-details {
+    justify-content: center;
+  }
+}
