@@ -197,7 +197,8 @@
   display: none;
 }
 
-@media (max-width: 640px) {
+@media (max-width: 640px),
+     (orientation: portrait) and (hover: none) and (pointer: coarse) {
 
   :root {
     --world-photo-size: 42vw;
