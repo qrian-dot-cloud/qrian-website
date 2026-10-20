@@ -96,3 +96,32 @@
     font-size: 20px;
   }
 }
+
+@media (min-width: 641px) and (max-width: 1024px)
+       and (orientation: portrait)
+       and (hover: none) and (pointer: coarse) {
+
+  .hello-main {
+    width: 100%;
+    max-width: none;
+    margin: 0;
+    padding: 84px 20px 80px;
+  }
+
+  .hello-statement {
+    font-size: 20px;
+  }
+
+  #corner-drop {
+    top: 76px;
+    right: 20px;
+
+    width: 180px;
+    height: 180px;
+
+    min-width: 180px;
+    min-height: 180px;
+    max-width: 180px;
+    max-height: 180px;
+  }
+}
