@@ -122,7 +122,7 @@
       if (isTabletPortrait()) {
         return {
           x: p.width * 0.5,
-          y: p.height * 0.68
+          y: p.height * 0.65
         };
       }
     
