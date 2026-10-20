@@ -199,7 +199,8 @@ body.interactive-page .sidebar {
    Mobile shared layout
 ----------------------------- */
 
-@media (max-width: 640px) {
+@media (max-width: 640px),
+     (max-width: 1024px) and (orientation: portrait) and (hover: none) and (pointer: coarse) {
   :root {
     --sidebar-width: 0px;
     --page-pad-x: 20px;
