@@ -254,15 +254,16 @@ body.interactive-page .sidebar {
   }
 }
 
-@media (min-width: 641px) and (max-width: 1024px)
-       and (orientation: portrait)
+/* iPad landscape */
+@media (min-width: 641px) and (max-width: 1366px)
+       and (orientation: landscape)
        and (hover: none) and (pointer: coarse) {
 
   .logo {
-    font-size: 24px;
+    font-size: 42px;
   }
 
   .code-nav {
-    font-size: 15px;
+    font-size: 28px;
   }
 }
