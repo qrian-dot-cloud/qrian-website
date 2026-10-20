@@ -130,16 +130,7 @@
        and (orientation: landscape)
        and (hover: none) and (pointer: coarse) {
 
-  :root {
-    --sidebar-width: 240px;
-  }
-
-  .sidebar {
-    padding-left: 32px;
-    padding-right: 24px;
-  }
-
   .hello-main {
-    padding-left: 48px;
+    padding-left: 40px;
   }
 }
