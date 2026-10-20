@@ -30,13 +30,31 @@
         window.matchMedia('(hover: none) and (pointer: coarse)').matches
       );
     }
-
-    function sidebarOffsetX() {
-      return window.innerWidth <= 640 ? 0 : 280;
+    
+    // iPad/tablet portrait layout only.
+    // This does NOT include phones because phones already have their own layout.
+    function isTabletPortrait() {
+      return (
+        window.innerWidth > 640 &&
+        window.innerWidth <= 1024 &&
+        window.matchMedia('(orientation: portrait)').matches &&
+        window.matchMedia('(hover: none) and (pointer: coarse)').matches
+      );
     }
-
+    
+    // Visual layout:
+    // phone + portrait tablet = mobile-style layout
+    // landscape tablet + desktop = desktop-style layout
+    function isMobileLayout() {
+      return window.innerWidth <= 640 || isTabletPortrait();
+    }
+    
+    function sidebarOffsetX() {
+      return isMobileLayout() ? 0 : 280;
+    }
+    
     function sidebarOffsetY() {
-      return window.innerWidth <= 640 ? 70 : 0;
+      return isMobileLayout() ? 70 : 0;
     }
 
     function nodeScale() {
@@ -92,26 +110,24 @@
     }
 
     function centerOfWorld() {
-      // Phone: full-width mobile composition
-      if (isMobileMode() && window.innerWidth <= 640) {
+    function centerOfWorld() {
+      // PHONE 
+      if (window.innerWidth <= 640) {
         return {
           x: p.width * 0.5,
           y: p.height * 0.7
         };
       }
     
-      // Tablet / touch device with desktop sidebar
-      if (isMobileMode() && window.innerWidth > 640) {
-        const left = sidebarOffsetX();
-        const availableWidth = p.width - left;
-    
+      // IPAD / TABLET PORTRAIT only
+      if (isTabletPortrait()) {
         return {
-          x: left + availableWidth * 0.5,
+          x: p.width * 0.5,
           y: p.height * 0.68
         };
       }
     
-      // Desktop
+      // DESKTOP + TABLET LANDSCAPE
       return {
         x:
           sidebarOffsetX() +
@@ -160,7 +176,7 @@
 
       caption.style.top = `${rect.bottom + gap}px`;
 
-      if (isMobileMode()) {
+      if (isMobileLayout()) {
         caption.style.left = '50%';
         caption.style.right = 'auto';
         caption.style.transform = 'translateX(-50%)';
@@ -502,11 +518,16 @@
         node.x += node.vx;
         node.y += node.vy;
 
-        const maxRadius =
+        const rawMaxRadius =
           p.min(
             p.width - sidebarOffsetX(),
             p.height - sidebarOffsetY()
           ) / 2 - 40;
+        
+        const maxRadius =
+          isTabletPortrait()
+            ? p.min(rawMaxRadius, 300)
+            : rawMaxRadius;
 
         const dx2 = node.x - center.x;
         const dy2 = node.y - center.y;
