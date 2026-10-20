@@ -110,7 +110,6 @@
     }
 
     function centerOfWorld() {
-    function centerOfWorld() {
       // PHONE 
       if (window.innerWidth <= 640) {
         return {
