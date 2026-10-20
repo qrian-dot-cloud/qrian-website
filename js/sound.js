@@ -133,9 +133,41 @@ function initSoundEngine() {
   configureAudioSession();
 
   const unlock = () => {
-    configureAudioSession();
-    ensureAudioUnlocked();
-  };
+  configureAudioSession();
+
+  let ctx = getAudioContext();
+  if (!ctx) return;
+
+  /*
+    Safari / iPadOS can occasionally leave Web Audio
+    in a non-standard "interrupted" state.
+    Re-create the context from the real user gesture.
+  */
+  if (ctx.state === 'interrupted' || ctx.state === 'closed') {
+    const oldCtx = ctx;
+
+    audioCtx = null;
+    audioUnlocked = false;
+    unlockPromise = null;
+
+    try {
+      if (oldCtx.state !== 'closed') {
+        oldCtx.close().catch(() => {});
+      }
+    } catch (e) {}
+
+    ctx = getAudioContext();
+    if (!ctx) return;
+  }
+
+  /*
+    Important for iOS / iPadOS:
+    prime synchronously while the user gesture is still active.
+  */
+  primeAudioContext();
+
+  ensureAudioUnlocked();
+};
 
   document.addEventListener(
     'pointerdown',
