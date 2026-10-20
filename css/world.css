@@ -198,7 +198,9 @@
 }
 
 @media (max-width: 640px),
-     (orientation: portrait) and (hover: none) and (pointer: coarse) {
+       (min-width: 641px) and (max-width: 1024px)
+       and (orientation: portrait)
+       and (hover: none) and (pointer: coarse) {
 
   :root {
     --world-photo-size: 42vw;
@@ -281,8 +283,3 @@
   }
 }
 
-@media (hover: none) and (pointer: coarse) {
-  #hover-caption .work-details {
-    justify-content: center;
-  }
-}
