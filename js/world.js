@@ -41,6 +41,15 @@
         window.matchMedia('(hover: none) and (pointer: coarse)').matches
       );
     }
+
+    function isTabletLandscape() {
+      return (
+        window.innerWidth > 640 &&
+        window.innerWidth <= 1366 &&
+        window.matchMedia('(orientation: landscape)').matches &&
+        window.matchMedia('(hover: none) and (pointer: coarse)').matches
+      );
+    }
     
     // Visual layout:
     // phone + portrait tablet = mobile-style layout
@@ -123,6 +132,18 @@
         return {
           x: p.width * 0.5,
           y: p.height * 0.65
+        };
+      }
+
+      // IPAD / TABLET LANDSCAPE
+      if (isTabletLandscape()) {
+        return {
+          x:
+            sidebarOffsetX() +
+            (p.width - sidebarOffsetX()) * 0.36,
+          y:
+            sidebarOffsetY() +
+            (p.height - sidebarOffsetY()) / 2
         };
       }
     
