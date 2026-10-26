@@ -140,14 +140,14 @@
         return {
           x:
             sidebarOffsetX() +
-            (p.width - sidebarOffsetX()) * 0.36,
+            (p.width - sidebarOffsetX()) * 0.34,
           y:
             sidebarOffsetY() +
             (p.height - sidebarOffsetY()) / 2
         };
       }
     
-      // DESKTOP + TABLET LANDSCAPE
+      // DESKTOP 
       return {
         x:
           sidebarOffsetX() +
