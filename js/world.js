@@ -417,6 +417,11 @@
 
       tooltip = document.getElementById('tooltip');
 
+      /* menu sound */
+      if (typeof attachHoverChime === 'function') {
+        attachHoverChime('.code-nav a, .logo', playMenuBlip);
+      }
+      
       setupEmptyBigTearSound();
 
       const center = centerOfWorld();
@@ -703,8 +708,22 @@
         Second tap on the same tear = enter.
       */
       selectedMobileNode = tapped;
+      
+      /*
+        Play immediately inside the real touch gesture.
+        This is important for iPadOS Safari.
+      */
+      if (typeof playSwoosh === 'function') {
+        playSwoosh();
+      }
+      
+      /*
+        Prevent updateHoverDOM() from playing the same sound
+        again on the next animation frame.
+      */
+      previousHoveredTitle = tapped.title;
+      
       return false;
-    };
 
     p.mouseClicked = function (event) {
       const target = event && event.target;
