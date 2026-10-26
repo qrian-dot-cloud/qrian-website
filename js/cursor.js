@@ -47,8 +47,16 @@
     const MOBILE_SPRING = 0.09;
     const MOBILE_DAMPING = 0.64;
 
+    const TABLET_SPRING = 0.12;
+    const TABLET_DAMPING = 0.62;
+
     const MOBILE_POINTER = window.matchMedia(
       '(hover: none), (pointer: coarse)'
+    );
+
+    const TABLET_POINTER = window.matchMedia(
+      '(min-width: 641px) and (max-width: 1366px) and ' +
+      '(hover: none) and (pointer: coarse)'
     );
     
     const TRAIL_LENGTH = 6;
@@ -73,13 +81,17 @@
     p.draw = function () {
       p.clear();
 
-      const spring = MOBILE_POINTER.matches
-        ? MOBILE_SPRING
-        : DESKTOP_SPRING;
+      const spring = TABLET_POINTER.matches
+        ? TABLET_SPRING
+        : MOBILE_POINTER.matches
+          ? MOBILE_SPRING
+          : DESKTOP_SPRING;
       
-      const damping = MOBILE_POINTER.matches
-        ? MOBILE_DAMPING
-        : DESKTOP_DAMPING;
+      const damping = TABLET_POINTER.matches
+        ? TABLET_DAMPING
+        : MOBILE_POINTER.matches
+          ? MOBILE_DAMPING
+          : DESKTOP_DAMPING;
       
       const ax = (p.mouseX - followerX) * spring;
       const ay = (p.mouseY - followerY) * spring;
