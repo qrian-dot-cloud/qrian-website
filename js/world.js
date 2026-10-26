@@ -724,8 +724,9 @@
       previousHoveredTitle = tapped.title;
       
       return false;
+      };
 
-    p.mouseClicked = function (event) {
+      p.mouseClicked = function (event) {
       const target = event && event.target;
 
       if (
@@ -740,6 +741,7 @@
         Mobile Safari/Chrome may create a synthetic mouse click after touch.
         Ignore it, so one tap never previews AND enters at the same time.
       */
+        
       if (
         isMobileMode() ||
         Date.now() - lastTouchAt < 650
