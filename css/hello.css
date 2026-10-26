@@ -98,22 +98,23 @@
 }
 
 @media (min-width: 641px) and (max-width: 1024px)
-       and (orientation: portrait)
-       and (hover: none) and (pointer: coarse) {
+     and (orientation: portrait)
+     and (hover: none) and (pointer: coarse) {
 
   .hello-main {
     width: 100%;
     max-width: none;
     margin: 0;
-    padding: 84px 20px 80px;
+    padding: 100px 20px 80px;
   }
+}
 
   .hello-statement {
     font-size: 20px;
   }
 
   #corner-drop {
-    top: 76px;
+    top: 92px;
     right: 20px;
 
     width: 180px;
