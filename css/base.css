@@ -254,16 +254,31 @@ body.interactive-page .sidebar {
   }
 }
 
+/* iPad portrait */
+@media (min-width: 641px) and (max-width: 1024px)
+       and (orientation: portrait)
+       and (hover: none) and (pointer: coarse) {
+
+  .logo {
+    font-size: 28px;
+  }
+
+  .code-nav {
+    font-size: 18px;
+  }
+}
+
+
 /* iPad landscape */
 @media (min-width: 641px) and (max-width: 1366px)
        and (orientation: landscape)
        and (hover: none) and (pointer: coarse) {
 
   .logo {
-    font-size: 42px;
+    font-size: 34px;
   }
 
   .code-nav {
-    font-size: 28px;
+    font-size: 21px;
   }
 }
