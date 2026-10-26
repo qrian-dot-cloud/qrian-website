@@ -283,3 +283,12 @@
   }
 }
 
+/* iPad only */
+@media (min-width: 641px) and (max-width: 1366px)
+       and (hover: none) and (pointer: coarse) {
+
+  #hover-photo {
+    top: 84px;
+  }
+}
+
