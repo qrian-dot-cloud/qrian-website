@@ -275,10 +275,10 @@ body.interactive-page .sidebar {
        and (hover: none) and (pointer: coarse) {
 
   .logo {
-    font-size: 34px;
+    font-size: 38px;
   }
 
   .code-nav {
-    font-size: 21px;
+    font-size: 24px;
   }
 }
