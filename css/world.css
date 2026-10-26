@@ -292,3 +292,13 @@
   }
 }
 
+/* iPad portrait */
+@media (min-width: 641px) and (max-width: 1024px)
+       and (orientation: portrait)
+       and (hover: none) and (pointer: coarse) {
+
+  #hover-photo {
+    top: 92px;
+  }
+}
+
