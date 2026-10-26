@@ -259,6 +259,10 @@ body.interactive-page .sidebar {
        and (orientation: portrait)
        and (hover: none) and (pointer: coarse) {
 
+  .sidebar {
+    padding: 20px 16px 14px;
+  }
+
   .logo {
     font-size: 28px;
   }
