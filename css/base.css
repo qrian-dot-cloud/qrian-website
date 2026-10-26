@@ -278,6 +278,15 @@ body.interactive-page .sidebar {
        and (orientation: landscape)
        and (hover: none) and (pointer: coarse) {
 
+    .sidebar {
+    background: transparent !important;
+    pointer-events: none;
+  }
+
+  .sidebar a {
+    pointer-events: auto;
+  }
+
   .logo {
     font-size: 40px;
   }
