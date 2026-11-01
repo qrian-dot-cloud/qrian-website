@@ -35,23 +35,12 @@
       </div>
 
       <p class="project-concept">
-        <em>Read My Face Out Loud</em> explores a reciprocal relationship
-        between facial expression and machine interpretation.
+        <em>Read My Face Out Loud, And We Resonate</em> explores a reciprocal
+        relationship between facial expression and machine interpretation.
         Facial emotion and position are translated into sound and responsive visuals,
         creating a continuous feedback loop between performer and system.
       </p>
 
-    </section>
-
-
-    <!-- VIDEO -->
-    <section class="project-video">
-      <iframe
-        src="https://www.youtube-nocookie.com/embed/K-DiIlkALeQ"
-        title="Read My Face Out Loud — performance documentation"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen>
-      </iframe>
     </section>
 
 
@@ -63,41 +52,49 @@
       </h2>
 
       <p class="project-copy">
-        Facial emotion data is processed in Max/MSP, where detected emotions
-        trigger different musical modes in real time. Facial position data is
-        exchanged through OSC and used to introduce variations in pitch and rhythm.
+        Facial emotion data is processed in Max/MSP, where recognised emotions
+        trigger different musical modes represented as MIDI note sets.
+        Notes are sequenced within each mode, while octave and reverb parameters
+        can be adjusted by the performer in response to the generated sound.
       </p>
 
       <p class="project-copy">
-        In parallel, TouchDesigner processes facial movement and transforms it
-        into abstract, wave-like visual structures. Sound, image, facial movement,
-        and machine interpretation continuously affect one another.
+        TouchDesigner tracks facial position through MediaPipe and sends X-axis
+        data to Max/MSP via OSC. This affects step size and introduces subtle
+        variations in pitch and rhythm.
+      </p>
+
+      <p class="project-copy">
+        In parallel, TouchDesigner compares changes in facial movement between
+        frames and transforms them into abstract, wave-like visual structures.
+        Sound, image, facial movement and machine interpretation continuously
+        feed back into one another.
       </p>
 
     </section>
 
 
-    <!-- PROCESS -->
+    <!-- PROCESS / SYSTEM IMAGES -->
     <section class="project-gallery">
 
       <figure>
         <img
           src="assets/images/read-my-face-out-loud/max-patch.webp"
-          alt="Max/MSP patch for facial emotion recognition and sound synthesis"
+          alt="Max/MSP patch showing facial emotion recognition, mode switching and MIDI-based sound synthesis"
         >
       </figure>
 
       <figure>
         <img
           src="assets/images/read-my-face-out-loud/touchdesigner.webp"
-          alt="TouchDesigner network generating responsive visuals"
+          alt="TouchDesigner network processing facial position data and generating responsive visuals"
         >
       </figure>
 
       <figure>
         <img
           src="assets/images/read-my-face-out-loud/system.webp"
-          alt="Max/MSP and TouchDesigner running simultaneously"
+          alt="Max/MSP and TouchDesigner running simultaneously as an audiovisual feedback system"
         >
       </figure>
 
@@ -119,8 +116,17 @@
 
       <p class="project-copy">
         The gap between felt emotion and machine-recognised emotion becomes part
-        of the performance itself, encouraging exaggerated expressions and sustained
-        physical awareness in response to the audiovisual feedback.
+        of the performance itself. As the performer listens and responds to the
+        system, they begin to exaggerate and adjust their expressions in ways the
+        machine can read, shifting the relationship between controlling the system
+        and performing for it.
+      </p>
+
+      <p class="project-copy">
+        Visual feedback also depends on the performer remaining within the
+        camera's view. Moving outside it interrupts the response, requiring a
+        sustained physical awareness of how the body and face are being perceived
+        by the machine.
       </p>
 
     </section>
@@ -130,7 +136,7 @@
     <section class="project-media-full">
       <img
         src="assets/images/read-my-face-out-loud/practice.webp"
-        alt="Live practice of Read My Face Out Loud"
+        alt="Bedroom live practice documenting embodied interaction between facial expression, sound and visuals"
       >
     </section>
 
@@ -139,7 +145,11 @@
     <section class="project-meta">
 
       <div class="keywords">
-        #audio-visual #facial-data #sound-synthesis #emotion #feedback #embodiment
+        #audio-visual #machine-vision #machine-learning #sound #synthesis #emotion #performance #embodiment
+      </div>
+
+      <div class="project-details">
+        2025 · Max/MSP · TouchDesigner · Node.js · MediaPipe · OSC
       </div>
 
     </section>
