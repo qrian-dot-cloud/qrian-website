@@ -18,12 +18,12 @@
     <section class="project-hero">
       <img
         src="assets/images/read-my-face-out-loud/hero.webp"
-        alt="Read My Face Out Loud"
+        alt="Read My Face Out Loud, And We Resonate"
       >
     </section>
 
 
-    <!-- INTRO -->
+    <!-- TITLE -->
     <section class="project-intro">
 
       <h1 class="project-title">
@@ -31,113 +31,262 @@
       </h1>
 
       <div class="project-medium">
-        Audio-Visual Performance — facial emotion recognition, sound synthesis, real-time visualisation
+        Audio-Visual Performance
       </div>
-
-      <p class="project-concept">
-        <em>Read My Face Out Loud, And We Resonate</em> explores a reciprocal
-        relationship between facial expression and machine interpretation.
-        Facial emotion and position are translated into sound and responsive visuals,
-        creating a continuous feedback loop between performer and system.
-      </p>
 
     </section>
 
 
-    <!-- SYSTEM -->
+    <!-- ABSTRACT -->
     <section class="project-section">
 
       <h2 class="project-section-title">
-        System
+        Abstract
       </h2>
 
       <p class="project-copy">
-        Facial emotion data is processed in Max/MSP, where recognised emotions
-        trigger different musical modes represented as MIDI note sets.
-        Notes are sequenced within each mode, while octave and reverb parameters
-        can be adjusted by the performer in response to the generated sound.
-      </p>
-
-      <p class="project-copy">
-        TouchDesigner tracks facial position through MediaPipe and sends X-axis
-        data to Max/MSP via OSC. This affects step size and introduces subtle
-        variations in pitch and rhythm.
-      </p>
-
-      <p class="project-copy">
-        In parallel, TouchDesigner compares changes in facial movement between
-        frames and transforms them into abstract, wave-like visual structures.
-        Sound, image, facial movement and machine interpretation continuously
-        feed back into one another.
+        This creative project explores a reciprocal relationship formed through facial emotion
+        and its data interpretation, switching between different musical modes, with notes randomly
+        sequenced within each mode, and using facial location to affect step size. The system is
+        developed using Max/MSP and TouchDesigner and implemented through a facial emotion
+        recognition API.
       </p>
 
     </section>
 
 
-    <!-- PROCESS / SYSTEM IMAGES -->
-    <section class="project-gallery">
+    <!-- INTRODUCTION -->
+    <section class="project-section">
+
+      <h2 class="project-section-title">
+        Introduction
+      </h2>
+
+      <p class="project-copy">
+        What do we face most often by showing our faces? Mobile phones, laptops, and other
+        camera-equipped devices collect vast amounts of information in daily life, and human
+        emotions are inferred from this exposure through facial expressions. <em>Read My Face Out Loud,
+        And We Resonate</em> allows the performer to read their face as data, then receive feedback
+        from the system in return, similar to other forms of information exchange. The performer
+        and the system respond to each other continuously. This project examines the relationship
+        between machines and humans, and how this relationship resonates through sonic and visual
+        representations of information.
+      </p>
+
+    </section>
+
+
+    <!-- CONTEXTUALISATION -->
+    <section class="project-section">
+
+      <h2 class="project-section-title">
+        Contextualisation
+      </h2>
+
+      <p class="project-copy">
+        The relationship between facial representation and emotional expression has a history
+        of over a hundred years of research (Kostić &amp; Chadee ed., 2015:3), and external APIs
+        commonly categorise primary emotions such as happiness, sadness, fear, anger, surprise,
+        and disgust (Buck &amp; Millar, 2015:173). As the human vocal range can express emotion
+        from sigh to scream, each musical mode is linked to an emotion recognition based on my
+        subjective association of colour and mode. Emotion remains subjective beyond the full
+        comprehension of objective science (ibid:174), and the sound of musical modes is similarly
+        subjective.
+      </p>
+
+      <p class="project-copy">
+        In this system, facial data is sent to Max/MSP for sonic response and to TouchDesigner
+        for abstract visual mirroring. The performer sends and receives facial expression data
+        visually through the right brain and auditory responses through the left brain
+        (Givens, 2015:19-20). Through OSC routing, humans and machines exchange data continuously,
+        responding to each other via feedback and information flow.
+      </p>
+
+    </section>
+
+
+    <!-- CREATIVE METHODOLOGY -->
+    <section class="project-section">
+
+      <h2 class="project-section-title">
+        Creative Methodology
+      </h2>
+
+      <p class="project-copy">
+        Max/MSP enables the use of Node.js to run a facial emotion recognition API on a local host.
+        Each musical mode, represented as MIDI note sets, is triggered in real time depending on
+        detected facial emotions. The octave and reverb wet/dry values can be adjusted by the
+        performer, allowing direct responses to sonic output. TouchDesigner sends facial X-axis
+        data from MediaPipe, which affects step size through OSC, resulting in subtle variations
+        in pitch and rhythmic changes.
+      </p>
+
+    </section>
+
+
+    <!-- FIGURE 1 -->
+    <section class="project-media-full">
 
       <figure>
         <img
           src="assets/images/read-my-face-out-loud/max-patch.webp"
-          alt="Max/MSP patch showing facial emotion recognition, mode switching and MIDI-based sound synthesis"
+          alt="Max/MSP patch showing facial emotion recognition, mode switching, and MIDI-based sound synthesis"
         >
+
+        <figcaption>
+          Figure 1. Max/MSP patch showing facial emotion recognition, mode switching, and MIDI-based sound synthesis.
+        </figcaption>
       </figure>
+
+    </section>
+
+
+    <!-- CREATIVE METHODOLOGY CONTINUED -->
+    <section class="project-section">
+
+      <p class="project-copy">
+        Visually, TouchDesigner processes facial cache data and calculates differences between
+        frames. This feedback visualises how and where the face has moved, forming wave-like
+        structures through sphere instancing and camera angle change. Together, these processes
+        enrich latency and feedback across systems: human to machine, machine to human, auditory
+        to visual, and visual to auditory, in experimental ways.
+      </p>
+
+    </section>
+
+
+    <!-- FIGURES 2–3 -->
+    <section class="project-gallery">
 
       <figure>
         <img
           src="assets/images/read-my-face-out-loud/touchdesigner.webp"
-          alt="TouchDesigner network processing facial position data and generating responsive visuals"
+          alt="TouchDesigner network processing facial position data to generate abstract, responsive visuals"
         >
+
+        <figcaption>
+          Figure 2. TouchDesigner network processing facial position data to generate abstract, responsive visuals.
+        </figcaption>
       </figure>
+
 
       <figure>
         <img
           src="assets/images/read-my-face-out-loud/system.webp"
-          alt="Max/MSP and TouchDesigner running simultaneously as an audiovisual feedback system"
+          alt="Combined Max/MSP and TouchDesigner system running simultaneously"
         >
+
+        <figcaption>
+          Figure 3. Combined Max/MSP and TouchDesigner system running simultaneously, showing real-time audiovisual feedback.
+        </figcaption>
       </figure>
 
     </section>
 
 
-    <!-- EMBODIED FEEDBACK -->
+    <!-- CONCLUSION & REFLECTION -->
     <section class="project-section">
 
       <h2 class="project-section-title">
-        Embodied Feedback
+        Conclusion &amp; Reflection
       </h2>
 
       <p class="project-copy">
-        The performer can intentionally alter facial expressions to influence
-        sonic and visual responses, while involuntary changes are also continuously
-        interpreted by the system.
-      </p>
-
-      <p class="project-copy">
-        The gap between felt emotion and machine-recognised emotion becomes part
-        of the performance itself. As the performer listens and responds to the
-        system, they begin to exaggerate and adjust their expressions in ways the
-        machine can read, shifting the relationship between controlling the system
-        and performing for it.
-      </p>
-
-      <p class="project-copy">
-        Visual feedback also depends on the performer remaining within the
-        camera's view. Moving outside it interrupts the response, requiring a
-        sustained physical awareness of how the body and face are being perceived
-        by the machine.
+        <em>Read My Face Out Loud, And We Resonate</em>, through its patches and live practices,
+        validates the expressive potential of simple monophonic sounds triggered by real-time
+        facial responses. The subject can intentionally change facial expressions to influence
+        sonic outcomes and their alignment. Visually, the system stops responding when the subject
+        moves outside the camera’s view, requiring sustained physical awareness to maintain visual
+        continuity. Unconsciously, facial expressions change even without deliberate intention,
+        yet their interpretation remains limited in fully matching internal emotional states.
+        This gap encourages the subject to enact and exaggerate facial expressions by listening
+        closely to sonic feedback.
       </p>
 
     </section>
 
 
-    <!-- PRACTICE IMAGE -->
+    <!-- FIGURE 4 -->
     <section class="project-media-full">
-      <img
-        src="assets/images/read-my-face-out-loud/practice.webp"
-        alt="Bedroom live practice documenting embodied interaction between facial expression, sound and visuals"
-      >
+
+      <figure>
+        <img
+          src="assets/images/read-my-face-out-loud/practice.webp"
+          alt="Bedroom live practice documenting embodied interaction between facial expression, sound, and visuals"
+        >
+
+        <figcaption>
+          Figure 4. Bedroom live practice, documenting embodied interaction between facial expression, sound, and visuals.
+        </figcaption>
+      </figure>
+
+    </section>
+
+
+    <!-- CONCLUSION & REFLECTION CONTINUED -->
+    <section class="project-section">
+
+      <p class="project-copy">
+        In future developments, I would like to expand this project into a larger scale performance
+        involving social media content, where a performer scrolls through information while a mobile
+        camera captures facial reactions. Machine feedback could render unconscious human responses
+        more visible, leaving ambiguity over whether the human or the machine is in control.
+        Additionally, I aim to develop a custom machine learning model to achieve more nuanced
+        facial data recognition. Moreover, I would like to become as comfortable working with
+        Max/MSP as I currently am with TouchDesigner.
+      </p>
+
+    </section>
+
+
+    <!-- REFERENCES -->
+    <section class="project-section">
+
+      <h2 class="project-section-title">
+        References
+      </h2>
+
+      <div class="project-references">
+
+        <p>
+          Buck, R. &amp; Miller, M. (2015) Beyond facial expression: Spatial distance as a factor
+          in the communication of discrete emotions. In: Kostić, A. &amp; Chadee, D. (eds.)
+          <em>The Social Psychology of Nonverbal Communication</em>. London: Palgrave Macmillan,
+          pp. 173-197.
+        </p>
+
+        <p>
+          Cipriani, A. &amp; Giri, M. (2010) <em>Electronic Music and Sound Design: Theory and
+          Practice with Max/MSP</em>. Volume 1. Rome: ConTempoNet.
+        </p>
+
+        <p>
+          fdb (2020) <em>max-face-api</em>. Available at:
+          <a
+            href="https://github.com/fdb/max-face-api"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            https://github.com/fdb/max-face-api
+          </a>
+          (Accessed: 15 Jan 2026)
+        </p>
+
+        <p>
+          Givens, D.B. (2015) Nonverbal neurology: How the brain encodes and decodes wordless
+          signs, signals, and cues. In: Kostić, A. &amp; Chadee, D. (eds.)
+          <em>The Social Psychology of Nonverbal Communication</em>. London: Palgrave Macmillan,
+          pp. 9-30.
+        </p>
+
+        <p>
+          Kostić, A. &amp; Chadee, D. (eds.) (2015)
+          <em>The Social Psychology of Nonverbal Communication</em>.
+          London: Palgrave Macmillan.
+        </p>
+
+      </div>
+
     </section>
 
 
