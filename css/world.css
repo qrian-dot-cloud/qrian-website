@@ -1,0 +1,314 @@
+/*
+  WORLD PAGE QUICK CONTROLS
+  -------------------------
+  These variables are the easiest place to change the hover presentation.
+
+  --world-photo-size       = top-right hover image size
+  --world-title-size       = project title size
+  --world-year-size        = year next to title
+  --world-type-size        = main subtitle / work type
+  --world-desc-size        = fallback description size
+  --world-detail-size      = smaller material / technique details
+  --world-series-size      = series label size
+  --world-caption-gap      = gap below the image
+  --world-node-scale       = overall tear-node size
+*/
+
+:root {
+  --world-photo-size: 32vmin;
+  --world-photo-min: 180px;
+  --world-photo-max: 320px;
+
+  --world-title-size: 21px;
+  /* --world-year-size: 20px; */
+  --world-type-size: 14px;
+  --world-desc-size: 11px;
+  --world-detail-size: 10px;
+  --world-series-size: 10px;
+  --world-tooltip-size: 11px;
+  --world-caption-gap: 12px;
+
+  --world-node-scale: 1;
+}
+
+#world-layer {
+  position: fixed !important;
+  inset: 0;
+  z-index: 0;
+}
+
+#tooltip {
+  position: fixed;
+  z-index: 20;
+  padding: 5px 9px;
+  border-radius: 3px;
+  opacity: 0;
+  transform: translate(-50%, -140%);
+  transition: opacity 0.15s ease;
+  pointer-events: none;
+  background: var(--text);
+  color: var(--bg);
+  font-family: 'Space Mono', monospace;
+  font-size: var(--world-tooltip-size);
+  letter-spacing: 0.01em;
+}
+
+#hover-photo {
+  position: fixed;
+  top: 40px;
+  right: 48px;
+  z-index: 8;
+  width: var(--world-photo-size);
+  height: var(--world-photo-size);
+  min-width: var(--world-photo-min);
+  min-height: var(--world-photo-min);
+  max-width: var(--world-photo-max);
+  max-height: var(--world-photo-max);
+  overflow: hidden;
+  pointer-events: none;
+
+  -webkit-mask-image:
+    radial-gradient(circle closest-side, black 40%, transparent 95%);
+
+  mask-image:
+    radial-gradient(circle closest-side, black 40%, transparent 95%);
+}
+
+#hover-photo .blob-bg {
+  position: absolute;
+  inset: 0;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(188, 228, 230, 0.4),
+      rgba(188, 228, 230, 0.06) 70%
+    );
+}
+
+#hover-photo img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+#hover-photo img.active {
+  opacity: 1;
+}
+
+#hover-caption {
+  position: fixed;
+  z-index: 8;
+  max-width: 420px;
+  text-align: right;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+  pointer-events: none;
+  font-family: 'Space Mono', monospace;
+}
+
+#hover-caption.active {
+  opacity: 1;
+}
+
+
+/* --------------------------------
+   PROJECT TITLE + YEAR
+--------------------------------- */
+
+#hover-caption .title {
+  margin-bottom: 5px;
+  color: var(--text);
+  font-size: var(--world-title-size);
+  line-height: 1.25;
+}
+
+#hover-caption .world-year {
+  font-size: calc(var(--world-title-size) - 1px);
+  font-weight: 400;
+  white-space: nowrap;
+}
+
+
+/* --------------------------------
+   DESCRIPTION
+--------------------------------- */
+
+#hover-caption .keywords {
+  margin-bottom: 8px;
+  color: #9DB5BA;
+  font-size: var(--world-desc-size);
+  line-height: 1.45;
+  letter-spacing: 0.01em;
+}
+
+/* */
+#hover-caption .work-type {
+  color: #AFC3C7;
+  font-size: var(--world-type-size);
+  line-height: 1.65;
+}
+
+/* */
+#hover-caption .work-details {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  column-gap: 7px;
+  row-gap: 2px;
+  margin-top: 6px;
+
+  color: #71858B;
+  font-family: 'Space Mono', monospace;
+  font-size: var(--world-detail-size);
+  line-height: 1.45;
+}
+
+#hover-caption .work-detail {
+  white-space: nowrap;
+}
+
+
+/* --------------------------------
+   SERIES
+--------------------------------- */
+
+#hover-caption .series {
+  color: var(--muted-2);
+  /* text-transform: uppercase; */
+  font-size: var(--world-series-size);
+  line-height: 1.4;
+  letter-spacing: 0.08em;
+}
+
+
+/* --------------------------------
+   MOBILE QRIAN.world
+   first tap = preview
+   second tap on same tear = enter
+--------------------------------- */
+
+#mobile-world-hint {
+  display: none;
+}
+
+@media (max-width: 640px),
+       (min-width: 641px) and (max-width: 1024px)
+       and (orientation: portrait)
+       and (hover: none) and (pointer: coarse) {
+
+  :root {
+    --world-photo-size: 42vw;
+    --world-photo-min: 132px;
+    --world-photo-max: 176px;
+
+    --world-title-size: 14px;
+    --world-type-size: 11px;
+    --world-desc-size: 10px;
+    --world-detail-size: 9px;
+    --world-series-size: 9px;
+    --world-tooltip-size: 10px;
+
+    /* Slightly larger tear nodes visually on touch screens. */
+    --world-node-scale: 1.12;
+  }
+
+  /* Top preview tear/image sits on the phone's centre axis. */
+  #hover-photo {
+    top: 68px;
+    left: 50%;
+    right: auto;
+    transform: translateX(-50%);
+  }
+
+  /* Preview text follows the same centre axis. */
+  #hover-caption {
+    display: block;
+    left: 50%;
+    right: auto;
+    width: min(84vw, 340px);
+    max-width: 340px;
+    transform: translateX(-50%);
+    text-align: center;
+  }
+
+  #hover-caption .title {
+    margin-bottom: 4px;
+  }
+
+  #hover-caption .world-year {
+  font-size: var(--world-title-size);
+  }
+  
+  #hover-caption .work-details {
+    justify-content: center;
+  }
+
+  #hover-caption .keywords {
+    line-height: 1.35;
+  }
+
+  #hover-caption .series {
+    margin-bottom: 3px;
+  }
+
+  /* Mobile */
+  #tooltip {
+    display: none;
+  }
+
+  #world-layer {
+    touch-action: manipulation;
+  }
+
+  #mobile-world-hint {
+    position: fixed;
+    left: 50%;
+    bottom: 18px;
+    z-index: 10;
+    display: block;
+    width: calc(100% - 40px);
+    transform: translateX(-50%);
+    color: #6F7D82;
+    text-align: center;
+    pointer-events: none;
+    font-family: 'Space Mono', monospace;
+    font-size: 9px;
+    line-height: 1.5;
+  }
+}
+
+/* iPad only */
+@media (min-width: 641px) and (max-width: 1366px)
+       and (hover: none) and (pointer: coarse) {
+
+  #hover-photo {
+    top: 84px;
+  }
+}
+
+/* iPad portrait */
+@media (min-width: 641px) and (max-width: 1024px)
+       and (orientation: portrait)
+       and (hover: none) and (pointer: coarse) {
+
+  #hover-photo {
+    top: 96px;
+  }
+}
+
+/* iPad landscape */
+@media (min-width: 641px) and (max-width: 1366px)
+       and (orientation: landscape)
+       and (hover: none) and (pointer: coarse) {
+
+  #hover-photo {
+    top: 40px;
+  }
+}
+

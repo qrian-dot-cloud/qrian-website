@@ -1,0 +1,828 @@
+/*
+  QRIAN — Shared Project Page System
+
+  Default structure:
+
+  Hero
+  Project title
+  Medium · Year
+  Concept / interaction detail
+  Technical stack
+  Short description
+  Documentation slider
+
+  Additional sections / galleries can still be used when needed.
+*/
+
+
+/* =========================================================
+   PAGE
+   ========================================================= */
+
+.project-main {
+  width: calc(100% - var(--sidebar-width));
+  max-width: 1100px;
+  margin-left: var(--sidebar-width);
+  padding: 0 0 var(--page-pad-bottom);
+}
+
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.project-hero {
+  position: relative;
+
+  width: 100%;
+  height: 64vh;
+  min-height: 360px;
+
+  overflow: hidden;
+
+  background: var(--panel);
+}
+
+.project-hero img,
+.project-hero video {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+}
+
+.project-hero::after {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  pointer-events: none;
+
+  background:
+    linear-gradient(
+      to top,
+      rgba(10, 13, 18, 0.88),
+      transparent 42%
+    );
+}
+
+
+/* =========================================================
+   READING COLUMN
+   ========================================================= */
+
+.project-intro,
+.project-section,
+.series-nav {
+  width: min(
+    880px,
+    calc(100% - (var(--page-pad-x) * 2))
+  );
+
+  margin-left: var(--page-pad-x);
+}
+
+
+/* =========================================================
+   INTRO
+   ========================================================= */
+
+.project-intro {
+  padding-top: 48px;
+}
+
+
+/* =========================================================
+   TITLE
+   ========================================================= */
+
+.project-title {
+  margin: 0 0 26px;
+
+  color: var(--text-strong);
+
+  font-family: 'Space Mono', monospace;
+  font-size: clamp(30px, 3vw, 42px);
+  font-weight: 400;
+
+  line-height: 1.15;
+}
+
+
+/* =========================================================
+   MEDIUM / YEAR / DETAILS
+   ========================================================= */
+
+.project-medium {
+  display: block;
+  margin: 0;
+
+  color: var(--accent);
+
+  font-family: 'Space Mono', monospace;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.project-meta-line {
+  display: block;
+  margin-top: 12px;
+
+  max-width: 100%;
+
+  color: var(--muted);
+
+  font-family: 'Space Mono', monospace;
+  font-size: 11px;
+  font-weight: 400;
+  line-height: 1.7;
+
+}
+
+.project-tech-line {
+  display: block;
+  margin-top: 4px;
+
+  color: var(--muted-2);
+
+  font-family: 'Space Mono', monospace;
+  font-size: 10px;
+  font-style: italic;
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+/* =========================================================
+   PROJECT DESCRIPTION
+   ========================================================= */
+
+.project-section {
+  padding-top: 56px;
+}
+
+.project-concept,
+.project-copy,
+.project-section p {
+  margin: 0;
+
+  color: var(--body-text);
+
+  opacity: 0.92;
+
+  font-size: 16px;
+  line-height: 1.72;
+}
+
+.project-section p + p {
+  margin-top: 22px;
+}
+
+
+/* =========================================================
+   OPTIONAL SECTION TITLE
+   ========================================================= */
+
+.project-section-title {
+  margin: 0 0 22px;
+
+  color: var(--text-strong);
+
+  font-family: 'Space Mono', monospace;
+  font-size: 18px;
+  font-weight: 400;
+
+  line-height: 1.3;
+}
+
+
+/* =========================================================
+   DOCUMENTATION SLIDER
+   ========================================================= */
+
+.project-slider {
+  width: 100%;
+
+  padding-top: 64px;
+
+  overflow: hidden;
+}
+
+.project-slider-track {
+  display: flex;
+
+  width: 100%;
+
+  overflow-x: auto;
+  overflow-y: hidden;
+
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+
+  overscroll-behavior-x: contain;
+
+  scrollbar-width: none;
+
+  -webkit-overflow-scrolling: touch;
+}
+
+.project-slider-track::-webkit-scrollbar {
+  display: none;
+}
+
+.project-slide {
+  position: relative;
+
+  flex: 0 0 100%;
+
+  width: 100%;
+
+  margin: 0;
+
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+
+  background: transparent;
+}
+
+.project-slide img,
+.project-slide video {
+  width: 100%;
+  height: min(76vh, 760px);
+
+  display: block;
+
+  object-fit: contain;
+
+  background: transparent;
+}
+
+
+/* =========================================================
+   SLIDER CAPTION
+   ========================================================= */
+
+.project-slide figcaption {
+  width: min(
+    880px,
+    calc(100% - (var(--page-pad-x) * 2))
+  );
+
+  margin:
+    10px
+    0
+    0
+    var(--page-pad-x);
+
+  color: var(--muted-2);
+
+  font-size: 11px;
+  line-height: 1.45;
+}
+
+
+/* =========================================================
+   OPTIONAL STANDARD FIGURES
+   ========================================================= */
+
+.project-section figure {
+  margin: 40px 0 0;
+}
+
+.project-section figure img,
+.project-section figure video {
+  width: 100%;
+  height: auto;
+
+  display: block;
+
+  background: var(--panel);
+}
+
+.project-section figure figcaption {
+  margin-top: 10px;
+
+  color: var(--muted-2);
+
+  font-size: 11px;
+  line-height: 1.45;
+}
+
+
+/* =========================================================
+   OPTIONAL GRID GALLERY
+   ========================================================= */
+
+.project-gallery {
+  width: 100%;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+
+  gap: 16px;
+
+  padding:
+    64px
+    var(--page-pad-x)
+    0;
+}
+
+.project-gallery.two {
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+}
+
+.project-gallery.one {
+  grid-template-columns: 1fr;
+}
+
+.project-gallery figure {
+  margin: 0;
+}
+
+.project-gallery img,
+.project-gallery video {
+  width: 100%;
+
+  aspect-ratio: 4 / 3;
+
+  display: block;
+
+  object-fit: cover;
+
+  background: var(--panel);
+}
+
+.project-gallery.one img,
+.project-gallery.one video {
+  aspect-ratio: auto;
+
+  max-height: 78vh;
+
+  object-fit: contain;
+}
+
+.project-gallery figcaption {
+  margin-top: 9px;
+
+  color: var(--muted-2);
+
+  font-size: 11px;
+  line-height: 1.45;
+}
+
+
+/* =========================================================
+   FULL WIDTH MEDIA
+   ========================================================= */
+
+.project-media-full {
+  width: 100%;
+
+  padding-top: 64px;
+}
+
+.project-media-full figure {
+  margin: 0;
+}
+
+.project-media-full img,
+.project-media-full video,
+.project-media-full iframe {
+  width: 100%;
+
+  display: block;
+
+  border: 0;
+}
+
+.project-media-full img,
+.project-media-full video {
+  max-height: 90vh;
+
+  object-fit: contain;
+
+  background: var(--panel);
+}
+
+.project-media-full figcaption {
+  width: min(
+    880px,
+    calc(100% - (var(--page-pad-x) * 2))
+  );
+
+  margin:
+    10px
+    0
+    0
+    var(--page-pad-x);
+
+  color: var(--muted-2);
+
+  font-size: 11px;
+  line-height: 1.45;
+}
+
+
+/* =========================================================
+   LINKS
+   ========================================================= */
+
+.project-section a,
+.project-copy a,
+.project-concept a {
+  color: var(--accent);
+
+  text-decoration: none;
+
+  border-bottom:
+    1px solid rgba(188, 228, 230, 0.35);
+}
+
+.project-section a:hover,
+.project-copy a:hover,
+.project-concept a:hover {
+  border-bottom-color:
+    rgba(188, 228, 230, 0.8);
+}
+
+
+/* =========================================================
+   OPTIONAL SERIES NAV
+   ========================================================= */
+
+.series-nav {
+  padding-top: 64px;
+
+  font-family: 'Space Mono', monospace;
+  font-size: 11px;
+}
+
+.series-nav .label {
+  margin-bottom: 14px;
+
+  color: var(--muted-2);
+
+  text-transform: uppercase;
+
+  font-size: 10px;
+
+  letter-spacing: 0.06em;
+}
+
+.series-nav ul {
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+}
+
+.series-nav li {
+  margin-bottom: 8px;
+}
+
+.series-nav a {
+  color: var(--body-text);
+
+  text-decoration: none;
+
+  border-bottom:
+    1px solid transparent;
+}
+
+.series-nav a.current,
+.series-nav a:hover {
+  color: var(--accent);
+}
+
+.series-nav a:hover {
+  border-bottom-color:
+    rgba(188, 228, 230, 0.4);
+}
+
+
+/* =========================================================
+   OPTIONAL TODO NOTE
+   ========================================================= */
+
+.project-todo {
+  margin-top: 26px;
+
+  padding: 14px 16px;
+
+  border:
+    1px solid rgba(188, 228, 230, 0.12);
+
+  color: var(--muted);
+
+  font-family: 'Space Mono', monospace;
+  font-size: 11px;
+
+  line-height: 1.6;
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 640px) {
+
+  .project-main {
+    width: 100%;
+    max-width: none;
+
+    margin: 0;
+
+    padding-top: 64px;
+  }
+
+
+  /* Hero */
+
+  .project-hero {
+    height: 52vh;
+    min-height: 280px;
+  }
+
+
+  /* Reading column */
+
+  .project-intro,
+  .project-section,
+  .series-nav {
+    width: auto;
+
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+
+
+  /* Intro */
+
+  .project-intro {
+    padding-top: 34px;
+  }
+
+
+  /* Title */
+
+  .project-title {
+    margin-bottom: 22px;
+
+    font-size: clamp(26px, 8vw, 34px);
+
+    line-height: 1.18;
+  }
+
+
+  /* Medium */
+
+  .project-medium {
+    font-size: 13px;
+  }
+
+  .project-medium-detail {
+    margin-top: 6px;
+
+    font-size: 11px;
+  }
+
+  .project-tech {
+    margin-top: 4px;
+
+    font-size: 9px;
+
+    line-height: 1.5;
+  }
+
+
+  /* Copy */
+
+  .project-section {
+    padding-top: 46px;
+  }
+
+  .project-concept,
+  .project-copy,
+  .project-section p {
+    font-size: 15px;
+
+    line-height: 1.68;
+  }
+
+
+  /* Section heading */
+
+  .project-section-title {
+    margin-bottom: 18px;
+
+    font-size: 17px;
+  }
+
+
+  /* Slider */
+
+  .project-slider {
+    padding-top: 52px;
+  }
+
+  .project-slide img,
+  .project-slide video {
+    height: auto;
+    max-height: 72vh;
+
+    object-fit: contain;
+  }
+
+  .project-slide figcaption {
+    width: auto;
+
+    margin:
+      8px
+      20px
+      0;
+
+    font-size: 10px;
+  }
+
+
+  /* Gallery */
+
+  .project-gallery,
+  .project-gallery.two,
+  .project-gallery.one {
+    grid-template-columns: 1fr;
+  }
+
+  .project-gallery {
+    gap: 28px;
+
+    padding:
+      52px
+      20px
+      0;
+  }
+
+  .project-gallery img,
+  .project-gallery video {
+    aspect-ratio: auto;
+
+    max-height: none;
+
+    object-fit: contain;
+  }
+
+
+  /* Full media */
+
+  .project-media-full {
+    padding-top: 52px;
+  }
+
+  .project-media-full figcaption {
+    width: auto;
+
+    margin:
+      8px
+      20px
+      0;
+  }
+
+
+  /* Series */
+
+  .series-nav {
+    padding-top: 52px;
+  }
+}
+
+
+/* =========================================================
+   iPAD PORTRAIT
+   ========================================================= */
+
+@media (min-width: 641px)
+       and (max-width: 1024px)
+       and (orientation: portrait)
+       and (hover: none)
+       and (pointer: coarse) {
+
+  .project-main {
+    width: 100%;
+    max-width: none;
+
+    margin: 0;
+
+    padding-top: 76px;
+  }
+
+
+  .project-hero {
+    height: 56vh;
+    min-height: 420px;
+  }
+
+
+  .project-intro,
+  .project-section,
+  .series-nav {
+    width: auto;
+
+    margin-left: 32px;
+    margin-right: 32px;
+  }
+
+
+  .project-intro {
+    padding-top: 42px;
+  }
+
+
+  .project-title {
+    font-size: clamp(32px, 5vw, 42px);
+  }
+
+
+  .project-medium {
+    font-size: 14px;
+  }
+
+
+  .project-medium-detail {
+    font-size: 11px;
+  }
+
+
+  .project-tech {
+    font-size: 9px;
+  }
+
+
+  .project-section {
+    padding-top: 52px;
+  }
+
+
+  .project-concept,
+  .project-copy,
+  .project-section p {
+    font-size: 16px;
+
+    line-height: 1.7;
+  }
+
+
+  .project-slider {
+    padding-top: 58px;
+  }
+
+
+  .project-slide img,
+  .project-slide video {
+    height: min(68vh, 720px);
+  }
+
+
+  .project-gallery {
+    gap: 14px;
+
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+}
+
+
+/* =========================================================
+   iPAD LANDSCAPE
+   ========================================================= */
+
+@media (min-width: 641px)
+       and (max-width: 1366px)
+       and (orientation: landscape)
+       and (hover: none)
+       and (pointer: coarse) {
+
+  .project-intro,
+  .project-section,
+  .series-nav {
+    margin-left: 48px;
+  }
+
+
+  .project-slide figcaption,
+  .project-media-full figcaption {
+    margin-left: 48px;
+  }
+
+
+  .project-gallery {
+    padding-left: 48px;
+    padding-right: 48px;
+  }
+}
